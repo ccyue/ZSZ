@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2008
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZSZ.Common", "ZSZ.Common\ZSZ.Common.csproj", "{3BFC274B-5E8C-4E74-A5ED-06079811F04A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZSZ.Test", "ZSZ.Test\ZSZ.Test.csproj", "{BA0D3757-097A-4930-AD70-F91356C4931A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BFC274B-5E8C-4E74-A5ED-06079811F04A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BFC274B-5E8C-4E74-A5ED-06079811F04A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BFC274B-5E8C-4E74-A5ED-06079811F04A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BFC274B-5E8C-4E74-A5ED-06079811F04A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA0D3757-097A-4930-AD70-F91356C4931A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA0D3757-097A-4930-AD70-F91356C4931A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA0D3757-097A-4930-AD70-F91356C4931A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA0D3757-097A-4930-AD70-F91356C4931A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CBADC0CB-6759-4746-BC75-F3BB5FBFF6B6}
+	EndGlobalSection
+EndGlobal
