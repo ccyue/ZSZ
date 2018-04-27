@@ -218,3 +218,12 @@ E:\Github\ZSZ\ZSZ.Test\obj\Debug\ZSZ.Test.csproj.ZSZ.Test.exe.config
 E:\Github\ZSZ\ZSZ.Test\obj\Debug\ZSZ.Test.csproj.CoreCompileInputs.cache
 E:\Github\ZSZ\ZSZ.Test\obj\Debug\ZSZ.Test.exe
 E:\Github\ZSZ\ZSZ.Test\obj\Debug\ZSZ.Test.pdb
+E:\Github\ZSZ\ZSZ.Test\bin\Debug\Common.Logging.Core.dll
+E:\Github\ZSZ\ZSZ.Test\bin\Debug\Common.Logging.dll
+E:\Github\ZSZ\ZSZ.Test\bin\Debug\Quartz.dll
+E:\Github\ZSZ\ZSZ.Test\bin\Debug\Common.Logging.pdb
+E:\Github\ZSZ\ZSZ.Test\bin\Debug\Common.Logging.xml
+E:\Github\ZSZ\ZSZ.Test\bin\Debug\Common.Logging.Core.pdb
+E:\Github\ZSZ\ZSZ.Test\bin\Debug\Common.Logging.Core.xml
+E:\Github\ZSZ\ZSZ.Test\bin\Debug\Quartz.pdb
+E:\Github\ZSZ\ZSZ.Test\bin\Debug\Quartz.xml

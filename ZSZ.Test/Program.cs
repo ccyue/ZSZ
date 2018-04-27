@@ -2,6 +2,9 @@
 using CodeCarvings.Piczard;
 using CodeCarvings.Piczard.Filters.Watermarks;
 using log4net;
+using Quartz;
+using Quartz.Impl;
+using Quartz.Spi;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -61,12 +64,28 @@ namespace ZSZ.Test
             #endregion
 
             #region log4net
-            log4net.Config.XmlConfigurator.Configure();
+            //log4net.Config.XmlConfigurator.Configure();
 
-            ILog log = LogManager.GetLogger(typeof(Program));
-            log.Debug("debug...");
-            log.Warn("Warn...");
-            log.Error("Log..");
+            //ILog log = LogManager.GetLogger(typeof(Program));
+            //log.Debug("debug...");
+            //log.Warn("Warn...");
+            //log.Error("Log..");
+            #endregion
+
+            #region Quartz
+            IScheduler sched = new StdSchedulerFactory().GetScheduler();
+
+            {
+                JobDetailImpl jdBossReport = new JobDetailImpl("jdTest", typeof(TestJob));
+                var builder = CalendarIntervalScheduleBuilder.Create();
+                builder.WithInterval(3, IntervalUnit.Second);
+                IMutableTrigger triggerBossReport = builder.Build();
+                //IMutableTrigger triggerBossReport =
+                //CronScheduleBuilder.DailyAtHourAndMinute(8, 54).Build();//每天23:45执行一次
+                triggerBossReport.Key = new TriggerKey("triggerTest");
+                sched.ScheduleJob(jdBossReport, triggerBossReport);
+                sched.Start();
+            }
             #endregion
 
             Console.ReadKey();
