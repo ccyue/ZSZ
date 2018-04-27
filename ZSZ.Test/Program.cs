@@ -1,6 +1,7 @@
 ﻿using CaptchaGen;
 using CodeCarvings.Piczard;
 using CodeCarvings.Piczard.Filters.Watermarks;
+using log4net;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -59,7 +60,14 @@ namespace ZSZ.Test
             //}
             #endregion
 
+            #region log4net
+            log4net.Config.XmlConfigurator.Configure();
 
+            ILog log = LogManager.GetLogger(typeof(Program));
+            log.Debug("debug...");
+            log.Warn("Warn...");
+            log.Error("Log..");
+            #endregion
 
             Console.ReadKey();
         }

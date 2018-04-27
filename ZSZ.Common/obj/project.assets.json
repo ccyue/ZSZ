@@ -210,11 +210,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "E:\\RuPeng\\ZSZ\\ZSZ.Common\\ZSZ.Common.csproj",
+      "projectUniqueName": "E:\\Github\\ZSZ\\ZSZ.Common\\ZSZ.Common.csproj",
       "projectName": "ZSZ.Common",
-      "projectPath": "E:\\RuPeng\\ZSZ\\ZSZ.Common\\ZSZ.Common.csproj",
+      "projectPath": "E:\\Github\\ZSZ\\ZSZ.Common\\ZSZ.Common.csproj",
       "packagesPath": "C:\\Users\\cheng\\.nuget\\packages\\",
-      "outputPath": "E:\\RuPeng\\ZSZ\\ZSZ.Common\\obj\\",
+      "outputPath": "E:\\Github\\ZSZ\\ZSZ.Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
