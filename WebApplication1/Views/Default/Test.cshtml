@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#btn").click(function () {
+                alert(1)
+                $.ajax({
+                    url: "/Default/Test",
+                    dataType: "json",
+                    type:"post",
+                    data: { Name: $("#Name").val() },
+                    success: function (data) {
+                        alert(data.name);
+                        alert(data.birthday);
+                    },
+                    error: function () {
+                        alert("error");
+                    }
+
+                });
+            })
+        })
+    </script>
+    <title>Test</title>
+</head>
+<body>
+    <div> 
+        <form method="post">
+            Name: <input name="Name" id="Name" />
+            <input type="submit"value="submit" />
+        </form>
+        <button id="btn">Click</button>
+    </div>
+</body>
+</html>

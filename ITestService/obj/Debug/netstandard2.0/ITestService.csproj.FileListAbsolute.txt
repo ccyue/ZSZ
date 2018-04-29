@@ -1,0 +1,9 @@
+E:\GitHub\ZSZ\ITestService\bin\Debug\netstandard2.0\ITestService.deps.json
+E:\GitHub\ZSZ\ITestService\bin\Debug\netstandard2.0\ITestService.dll
+E:\GitHub\ZSZ\ITestService\bin\Debug\netstandard2.0\ITestService.pdb
+E:\GitHub\ZSZ\ITestService\obj\Debug\netstandard2.0\ITestService.csprojResolveAssemblyReference.cache
+E:\GitHub\ZSZ\ITestService\obj\Debug\netstandard2.0\ITestService.csproj.CoreCompileInputs.cache
+E:\GitHub\ZSZ\ITestService\obj\Debug\netstandard2.0\ITestService.AssemblyInfoInputs.cache
+E:\GitHub\ZSZ\ITestService\obj\Debug\netstandard2.0\ITestService.AssemblyInfo.cs
+E:\GitHub\ZSZ\ITestService\obj\Debug\netstandard2.0\ITestService.dll
+E:\GitHub\ZSZ\ITestService\obj\Debug\netstandard2.0\ITestService.pdb

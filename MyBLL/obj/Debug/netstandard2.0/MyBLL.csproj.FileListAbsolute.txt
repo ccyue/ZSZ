@@ -1,0 +1,11 @@
+E:\GitHub\ZSZ\MyBLL\bin\Debug\netstandard2.0\MyBLL.deps.json
+E:\GitHub\ZSZ\MyBLL\bin\Debug\netstandard2.0\MyBLL.dll
+E:\GitHub\ZSZ\MyBLL\bin\Debug\netstandard2.0\MyBLL.pdb
+E:\GitHub\ZSZ\MyBLL\bin\Debug\netstandard2.0\IMyBLL.dll
+E:\GitHub\ZSZ\MyBLL\bin\Debug\netstandard2.0\IMyBLL.pdb
+E:\GitHub\ZSZ\MyBLL\obj\Debug\netstandard2.0\MyBLL.csprojResolveAssemblyReference.cache
+E:\GitHub\ZSZ\MyBLL\obj\Debug\netstandard2.0\MyBLL.csproj.CoreCompileInputs.cache
+E:\GitHub\ZSZ\MyBLL\obj\Debug\netstandard2.0\MyBLL.AssemblyInfoInputs.cache
+E:\GitHub\ZSZ\MyBLL\obj\Debug\netstandard2.0\MyBLL.AssemblyInfo.cs
+E:\GitHub\ZSZ\MyBLL\obj\Debug\netstandard2.0\MyBLL.dll
+E:\GitHub\ZSZ\MyBLL\obj\Debug\netstandard2.0\MyBLL.pdb

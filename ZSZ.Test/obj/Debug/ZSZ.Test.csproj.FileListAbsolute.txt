@@ -227,3 +227,17 @@ E:\Github\ZSZ\ZSZ.Test\bin\Debug\Common.Logging.Core.pdb
 E:\Github\ZSZ\ZSZ.Test\bin\Debug\Common.Logging.Core.xml
 E:\Github\ZSZ\ZSZ.Test\bin\Debug\Quartz.pdb
 E:\Github\ZSZ\ZSZ.Test\bin\Debug\Quartz.xml
+E:\GitHub\ZSZ\ZSZ.Test\bin\Debug\Autofac.dll
+E:\GitHub\ZSZ\ZSZ.Test\bin\Debug\IMyBLL.dll
+E:\GitHub\ZSZ\ZSZ.Test\bin\Debug\MyBLL.dll
+E:\GitHub\ZSZ\ZSZ.Test\bin\Debug\IMyBLL.pdb
+E:\GitHub\ZSZ\ZSZ.Test\bin\Debug\MyBLL.pdb
+E:\GitHub\ZSZ\ZSZ.Test\bin\Debug\Autofac.xml
+E:\GitHub\ZSZ\ZSZ.Test\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\GitHub\ZSZ\ZSZ.Test\bin\Debug\EntityFramework.dll
+E:\GitHub\ZSZ\ZSZ.Test\bin\Debug\EntityFramework.SqlServer.dll
+E:\GitHub\ZSZ\ZSZ.Test\bin\Debug\ZSZ.Service.dll
+E:\GitHub\ZSZ\ZSZ.Test\bin\Debug\ZSZ.Service.pdb
+E:\GitHub\ZSZ\ZSZ.Test\bin\Debug\ZSZ.Service.dll.config
+E:\GitHub\ZSZ\ZSZ.Test\bin\Debug\EntityFramework.xml
+E:\GitHub\ZSZ\ZSZ.Test\bin\Debug\EntityFramework.SqlServer.xml

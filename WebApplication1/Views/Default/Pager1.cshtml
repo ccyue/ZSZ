@@ -1,0 +1,17 @@
+﻿@using ZSZ.CommonMVC;
+@{
+    ViewBag.Title = "Pager1";
+}
+
+<h2>Pager1</h2>
+
+@{ 
+    Pager pager = new Pager();
+    pager.CurrentPageClassName = "active";
+    pager.MaxPageCount = 10;
+    pager.PageIndex = 3;
+    pager.PageSize = 50;
+    pager.TotalCount = 999;
+    pager.UrlPattern = "/Data?p={pn}";
+}
+@Html.Raw(pager.GetPagerHtml());

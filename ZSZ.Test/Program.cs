@@ -1,7 +1,10 @@
-﻿using CaptchaGen;
+﻿using Autofac;
+using CaptchaGen;
 using CodeCarvings.Piczard;
 using CodeCarvings.Piczard.Filters.Watermarks;
+using IMyBLL;
 using log4net;
+using MyBLL;
 using Quartz;
 using Quartz.Impl;
 using Quartz.Spi;
@@ -10,9 +13,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Mail;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using ZSZ.Common;
+using ZSZ.Service;
+using ZSZ.Service.Entities;
 
 namespace ZSZ.Test
 {
@@ -73,22 +79,56 @@ namespace ZSZ.Test
             #endregion
 
             #region Quartz
-            IScheduler sched = new StdSchedulerFactory().GetScheduler();
+            //IScheduler sched = new StdSchedulerFactory().GetScheduler();
 
-            {
-                JobDetailImpl jdBossReport = new JobDetailImpl("jdTest", typeof(TestJob));
-                var builder = CalendarIntervalScheduleBuilder.Create();
-                builder.WithInterval(3, IntervalUnit.Second);
-                IMutableTrigger triggerBossReport = builder.Build();
-                //IMutableTrigger triggerBossReport =
-                //CronScheduleBuilder.DailyAtHourAndMinute(8, 54).Build();//每天23:45执行一次
-                triggerBossReport.Key = new TriggerKey("triggerTest");
-                sched.ScheduleJob(jdBossReport, triggerBossReport);
-                sched.Start();
-            }
+            //{
+            //    JobDetailImpl jdBossReport = new JobDetailImpl("jdTest", typeof(TestJob));
+            //    var builder = CalendarIntervalScheduleBuilder.Create();
+            //    builder.WithInterval(3, IntervalUnit.Second);
+            //    IMutableTrigger triggerBossReport = builder.Build();
+            //    //IMutableTrigger triggerBossReport =
+            //    //CronScheduleBuilder.DailyAtHourAndMinute(8, 54).Build();//每天23:45执行一次
+            //    triggerBossReport.Key = new TriggerKey("triggerTest");
+            //    sched.ScheduleJob(jdBossReport, triggerBossReport);
+            //    sched.Start();
+            //}
             #endregion
 
-            Console.ReadKey();
+            #region IOC
+            //ContainerBuilder builder = new ContainerBuilder();
+            ////builder.RegisterType<UserBLL>().As<IUserBLL>();
+            ////builder.RegisterType<UserBLL>().AsImplementedInterfaces();
+            //Assembly asm = Assembly.Load("MyBLL");
+            //builder.RegisterAssemblyTypes(asm).AsImplementedInterfaces().PropertiesAutowired().SingleInstance();
+            //IContainer container =  builder.Build();
+            //IUserBLL userbll = container.Resolve<IUserBLL>();
+            //userbll.Check("yue", "123");
+            #endregion
+
+            #region SMS
+            //System.Net.WebClient wc = new System.Net.WebClient();
+            //string userName = "test0428";
+            //string appKey = "2248af97feb06c7e1855a7";
+            //int templateId = 1054;
+            //int code = 76823;
+            //string phoneNum = "18945267963";
+            //wc.Encoding = Encoding.UTF8;
+            //string status = wc.DownloadString("http://sms.rupeng.cn/SendSms.ashx?UserName="
+            //    + Uri.EscapeDataString(userName)
+            //    + "&appKey="+Uri.EscapeDataString(appKey)
+            //    + "&templateId="+templateId
+            //    + "&code="+code
+            //    + "&phoneNum="+phoneNum);
+
+            #endregion
+
+            //using (ZSZDbContext dbcontext = new ZSZDbContext())
+            //{
+            //    dbcontext.Database.Delete();
+            //    dbcontext.Database.Create();
+            //}
+
+                Console.ReadKey();
         }
     }
 }
