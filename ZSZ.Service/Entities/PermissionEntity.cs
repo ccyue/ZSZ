@@ -12,6 +12,6 @@ namespace ZSZ.Service.Entities
         public string Description { get; set; }
         public string Name { get; set; }
 
-        public virtual ICollection<RoleEntity> Roles { get; set; } = new List<RoleEntity>();
+        public virtual ICollection<RoleEntity> Roles { get; set; }
     }
 }

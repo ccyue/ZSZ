@@ -2,9 +2,7 @@
 using CaptchaGen;
 using CodeCarvings.Piczard;
 using CodeCarvings.Piczard.Filters.Watermarks;
-using IMyBLL;
 using log4net;
-using MyBLL;
 using Quartz;
 using Quartz.Impl;
 using Quartz.Spi;
@@ -122,11 +120,13 @@ namespace ZSZ.Test
 
             #endregion
 
+            #region Create DataBase
             //using (ZSZDbContext dbcontext = new ZSZDbContext())
             //{
             //    dbcontext.Database.Delete();
             //    dbcontext.Database.Create();
-            //}
+            //} 
+            #endregion
 
                 Console.ReadKey();
         }

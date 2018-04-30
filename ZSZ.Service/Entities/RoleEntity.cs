@@ -13,8 +13,8 @@ namespace ZSZ.Service.Entities
 
 
         //既可以一张表对应一个Entity，关系表也建立实体，也可以像这样直接让对象带属性，隐式的关系表
-        public virtual ICollection<PermissionEntity> Permissions { get; set; } = new List<PermissionEntity>();
+        public virtual ICollection<PermissionEntity> Permissions { get; set; }
 
-        public ICollection<AdminUserEntity> AdminUsers { get; set; } = new List<AdminUserEntity>();
+        public ICollection<AdminUserEntity> AdminUsers { get; set; }
     }
 }

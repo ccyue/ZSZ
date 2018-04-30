@@ -143,3 +143,5 @@ E:\GitHub\ZSZ\WebApplication1\bin\zh-Hans\System.Web.Webpages.Deployment.resourc
 E:\GitHub\ZSZ\WebApplication1\bin\zh-Hans\System.Web.Webpages.Razor.resources.dll
 E:\GitHub\ZSZ\WebApplication1\bin\zh-Hans\System.Web.Helpers.resources.dll
 E:\GitHub\ZSZ\WebApplication1\bin\zh-Hans\System.Web.Mvc.resources.dll
+C:\GitHub\ZSZ\WebApplication1\obj\Debug\WebApplication1.dll
+C:\GitHub\ZSZ\WebApplication1\obj\Debug\WebApplication1.pdb

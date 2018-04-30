@@ -11,6 +11,6 @@ namespace ZSZ.Service.Entities
         public string Name { get; set; }
         public string IconName { get; set; }
 
-        public virtual ICollection<HouseEntity> Houses { get; set; } = new List<HouseEntity>();
+        public virtual ICollection<HouseEntity> Houses { get; set; }
     }
 }

@@ -15,6 +15,7 @@ namespace ZSZ.Service
         private static ILog log = LogManager.GetLogger(typeof(ZSZDbContext));
         public ZSZDbContext():base("name=connstr")
         {
+            //禁用自动创建数据库
             Database.SetInitializer<ZSZDbContext>(null);
             this.Database.Log = (sql) =>
             {

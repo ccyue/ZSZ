@@ -21,6 +21,6 @@ namespace ZSZ.Service.Entities
         public int LoginErrorTimes { get; set; }
         public DateTime? LastLoginErrorDateTime { get; set; }
 
-        public virtual ICollection<RoleEntity> Roles { get; set; } = new List<RoleEntity>();
+        public virtual ICollection<RoleEntity> Roles { get; set; }
     }
 }

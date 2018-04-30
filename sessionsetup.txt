@@ -1,0 +1,2 @@
+cd C:\Windows\Microsoft.NET\Framework64\v4.0.30319
+aspnet_regsql.exe -ssadd -sstype c -d zhangshangzu  -S . ¨CU sa -P P@ssw0rd

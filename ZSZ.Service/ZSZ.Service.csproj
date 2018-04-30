@@ -50,7 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseService.cs" />
+    <Compile Include="CommonService.cs" />
+    <Compile Include="CityService.cs" />
     <Compile Include="ModelConfig\AdminLogConfig.cs" />
     <Compile Include="ModelConfig\AdminUserConfig.cs" />
     <Compile Include="ModelConfig\AttachmentConfig.cs" />
@@ -87,6 +88,19 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ZSZ.Common\ZSZ.Common.csproj">
+      <Project>{cab4ad0e-4af9-4f08-a90e-67b9b93f0f17}</Project>
+      <Name>ZSZ.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZSZ.DTO\ZSZ.DTO.csproj">
+      <Project>{3c067852-054c-4a1f-8ffb-761c03b25e62}</Project>
+      <Name>ZSZ.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZSZ.IService\ZSZ.IService.csproj">
+      <Project>{4787ade4-96ed-48f0-b0f5-f04ff41750aa}</Project>
+      <Name>ZSZ.IService</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
