@@ -11,8 +11,6 @@ namespace ZSZ.DTO
     {
         public long Id { get; set; }
         public DateTime CreateDateTime { get; set; }
-        public long CreateBy { get; set; }
-        public DateTime ModifyDateTime { get; set; }
-        public long ModifyBy { get; set; }
     }
+
 }

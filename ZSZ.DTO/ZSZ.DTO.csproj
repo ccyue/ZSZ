@@ -40,24 +40,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminUser.cs" />
+    <Compile Include="AdminLogDTO.cs" />
+    <Compile Include="AdminUserDTO.cs" />
+    <Compile Include="AttachmentDTO.cs" />
     <Compile Include="BaseDTO.cs" />
-    <Compile Include="City.cs" />
-    <Compile Include="Community.cs" />
-    <Compile Include="Facility.cs" />
-    <Compile Include="House.cs" />
-    <Compile Include="HouseAppointment.cs" />
-    <Compile Include="HouseFacility.cs" />
-    <Compile Include="HousePic.cs" />
-    <Compile Include="OperationLog.cs" />
-    <Compile Include="Permission.cs" />
+    <Compile Include="CityDTO.cs" />
+    <Compile Include="CommunityDTO.cs" />
+    <Compile Include="HouseAddNewDTO.cs" />
+    <Compile Include="HouseAppointmentDTO.cs" />
+    <Compile Include="HouseDTO.cs" />
+    <Compile Include="HousePicDTO.cs" />
+    <Compile Include="HouseSearchOptions.cs" />
+    <Compile Include="HouseSearchOrderByType.cs" />
+    <Compile Include="HouseSearchResult.cs" />
+    <Compile Include="IdNameDTO.cs" />
+    <Compile Include="PermissionDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Region.cs" />
-    <Compile Include="Role.cs" />
-    <Compile Include="RolePermission.cs" />
-    <Compile Include="Setting.cs" />
-    <Compile Include="SysDictionary.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="RegionDTO.cs" />
+    <Compile Include="RoleDTO.cs" />
+    <Compile Include="SettingDTO.cs" />
+    <Compile Include="UserDTO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

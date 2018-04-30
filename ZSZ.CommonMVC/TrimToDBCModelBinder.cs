@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace ZSZ.CommonMVC
 {
-    class TrimToDBCModelBinder: DefaultModelBinder
+    public class TrimToDBCModelBinder: DefaultModelBinder
     {
         public override object BindModel(ControllerContext controllerContext, ModelBindingContext bindingContext)
         {

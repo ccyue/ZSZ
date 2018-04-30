@@ -1,0 +1,6 @@
+E:\GitHub\ZSZ\ZSZ.IService\bin\Debug\ZSZ.IService.dll
+E:\GitHub\ZSZ\ZSZ.IService\bin\Debug\ZSZ.IService.pdb
+E:\GitHub\ZSZ\ZSZ.IService\obj\Debug\ZSZ.IService.csprojResolveAssemblyReference.cache
+E:\GitHub\ZSZ\ZSZ.IService\obj\Debug\ZSZ.IService.csproj.CoreCompileInputs.cache
+E:\GitHub\ZSZ\ZSZ.IService\obj\Debug\ZSZ.IService.dll
+E:\GitHub\ZSZ\ZSZ.IService\obj\Debug\ZSZ.IService.pdb

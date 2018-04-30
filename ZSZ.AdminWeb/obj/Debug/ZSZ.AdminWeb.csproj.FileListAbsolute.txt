@@ -1,0 +1,2 @@
+E:\GitHub\ZSZ\ZSZ.AdminWeb\obj\Debug\ZSZ.AdminWeb.csprojResolveAssemblyReference.cache
+E:\GitHub\ZSZ\ZSZ.AdminWeb\obj\Debug\ZSZ.AdminWeb.csproj.CoreCompileInputs.cache

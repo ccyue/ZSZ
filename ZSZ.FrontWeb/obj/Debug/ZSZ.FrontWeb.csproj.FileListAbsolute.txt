@@ -1,0 +1,2 @@
+E:\GitHub\ZSZ\ZSZ.FrontWeb\obj\Debug\ZSZ.FrontWeb.csprojResolveAssemblyReference.cache
+E:\GitHub\ZSZ\ZSZ.FrontWeb\obj\Debug\ZSZ.FrontWeb.csproj.CoreCompileInputs.cache
