@@ -84,3 +84,5 @@ E:\GitHub\ZSZ\ZSZ.AdminWeb\obj\Debug\ZSZ.AdminWeb.csprojResolveAssemblyReference
 E:\GitHub\ZSZ\ZSZ.AdminWeb\obj\Debug\ZSZ.AdminWeb.csproj.CoreCompileInputs.cache
 E:\GitHub\ZSZ\ZSZ.AdminWeb\obj\Debug\ZSZ.AdminWeb.dll
 E:\GitHub\ZSZ\ZSZ.AdminWeb\obj\Debug\ZSZ.AdminWeb.pdb
+E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\EntityFramework.SqlServer.dll
+E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\EntityFramework.SqlServer.xml

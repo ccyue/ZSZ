@@ -29,17 +29,28 @@ namespace ZSZ.IService
         /// <returns></returns>
         AdminUserDTO[] GetAll();
         /// <summary>
+        /// Get All AdminUserbyCityId
+        /// </summary>
+        /// <returns></returns>
+        AdminUserDTO[] GetAll(long? cityId);
+        /// <summary>
         /// Get AdminUser information by Id
         /// </summary>
         /// <returns></returns>
         AdminUserDTO GetById(long id);
+        /// <summary>
+        /// Get AdminUser information by phoneNum
+        /// </summary>
+        /// <param name="phoneNum"></param>
+        /// <returns></returns>
+        AdminUserDTO GetbyPhoneNum(string phoneNum);
         /// <summary>
         /// Login
         /// </summary>
         /// <param name="name"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        bool CheckLogin(string name, string password);
+        bool CheckLogin(string phoneNum, string password);
         /// <summary>
         /// Check Permission
         /// </summary>
@@ -51,11 +62,11 @@ namespace ZSZ.IService
         /// Record Login Error time
         /// </summary>
         /// <param name="id"></param>
-        void RecordLoginError(long id);
+        void RecordLoginError(long adminUserId);
         /// <summary>
         /// Reset Login Error time
         /// </summary>
         /// <param name="id"></param>
-        void ResetLoginError(long id);
+        void ResetLoginError(long adminUserId);
     }
 }

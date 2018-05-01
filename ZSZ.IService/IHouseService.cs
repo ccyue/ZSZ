@@ -11,13 +11,15 @@ namespace ZSZ.IService
     {
         HouseDTO GetById(long id);
         long GetTotalCount(long cityId, long typeId);
-        HouseDTO[] GetPageData(long cityId, int pageSize, int currentIndex);
+        HouseDTO[] GetPageData(long cityId, long typeId, int pageSize, int currentIndex);
         long Add(HouseDTO house);
         void Update(HouseDTO house);
         void Delete(long id);
         long AddHousePic(HousePicDTO housePic);
         void DeleteHousePic(long housePicId);
         HouseSearchResult Search(HouseSearchOptions options);
-        int GetCount(long cityId, DateTime startDateTime, DateTime endDateTime);
+        long GetCount(long cityId, DateTime startDateTime, DateTime endDateTime);
+        HousePicDTO[] GetPics(long houseId);
+        int GetTodayNewHouseCount(long cityId);
     }
 }

@@ -16,3 +16,4 @@ E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\System.Web.Mvc.xml
 E:\GitHub\ZSZ\ZSZ.FrontWeb\obj\Debug\ZSZ.FrontWeb.csproj.CoreCompileInputs.cache
 E:\GitHub\ZSZ\ZSZ.FrontWeb\obj\Debug\ZSZ.FrontWeb.dll
 E:\GitHub\ZSZ\ZSZ.FrontWeb\obj\Debug\ZSZ.FrontWeb.pdb
+E:\GitHub\ZSZ\ZSZ.FrontWeb\obj\Debug\ZSZ.FrontWeb.csprojResolveAssemblyReference.cache

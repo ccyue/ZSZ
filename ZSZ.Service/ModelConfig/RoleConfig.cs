@@ -12,6 +12,7 @@ namespace ZSZ.Service.ModelConfig
     {
         public RoleConfig()
         {
+            ToTable("T_Roles");
             HasMany(p => p.Permissions).WithMany(p=>p.Roles)
                 .Map(p => p.ToTable("T_RolePermissions").MapLeftKey("RoleId").MapRightKey("PermissionId"));
             Property(p => p.Name).IsRequired().HasMaxLength(50);

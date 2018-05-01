@@ -8,3 +8,4 @@ C:\GitHub\ZSZ\Calc\bin\Debug\Calc.pdb
 C:\GitHub\ZSZ\Calc\obj\Debug\Calc.csprojResolveAssemblyReference.cache
 C:\GitHub\ZSZ\Calc\obj\Debug\Calc.dll
 C:\GitHub\ZSZ\Calc\obj\Debug\Calc.pdb
+E:\GitHub\ZSZ\Calc\obj\Debug\Calc.csprojResolveAssemblyReference.cache

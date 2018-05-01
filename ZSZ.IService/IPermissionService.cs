@@ -10,10 +10,11 @@ namespace ZSZ.IService
     public interface IPermissionService:IServiceSupport
     {
         PermissionDTO[] GetAll();
-        PermissionDTO GetById();
+        PermissionDTO GetById(long id);
         PermissionDTO GetByName(string name);
-        PermissionDTO[] GetByRoleId { get; set; }
-        void AddPermForRole(long roleId, long[] permIds);
+        PermissionDTO[] GetByRoleId(long roleId);
         void UpdatePermForRole(long roleId, long[] permIds);
+        void UpdatePermission(long id, string permName, string description);
+        void Deleted(long id);
     }
 }

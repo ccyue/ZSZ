@@ -10,7 +10,7 @@ namespace ZSZ.IService
     public interface IAttachementService:IServiceSupport
     {
         AttachmentDTO[] GetAll();
-        AttachmentDTO GetByHouseId(long houseId);
+        AttachmentDTO[] GetByHouseId(long houseId);
 
     }
 }

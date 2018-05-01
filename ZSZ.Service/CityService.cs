@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using System.Text;
 using System.Threading.Tasks;
 using ZSZ.DTO;
@@ -13,30 +14,48 @@ namespace ZSZ.Service
     {
         public long Add(string cityName)
         {
-            using(ZSZDbContext ctx = new ZSZDbContext())
+            using(ZSZDbContext dbc = new ZSZDbContext())
             {
-                CommonService<CityEntity> bs = new CommonService<CityEntity>(ctx);
+                CommonService<CityEntity> cs = new CommonService<CityEntity>(dbc);
                 // Any > where+count
-                bool exists = bs.GetAll().Any(p => p.Name == cityName);
+                bool exists = cs.GetAll().Any(p => p.Name == cityName);
                 if(exists)
                 {
-                    throw new ArgumentException("The city has exists!");
+                    throw new ArgumentException(string.Format("{0} has already exist.", cityName));
                 }
                 CityEntity city = new CityEntity(){ Name= cityName, CreateDateTime =DateTime.Now};
-                ctx.Cities.Add(city);
-                ctx.SaveChanges();
+                dbc.Cities.Add(city);
+                dbc.SaveChanges();
                 return city.Id;
             }
         }
 
         public CityDTO[] GetAll()
         {
-            throw new NotImplementedException();
+            using (ZSZDbContext dbc = new ZSZDbContext())
+            {
+                CommonService<CityEntity> cs = new CommonService<CityEntity>(dbc);
+                return cs.GetAll().AsNoTracking().Select(p => ToDTO(p)).ToArray();
+            }
         }
 
         public CityDTO GetById(long id)
         {
-            throw new NotImplementedException();
+            using (ZSZDbContext dbc = new ZSZDbContext())
+            {
+                CommonService<CityEntity> cs = new CommonService<CityEntity>(dbc);
+                var city = cs.GetById(id);
+                return city == null ? null : ToDTO(city);
+            }
+        }
+        private CityDTO ToDTO(CityEntity city)
+        {
+            return new CityDTO()
+            {
+                Id = city.Id,
+                Name = city.Name,
+                CreateDateTime = city.CreateDateTime
+            };
         }
     }
 }

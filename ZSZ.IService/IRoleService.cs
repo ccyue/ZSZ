@@ -16,7 +16,6 @@ namespace ZSZ.IService
         RoleDTO GetByName(string roleName);
         RoleDTO[] GetAll();
         void GrantRoleToAdmin(long adminUserId, long[] roleIds);
-        void UpdateRoleToAdmin(long adminUserId, long[] roleIds);
         RoleDTO[] GetByAdminUser(long adminUserId);
     }
 }

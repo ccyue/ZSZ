@@ -9,7 +9,7 @@ namespace ZSZ.IService
 {
     public interface IRegionService:IServiceSupport
     {
-        RegionDTO GetById(long Id);
+        RegionDTO GetById(long id);
         RegionDTO[] GetAll(long cityId);
     }
 }
