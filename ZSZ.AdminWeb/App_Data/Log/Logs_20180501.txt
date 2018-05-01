@@ -1,0 +1,48 @@
+2018-05-01 08:16:24,947 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/1/2018 8:16:24 AM +08:00
+
+2018-05-01 08:16:26,132 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    CASE WHEN ( EXISTS (SELECT 
+        1 AS [C1]
+        FROM [dbo].[T_Cities] AS [Extent1]
+        WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[Name] = @p__linq__0)
+    )) THEN cast(1 as bit) ELSE cast(0 as bit) END AS [C1]
+    FROM  ( SELECT 1 AS X ) AS [SingleRowTable1]
+2018-05-01 08:16:26,133 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-01 08:16:26,135 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '北京' (Type = String, Size = 4000)
+
+2018-05-01 08:16:26,135 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/1/2018 8:16:26 AM +08:00
+
+2018-05-01 08:16:26,145 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 9 ms with result: SqlDataReader
+
+2018-05-01 08:16:26,145 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-01 08:16:26,153 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/1/2018 8:16:26 AM +08:00
+
+2018-05-01 08:16:26,250 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/1/2018 8:16:26 AM +08:00
+
+2018-05-01 08:16:26,254 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Started transaction at 5/1/2018 8:16:26 AM +08:00
+
+2018-05-01 08:16:26,390 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:INSERT [dbo].[T_Cities]([Name], [CreateDateTime], [IsDeleted])
+VALUES (@0, @1, @2)
+SELECT [Id]
+FROM [dbo].[T_Cities]
+WHERE @@ROWCOUNT > 0 AND [Id] = scope_identity()
+2018-05-01 08:16:26,390 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-01 08:16:26,390 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- @0: '北京' (Type = String, Size = 250)
+
+2018-05-01 08:16:26,390 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- @1: '5/1/2018 8:16:26 AM' (Type = DateTime2)
+
+2018-05-01 08:16:26,390 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- @2: 'False' (Type = Boolean)
+
+2018-05-01 08:16:26,390 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/1/2018 8:16:26 AM +08:00
+
+2018-05-01 08:16:26,394 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 4 ms with result: SqlDataReader
+
+2018-05-01 08:16:26,394 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-01 08:16:26,412 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Committed transaction at 5/1/2018 8:16:26 AM +08:00
+
+2018-05-01 08:16:26,412 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/1/2018 8:16:26 AM +08:00
+

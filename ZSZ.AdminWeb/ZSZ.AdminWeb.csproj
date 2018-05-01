@@ -19,6 +19,8 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -1437,7 +1439,6 @@
     <Content Include="skin\yellow\acrossTab.png" />
     <Content Include="skin\yellow\icon_arrow.png" />
     <Content Include="skin\yellow\skin.css" />
-    <Content Include="Web1.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -1482,12 +1483,6 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <None Include="Web1.Debug.config">
-      <DependentUpon>Web1.config</DependentUpon>
-    </None>
-    <None Include="Web1.Release.config">
-      <DependentUpon>Web1.config</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

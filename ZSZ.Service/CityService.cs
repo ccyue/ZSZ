@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ZSZ.DTO;
 using ZSZ.IService;
 using ZSZ.Service.Entities;
 
@@ -26,6 +27,16 @@ namespace ZSZ.Service
                 ctx.SaveChanges();
                 return city.Id;
             }
+        }
+
+        public CityDTO[] GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public CityDTO GetById(long id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

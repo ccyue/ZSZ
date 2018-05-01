@@ -12,12 +12,12 @@ namespace ZSZ.AdminWeb.Controllers
         public ICityService cityService { get; set; }
         public ActionResult Index()
         {
-            //if(Session["ss"]!=null)
-            //{
-            //    return Content((string)Session["ss"]);
-            //}
-            //Session["ss"] = "test session";
-            //cityService.Add("北京");
+            if (Session["ss"] != null)
+            {
+                return Content((string)Session["ss"]);
+            }
+            Session["ss"] = "test session";
+            cityService.Add("北京");
             return View();
         }
         public ActionResult Login()

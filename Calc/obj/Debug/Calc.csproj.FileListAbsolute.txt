@@ -3,7 +3,6 @@ E:\GitHub\ZSZ\Calc\bin\Debug\Calc.pdb
 E:\GitHub\ZSZ\Calc\obj\Debug\Calc.csproj.CoreCompileInputs.cache
 E:\GitHub\ZSZ\Calc\obj\Debug\Calc.dll
 E:\GitHub\ZSZ\Calc\obj\Debug\Calc.pdb
-E:\GitHub\ZSZ\Calc\obj\Debug\Calc.csprojResolveAssemblyReference.cache
 C:\GitHub\ZSZ\Calc\bin\Debug\Calc.dll
 C:\GitHub\ZSZ\Calc\bin\Debug\Calc.pdb
 C:\GitHub\ZSZ\Calc\obj\Debug\Calc.csprojResolveAssemblyReference.cache

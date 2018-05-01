@@ -29,3 +29,9 @@ C:\GitHub\ZSZ\ZSZ.Service\bin\Debug\ZSZ.IService.dll
 C:\GitHub\ZSZ\ZSZ.Service\bin\Debug\ZSZ.Common.pdb
 C:\GitHub\ZSZ\ZSZ.Service\bin\Debug\ZSZ.DTO.pdb
 C:\GitHub\ZSZ\ZSZ.Service\bin\Debug\ZSZ.IService.pdb
+E:\GitHub\ZSZ\ZSZ.Service\bin\Debug\ZSZ.Common.dll
+E:\GitHub\ZSZ\ZSZ.Service\bin\Debug\ZSZ.DTO.dll
+E:\GitHub\ZSZ\ZSZ.Service\bin\Debug\ZSZ.IService.dll
+E:\GitHub\ZSZ\ZSZ.Service\bin\Debug\ZSZ.Common.pdb
+E:\GitHub\ZSZ\ZSZ.Service\bin\Debug\ZSZ.DTO.pdb
+E:\GitHub\ZSZ\ZSZ.Service\bin\Debug\ZSZ.IService.pdb
