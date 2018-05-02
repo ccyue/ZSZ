@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -57,7 +58,10 @@
     <Compile Include="PermissionDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegionDTO.cs" />
+    <Compile Include="RoleAddDTO.cs" />
     <Compile Include="RoleDTO.cs" />
+    <Compile Include="RoleDisplayDTO.cs" />
+    <Compile Include="RoleEditDTO.cs" />
     <Compile Include="SettingDTO.cs" />
     <Compile Include="UserDTO.cs" />
   </ItemGroup>

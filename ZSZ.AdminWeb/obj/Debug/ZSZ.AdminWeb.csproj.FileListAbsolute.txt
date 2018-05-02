@@ -61,6 +61,7 @@ E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\ZSZ.IService.dll
 E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\ZSZ.Service.dll
 E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\ZSZ.Web.Common.dll
 E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\EntityFramework.dll
+E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\EntityFramework.SqlServer.dll
 E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\ZSZ.CommonMVC.pdb
 E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\ZSZ.Common.pdb
 E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\ZSZ.DTO.pdb
@@ -80,9 +81,8 @@ E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\System.Web.WebPages.xml
 E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\System.Web.WebPages.Deployment.xml
 E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\System.Web.WebPages.Razor.xml
 E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\EntityFramework.xml
+E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\EntityFramework.SqlServer.xml
 E:\GitHub\ZSZ\ZSZ.AdminWeb\obj\Debug\ZSZ.AdminWeb.csprojResolveAssemblyReference.cache
 E:\GitHub\ZSZ\ZSZ.AdminWeb\obj\Debug\ZSZ.AdminWeb.csproj.CoreCompileInputs.cache
 E:\GitHub\ZSZ\ZSZ.AdminWeb\obj\Debug\ZSZ.AdminWeb.dll
 E:\GitHub\ZSZ\ZSZ.AdminWeb\obj\Debug\ZSZ.AdminWeb.pdb
-E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\EntityFramework.SqlServer.dll
-E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\EntityFramework.SqlServer.xml

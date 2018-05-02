@@ -17,7 +17,7 @@ namespace ZSZ.Service
             using (ZSZDbContext dbc = new ZSZDbContext())
             {
                 CommonService<RoleEntity> rsRole = new CommonService<RoleEntity>(dbc);
-                return rsRole.GetAll().Select(p => ToDTO(p)).ToArray();
+                return rsRole.GetAll().ToList().Select(p => ToDTO(p)).ToArray();
             }
         }
 
@@ -67,11 +67,14 @@ namespace ZSZ.Service
             using (ZSZDbContext dbc = new ZSZDbContext())
             {
                 CommonService<RoleEntity> csRole = new CommonService<RoleEntity>(dbc);
-                var role = csRole.GetById(roleId);
-                if (role == null)
+                var exist = csRole.GetAll().Any(p => p.Name == roleName && p.Id != roleId);
+                if (exist)
                 {
-                    throw new ArgumentException("The role is not exist");
+                    throw new ArgumentException("The role name has been already exist.");
                 }
+                RoleEntity role = new RoleEntity();
+                role.Id = roleId;
+                dbc.Entry(role).State = EntityState.Unchanged;
                 role.Name = roleName;
                 dbc.SaveChanges();
             }
@@ -96,7 +99,7 @@ namespace ZSZ.Service
                 {
                     throw new ArgumentException("The user is not exist");
                 }
-                return user.Roles.Count() > 0 ? user.Roles.Select(p => ToDTO(p)).ToArray() : null;
+                return user.Roles.Count() > 0 ? user.Roles.ToList().Select(p => ToDTO(p)).ToArray() : null;
             }
         }
 

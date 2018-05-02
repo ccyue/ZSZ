@@ -35,7 +35,7 @@ namespace ZSZ.Service
             using (ZSZDbContext dbc = new ZSZDbContext())
             {
                 CommonService<CityEntity> cs = new CommonService<CityEntity>(dbc);
-                return cs.GetAll().AsNoTracking().Select(p => ToDTO(p)).ToArray();
+                return cs.GetAll().AsNoTracking().ToList().Select(p => ToDTO(p)).ToArray();
             }
         }
 

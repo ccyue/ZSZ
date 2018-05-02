@@ -18,7 +18,8 @@ namespace ZSZ.Service
                     new AdminLogEntity()
                     {
                         AdminUserId = adminUserId,
-                        Message = message
+                        Message = message,
+                        CreateDateTime = DateTime.Now                      
                     });
                 dbc.SaveChanges();
             }

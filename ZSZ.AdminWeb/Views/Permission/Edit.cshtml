@@ -1,0 +1,36 @@
+﻿@model ZSZ.DTO.PermissionDTO
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form id="formEdit">
+    @Html.HiddenFor(p => p.Id)
+    名称：@Html.TextBoxFor(p => p.Name)
+    描述：@Html.TextBoxFor(p => p.Description)
+    <input type="button" value="保存" id="btnSave" />
+</form>
+@section FooterScript{
+    <script type="text/javascript">
+        var saveAjax = function () {
+            var formData = $("#formEdit").serializeArray();
+            $.ajax({
+                url: "/Permission/Edit",
+                type: "Post",
+                data: formData,
+                dataType: "json",
+                success: function (res) {
+                    if (res.Status == "ok") {
+                        parent.location.reload();
+                    }
+                    else {
+                        alert("error");
+                    }
+                },
+                error: function () { alert("请求出错"); }
+            });
+        }
+        $(function () {
+            $("#btnSave").click(saveAjax);
+        })
+    </script>
+}

@@ -17,7 +17,7 @@ namespace ZSZ.Service
             using (ZSZDbContext dbc = new ZSZDbContext())
             {
                 CommonService<AttachmentEntity> cs = new CommonService<AttachmentEntity>(dbc);
-                return cs.GetAll().Select(p => ToDTO(p)).ToArray();
+                return cs.GetAll().ToList().Select(p => ToDTO(p)).ToArray();
             }
         }
 

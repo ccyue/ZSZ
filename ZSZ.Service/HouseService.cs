@@ -13,7 +13,38 @@ namespace ZSZ.Service
 {
     public class HouseService : IHouseService
     {
-        public long Add(HouseDTO house)
+        //public long Add(HouseDTO house)
+        //{
+        //    using (ZSZDbContext dbc = new ZSZDbContext())
+        //    {
+        //        CommonService<AttachmentEntity> csAttachment = new CommonService<AttachmentEntity>(dbc);
+        //        var attachments = csAttachment.GetAll().Where(p => house.AttachmentIds.Contains(p.Id)).ToArray();
+        //        HouseEntity entity = new HouseEntity()
+        //        {
+        //            CommunityId = house.CommunityId,
+        //            RoomTypeId = house.RoomTypeId,
+        //            Address = house.Address,
+        //            MonthRent = house.MonthRent,
+        //            StatusId = house.StatusId,
+        //            Area = house.Area,
+        //            DecorateStatusId = house.DecorateStatusId,
+        //            TotalFloorCount = house.TotalFloorCount,
+        //            FloorIndex = house.FloorIndex,
+        //            Direction = house.Direction,
+        //            LookableDateTime = house.LookableDateTime,
+        //            CheckInDateTime =house.CheckInDateTime,
+        //            OwnerName = house.OwnerName,
+        //            OwnerPhoneNum = house.OwnerPhoneNum,
+        //            Description = house.Description,
+        //            Attachments = attachments,
+        //            CreateDateTime = DateTime.Now
+        //        };
+        //        dbc.Houses.Add(entity);
+        //        dbc.SaveChanges();
+        //        return entity.Id;
+        //    }
+        //}
+        public long Add(HouseAddNewDTO house)
         {
             using (ZSZDbContext dbc = new ZSZDbContext())
             {
@@ -32,7 +63,7 @@ namespace ZSZ.Service
                     FloorIndex = house.FloorIndex,
                     Direction = house.Direction,
                     LookableDateTime = house.LookableDateTime,
-                    CheckInDateTime =house.CheckInDateTime,
+                    CheckInDateTime = house.CheckInDateTime,
                     OwnerName = house.OwnerName,
                     OwnerPhoneNum = house.OwnerPhoneNum,
                     Description = house.Description,
@@ -79,12 +110,16 @@ namespace ZSZ.Service
         {
             using (ZSZDbContext dbc = new ZSZDbContext())
             {
-                var housePic = dbc.HousePics.SingleOrDefault(p => p.IsDeleted == false && p.Id == housePicId);
-                if(housePic!=null)
-                {
-                    dbc.HousePics.Remove(housePic);
-                    dbc.SaveChanges();
-                }
+                HousePicEntity pic = new HousePicEntity();
+                pic.Id = housePicId;
+                dbc.Entry(pic).State = EntityState.Deleted;
+                dbc.SaveChanges();
+                //var housePic = dbc.HousePics.SingleOrDefault(p => p.IsDeleted == false && p.Id == housePicId);
+                //if(housePic!=null)
+                //{
+                //    dbc.HousePics.Remove(housePic);
+                //    dbc.SaveChanges();
+                //}
             }
         }
 
@@ -131,7 +166,7 @@ namespace ZSZ.Service
                     .AsNoTracking()
                     .Where(p => p.Community.Region.CityId == cityId && p.TypeId == typeId)
                     .OrderByDescending(p => p.CreateDateTime).Skip(currentIndex).Take(pageSize)
-                    .Select(p => ToDTO(p))
+                    .ToList().Select(p => ToDTO(p))
                     .ToArray();
             }
         }
@@ -195,7 +230,7 @@ namespace ZSZ.Service
                     case HouseSearchOrderByType.MonthRentDesc: houses = houses.OrderByDescending(p => p.MonthRent); break;
                 };
                 HouseDTO[] dto = houses.Skip((options.CurrentIndex - 1) * options.PageSize).Take(options.PageSize)
-                .Select(p => ToDTO(p)).ToArray();
+                .ToList().Select(p => ToDTO(p)).ToArray();
                 return new HouseSearchResult()
                 {
                     totalCount = totalCount,

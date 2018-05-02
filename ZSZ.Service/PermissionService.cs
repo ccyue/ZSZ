@@ -17,7 +17,7 @@ namespace ZSZ.Service
             using (ZSZDbContext dbc = new ZSZDbContext())
             {
                 CommonService<PermissionEntity> cs = new CommonService<PermissionEntity>(dbc);
-                return cs.GetAll().Select(p => ToDTO(p)).ToArray();
+                return cs.GetAll().ToList().Select(p => ToDTO(p)).ToArray();
             }
         }
 
@@ -46,7 +46,7 @@ namespace ZSZ.Service
             {
                 CommonService<RoleEntity> cs = new CommonService<RoleEntity>(dbc);
                 return cs.GetAll().Where(p => p.Id == roleId).Include(p => p.Permissions)
-                    .SelectMany(p => p.Permissions).Select(p => ToDTO(p))
+                    .SelectMany(p => p.Permissions).ToList().Select(p => ToDTO(p))
                     .ToArray();
             }
         }
@@ -89,6 +89,27 @@ namespace ZSZ.Service
             {
                 CommonService<PermissionEntity> cs = new CommonService<PermissionEntity>(dbc);
                 cs.MarkDeleted(id);
+            }
+        }
+        public long Add(string permName, string description)
+        {
+            using (ZSZDbContext dbc = new ZSZDbContext())
+            {
+                CommonService<PermissionEntity> cs = new CommonService<PermissionEntity>(dbc);
+                var exist = cs.GetAll().Any(p=>p.Name==permName);
+                if (exist)
+                {
+                    throw new ArgumentException("The permission name has already exist");
+                }
+                var permission = new PermissionEntity()
+                {
+                    Name = permName,
+                    Description = description,
+                    CreateDateTime = DateTime.Now
+                };
+                dbc.Permissions.Add(permission);
+                dbc.SaveChanges();
+                return permission.Id;
             }
         }
         public PermissionDTO ToDTO(PermissionEntity entity)

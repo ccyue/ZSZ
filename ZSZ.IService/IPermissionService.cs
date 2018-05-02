@@ -16,5 +16,6 @@ namespace ZSZ.IService
         void UpdatePermForRole(long roleId, long[] permIds);
         void UpdatePermission(long id, string permName, string description);
         void Deleted(long id);
+        long Add(string permName, string description);
     }
 }

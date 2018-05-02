@@ -11,7 +11,7 @@ using ZSZ.Common;
 
 namespace ZSZ.Service
 {
-    class AdminUserService : IAdminUserService
+    public class AdminUserService : IAdminUserService
     {
         public long Add(string name, string phoneNum, string password, string email, long? cityId)
         {
@@ -31,9 +31,11 @@ namespace ZSZ.Service
                     PasswordSalt = salt,
                     PasswordHash = CommonHelper.CalcMD5(salt + password),                   
                     Email = email,
-                    CityId = cityId
+                    CityId = cityId,
+                    CreateDateTime = DateTime.Now
                 };
                 dbc.AdminUsers.Add(admin);
+                dbc.SaveChanges();
                 return admin.Id;
             }
         }
@@ -69,7 +71,7 @@ namespace ZSZ.Service
                 CommonService<AdminUserEntity> cs = new CommonService<AdminUserEntity>(dbc);
                 return cs.GetAll()
                     .Include(p=>p.City).AsNoTracking()
-                    .Select(p => ToDTO(p)).ToArray();
+                    .ToList().Select(p => ToDTO(p)).ToArray();
             }
         }
         public AdminUserDTO[] GetAll(long? cityId)
@@ -77,8 +79,8 @@ namespace ZSZ.Service
             using (ZSZDbContext dbc = new ZSZDbContext())
             {
                 CommonService<AdminUserEntity> cs = new CommonService<AdminUserEntity>(dbc);
-                return cs.GetAll().Where(p => p.CityId == cityId).Include(p => p.City).AsNoTracking()
-                    .Select(p => ToDTO(p)).ToArray();
+                return cs.GetAll().Include(p => p.City).AsNoTracking().Where(p => p.CityId == cityId)
+                    .ToList().Select(p => ToDTO(p)).ToArray();
             }
         }
         public AdminUserDTO GetById(long id)
@@ -170,7 +172,7 @@ namespace ZSZ.Service
                 var entity = cs.GetById(id);
                 if (entity == null)
                 {
-                    throw new ArgumentException(string.Format("{0} is exist.", name));
+                    throw new ArgumentException(string.Format("{0} is not exist.", id));
                 }
                 entity.Name = name;
                 entity.PhoneNum = phoneNum;

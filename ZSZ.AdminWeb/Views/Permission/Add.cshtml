@@ -1,0 +1,37 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<form id="formAdd">
+    名称：<input type="text" name="Name" id="name" />
+    描述：<input type="text" name="Description" id="description" />
+    <input type="button" value="保存" id="btnSave" />
+</form>
+
+@section FooterScript
+{
+    <script type="text/javascript">
+        var saveAjax = function () {
+            var formData = $("#formAdd").serializeArray();
+            $.ajax({
+                url: "/Permission/Add",
+                type: "Post",
+                data: formData,
+                dataType: "json",
+                success: function (res) {
+                    if (res.Status == "ok") {
+                        parent.location.reload();
+                    }
+                    else {
+                        alert("error");
+                    }
+                },
+                error: function () { alert("请求出错"); }
+            })
+        };
+        $(function () {
+            $("#btnSave").click(saveAjax);
+        })
+    </script>
+    }

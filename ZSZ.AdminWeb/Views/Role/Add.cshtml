@@ -1,0 +1,89 @@
+﻿@model ZSZ.DTO.RoleDTO
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="pd-20">
+    <form action="" method="post" class="form form-horizontal" id="formAdd">
+        <div class="row cl">
+            <label class="form-label col-2"><span class="c-red">*</span>角色名称：</label>
+            <div class="formControls col-10">
+                @Html.TextBoxFor(p => p.Name, new { @class = "input-text", datatype = "*1-50",nullmsg = "角色名称不能为空" })
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-2">权限分配：</label>
+            <div class="formControls col-10">
+                <dl class="permission-list">
+                    @foreach (var perm in ViewBag.Permissions as ZSZ.DTO.PermissionDTO[])
+                    {
+                        <dt>
+                            <label>
+                                <input type="checkbox" value="@perm.Id" name="PermissionIds" id="PermissionIds_@perm.Id">
+                                @perm.Name
+                            </label>
+                        </dt>
+                    }                    
+                </dl>                
+            </div>
+        </div>
+        <div class="row cl">
+            <div class="col-10 col-offset-2">
+                <button type="button" class="btn btn-success radius" id="admin-role-save" name="admin-role-save"><i class="icon-ok"></i> 确定</button>
+            </div>
+        </div>
+    </form>
+</div>
+@section FooterScript{
+    <script type="text/javascript" src="~/lib/Validform/5.3.2/Validform.min.js"></script>
+    <script>
+        var saveAjax = function () {
+            var formData = $("#formAdd").serializeArray();
+            $.ajax({
+                url: "@Url.Action("Add","Role")",
+                data: formData,
+                type: "POST",
+                dataType: "json",
+                success: function (res) {
+                    if (res.Status == "ok") {
+                        parent.location.reload();
+                    }
+                    else {
+                        alert(res.ErrorMsg);
+                    }
+                },
+                error: function () { alert("请求出错"); }
+            });
+        };
+        $(function () {
+            $(".permission-list dt input:checkbox").click(function () {
+                $(this).closest("dl").find("dd input:checkbox").prop("checked", $(this).prop("checked"));
+            });
+            $(".permission-list2 dd input:checkbox").click(function () {
+                var l = $(this).parent().parent().find("input:checked").length;
+                var l2 = $(this).parents(".permission-list").find(".permission-list2 dd").find("input:checked").length;
+                if ($(this).prop("checked")) {
+                    $(this).closest("dl").find("dt input:checkbox").prop("checked", true);
+                    $(this).parents(".permission-list").find("dt").first().find("input:checkbox").prop("checked", true);
+                }
+                else {
+                    if (l == 0) {
+                        $(this).closest("dl").find("dt input:checkbox").prop("checked", false);
+                    }
+                    if (l2 == 0) {
+                        $(this).parents(".permission-list").find("dt").first().find("input:checkbox").prop("checked", false);
+                    }
+                }
+            });
+
+            var validForm = $("#formAdd").Validform({ tiptype: 3 });
+
+            $("#admin-role-save").click(function () {
+                if (validForm.check(false)) {
+                    saveAjax();
+                }    
+            });
+
+        });
+    </script>
+}

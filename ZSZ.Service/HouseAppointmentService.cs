@@ -82,7 +82,7 @@ namespace ZSZ.Service
                     .Where(p => p.Status == status)
                     .OrderByDescending(p => p.CreateDateTime)
                     .Skip(currentIndex).Take(pageSize)
-                    .Select(p => ToDTO(p)).ToArray();
+                    .ToList().Select(p => ToDTO(p)).ToArray();
                 return houseApps;
             }
         }
@@ -95,6 +95,7 @@ namespace ZSZ.Service
                 return cs.GetAll().LongCount(p => p.House.Community.Region.CityId == cityId && p.Status == status);
             }
         }
+
         private HouseAppointmentDTO ToDTO(HouseAppointmentEntity houseApp)
         {
             HouseAppointmentDTO dto = new HouseAppointmentDTO();

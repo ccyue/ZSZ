@@ -12,7 +12,7 @@ namespace ZSZ.IService
         HouseDTO GetById(long id);
         long GetTotalCount(long cityId, long typeId);
         HouseDTO[] GetPageData(long cityId, long typeId, int pageSize, int currentIndex);
-        long Add(HouseDTO house);
+        long Add(HouseAddNewDTO house);
         void Update(HouseDTO house);
         void Delete(long id);
         long AddHousePic(HousePicDTO housePic);

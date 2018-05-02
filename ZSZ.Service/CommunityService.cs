@@ -18,7 +18,7 @@ namespace ZSZ.Service
             {
                 CommonService<CommunityEntity> community = new CommonService<CommunityEntity>(dbc);
                 return community.GetAll().AsNoTracking()
-                    .Where(p => p.RegionId == regionId).Select(p => ToDTO(p)).ToArray();
+                    .Where(p => p.RegionId == regionId).ToList().Select(p => ToDTO(p)).ToArray();
             }
         }
         private CommunityDTO ToDTO(CommunityEntity community)
