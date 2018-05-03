@@ -46,6 +46,9 @@
     <Reference Include="Autofac.Integration.Mvc">
       <HintPath>..\packages\Autofac.Mvc5.4.0.2\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="CaptchaGen, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CaptchaGen.1.0.0\lib\net40\CaptchaGen.dll</HintPath>
+    </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
@@ -1488,6 +1491,7 @@
     <Compile Include="lib\ueditor\1.4.3\net\App_Code\NotSupportedHandler.cs" />
     <Compile Include="lib\ueditor\1.4.3\net\App_Code\PathFormater.cs" />
     <Compile Include="lib\ueditor\1.4.3\net\App_Code\UploadHandler.cs" />
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1500,7 +1504,6 @@
     <Folder Include="lib\Highcharts\4.1.7\exporting-server\java\highcharts-export\highcharts-export-convert\target\surefire\" />
     <Folder Include="lib\Highcharts\4.1.7\exporting-server\java\highcharts-export\highcharts-export-web\target\generated-sources\annotations\" />
     <Folder Include="lib\Highcharts\4.1.7\exporting-server\java\highcharts-export\highcharts-export-web\target\surefire\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\HouseAppointment\" />
     <Folder Include="Views\House\" />
   </ItemGroup>

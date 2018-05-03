@@ -31,7 +31,7 @@ namespace ServiceTests
         [TestMethod]
         public void Update()
         {
-            service.Update(3, "test1", "123456", "", "123@qq.com", 1);
+            service.Update(2, "Admin", "18642882528", "1", "884167190@qq.com", 1);
         }
         [TestMethod]
         public void HasPermission()

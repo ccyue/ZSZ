@@ -176,7 +176,7 @@ namespace ZSZ.Service
                 }
                 entity.Name = name;
                 entity.PhoneNum = phoneNum;
-                if(string.IsNullOrEmpty(password))
+                if(!string.IsNullOrEmpty(password))
                 {
                     entity.PasswordHash = CommonHelper.CalcMD5(entity.PasswordSalt + password);
                 }                

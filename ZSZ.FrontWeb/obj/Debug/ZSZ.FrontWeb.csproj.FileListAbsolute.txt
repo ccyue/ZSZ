@@ -18,4 +18,3 @@ E:\GitHub\ZSZ\ZSZ.FrontWeb\obj\Debug\ZSZ.FrontWeb.dll
 E:\GitHub\ZSZ\ZSZ.FrontWeb\obj\Debug\ZSZ.FrontWeb.pdb
 E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\Newtonsoft.Json.dll
 E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\Newtonsoft.Json.xml
-E:\GitHub\ZSZ\ZSZ.FrontWeb\obj\Debug\ZSZ.FrontWeb.csprojResolveAssemblyReference.cache

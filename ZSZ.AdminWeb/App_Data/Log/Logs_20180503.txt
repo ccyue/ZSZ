@@ -1,0 +1,1254 @@
+2018-05-03 21:52:59,371 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 9:52:59 PM +08:00
+
+2018-05-03 21:53:00,610 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[PhoneNum] AS [PhoneNum], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[PasswordSalt] AS [PasswordSalt], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[CityId] AS [CityId], 
+    [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_AdminUsers] AS [Extent1]
+    WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+2018-05-03 21:53:00,611 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 21:53:00,612 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 21:53:00,613 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 9:53:00 PM +08:00
+
+2018-05-03 21:53:00,640 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 26 ms with result: SqlDataReader
+
+2018-05-03 21:53:00,641 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 21:53:00,719 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 9:53:00 PM +08:00
+
+2018-05-03 21:53:05,325 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 9:53:05 PM +08:00
+
+2018-05-03 21:53:05,362 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    CASE WHEN ( EXISTS (SELECT 
+        1 AS [C1]
+        FROM [dbo].[T_Cities] AS [Extent1]
+        WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[Name] = @p__linq__0)
+    )) THEN cast(1 as bit) ELSE cast(0 as bit) END AS [C1]
+    FROM  ( SELECT 1 AS X ) AS [SingleRowTable1]
+2018-05-03 21:53:05,362 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 21:53:05,362 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '北京' (Type = String, Size = 4000)
+
+2018-05-03 21:53:05,362 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 9:53:05 PM +08:00
+
+2018-05-03 21:53:05,393 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 30 ms with result: SqlDataReader
+
+2018-05-03 21:53:05,393 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 21:53:05,398 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 9:53:05 PM +08:00
+
+2018-05-03 21:53:20,180 [9] ERROR ZSZ.AdminWeb.App_Start.ZSZExceptionFilter - Exception
+System.ArgumentException: 北京 has already exist.
+   at ZSZ.Service.CityService.Add(String cityName) in E:\GitHub\ZSZ\ZSZ.Service\CityService.cs:line 24
+   at ZSZ.AdminWeb.Controllers.MainController.Index() in E:\GitHub\ZSZ\ZSZ.AdminWeb\Controllers\MainController.cs:line 23
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass48.<InvokeActionMethodFilterAsynchronouslyRecursive>b__41()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-05-03 22:21:00,825 [18] ERROR ZSZ.AdminWeb.App_Start.ZSZExceptionFilter - Exception
+System.ObjectDisposedException: Cannot access a closed Stream.
+   at System.IO.__Error.StreamIsClosed()
+   at System.IO.MemoryStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Web.Mvc.FileStreamResult.WriteFile(HttpResponseBase response)
+   at System.Web.Mvc.FileResult.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-05-03 22:21:35,024 [11] ERROR ZSZ.AdminWeb.App_Start.ZSZExceptionFilter - Exception
+System.ObjectDisposedException: Cannot access a closed Stream.
+   at System.IO.__Error.StreamIsClosed()
+   at System.IO.MemoryStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Web.Mvc.FileStreamResult.WriteFile(HttpResponseBase response)
+   at System.Web.Mvc.FileResult.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-05-03 22:21:36,571 [16] ERROR ZSZ.AdminWeb.App_Start.ZSZExceptionFilter - Exception
+System.ObjectDisposedException: Cannot access a closed Stream.
+   at System.IO.__Error.StreamIsClosed()
+   at System.IO.MemoryStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Web.Mvc.FileStreamResult.WriteFile(HttpResponseBase response)
+   at System.Web.Mvc.FileResult.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-05-03 22:21:38,942 [13] ERROR ZSZ.AdminWeb.App_Start.ZSZExceptionFilter - Exception
+System.ObjectDisposedException: Cannot access a closed Stream.
+   at System.IO.__Error.StreamIsClosed()
+   at System.IO.MemoryStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Web.Mvc.FileStreamResult.WriteFile(HttpResponseBase response)
+   at System.Web.Mvc.FileResult.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-05-03 22:21:39,035 [24] ERROR ZSZ.AdminWeb.App_Start.ZSZExceptionFilter - Exception
+System.ObjectDisposedException: Cannot access a closed Stream.
+   at System.IO.__Error.StreamIsClosed()
+   at System.IO.MemoryStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Web.Mvc.FileStreamResult.WriteFile(HttpResponseBase response)
+   at System.Web.Mvc.FileResult.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-05-03 22:22:02,798 [24] ERROR ZSZ.AdminWeb.App_Start.ZSZExceptionFilter - Exception
+System.ObjectDisposedException: Cannot access a closed Stream.
+   at System.IO.__Error.StreamIsClosed()
+   at System.IO.MemoryStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Web.Mvc.FileStreamResult.WriteFile(HttpResponseBase response)
+   at System.Web.Mvc.FileResult.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-05-03 22:22:10,097 [20] ERROR ZSZ.AdminWeb.App_Start.ZSZExceptionFilter - Exception
+System.ObjectDisposedException: Cannot access a closed Stream.
+   at System.IO.__Error.StreamIsClosed()
+   at System.IO.MemoryStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Web.Mvc.FileStreamResult.WriteFile(HttpResponseBase response)
+   at System.Web.Mvc.FileResult.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-05-03 22:22:12,990 [22] ERROR ZSZ.AdminWeb.App_Start.ZSZExceptionFilter - Exception
+System.ObjectDisposedException: Cannot access a closed Stream.
+   at System.IO.__Error.StreamIsClosed()
+   at System.IO.MemoryStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Web.Mvc.FileStreamResult.WriteFile(HttpResponseBase response)
+   at System.Web.Mvc.FileResult.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-05-03 22:25:04,661 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:25:04 PM +08:00
+
+2018-05-03 22:25:05,853 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[PhoneNum] AS [PhoneNum], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[PasswordSalt] AS [PasswordSalt], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[CityId] AS [CityId], 
+    [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_AdminUsers] AS [Extent1]
+    WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+2018-05-03 22:25:05,853 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:25:05,854 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:25:05,855 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:25:05 PM +08:00
+
+2018-05-03 22:25:05,859 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 2 ms with result: SqlDataReader
+
+2018-05-03 22:25:05,859 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:25:05,938 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:25:05 PM +08:00
+
+2018-05-03 22:25:05,953 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:25:05 PM +08:00
+
+2018-05-03 22:25:06,066 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[T_AdminUsers] AS [Extent1]
+        WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )  AS [GroupBy1]
+2018-05-03 22:25:06,066 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:25:06,067 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:25:06,067 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:25:06 PM +08:00
+
+2018-05-03 22:25:06,069 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 2 ms with result: SqlDataReader
+
+2018-05-03 22:25:06,069 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:25:06,073 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:25:06 PM +08:00
+
+2018-05-03 22:25:06,074 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:25:06 PM +08:00
+
+2018-05-03 22:25:06,182 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[Name] AS [Name], 
+    [Limit1].[PhoneNum] AS [PhoneNum], 
+    [Limit1].[PasswordHash] AS [PasswordHash], 
+    [Limit1].[PasswordSalt] AS [PasswordSalt], 
+    [Limit1].[Email] AS [Email], 
+    [Limit1].[CityId] AS [CityId], 
+    [Limit1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Limit1].[CreateDateTime] AS [CreateDateTime], 
+    [Limit1].[IsDeleted] AS [IsDeleted], 
+    [Limit1].[Id1] AS [Id1], 
+    [Limit1].[Name1] AS [Name1], 
+    [Limit1].[CreateDateTime1] AS [CreateDateTime1], 
+    [Limit1].[IsDeleted1] AS [IsDeleted1]
+    FROM ( SELECT TOP (2) 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[PhoneNum] AS [PhoneNum], 
+        [Extent1].[PasswordHash] AS [PasswordHash], 
+        [Extent1].[PasswordSalt] AS [PasswordSalt], 
+        [Extent1].[Email] AS [Email], 
+        [Extent1].[CityId] AS [CityId], 
+        [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+        [Extent1].[CreateDateTime] AS [CreateDateTime], 
+        [Extent1].[IsDeleted] AS [IsDeleted], 
+        [Extent2].[Id] AS [Id1], 
+        [Extent2].[Name] AS [Name1], 
+        [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+        [Extent2].[IsDeleted] AS [IsDeleted1]
+        FROM  [dbo].[T_AdminUsers] AS [Extent1]
+        LEFT OUTER JOIN [dbo].[T_Cities] AS [Extent2] ON [Extent1].[CityId] = [Extent2].[Id]
+        WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )  AS [Limit1]
+2018-05-03 22:25:06,182 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:25:06,182 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:25:06,182 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:25:06 PM +08:00
+
+2018-05-03 22:25:06,186 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 3 ms with result: SqlDataReader
+
+2018-05-03 22:25:06,186 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:25:06,209 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:25:06 PM +08:00
+
+2018-05-03 22:25:06,367 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:25:06 PM +08:00
+
+2018-05-03 22:25:06,369 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[PhoneNum] AS [PhoneNum], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[PasswordSalt] AS [PasswordSalt], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[CityId] AS [CityId], 
+    [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_AdminUsers] AS [Extent1]
+    WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+2018-05-03 22:25:06,369 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:25:06,369 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:25:06,369 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:25:06 PM +08:00
+
+2018-05-03 22:25:06,370 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 0 ms with result: SqlDataReader
+
+2018-05-03 22:25:06,370 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:25:06,371 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:25:06 PM +08:00
+
+2018-05-03 22:25:06,372 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:25:06 PM +08:00
+
+2018-05-03 22:25:06,373 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[T_AdminUsers] AS [Extent1]
+        WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )  AS [GroupBy1]
+2018-05-03 22:25:06,373 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:25:06,373 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:25:06,373 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:25:06 PM +08:00
+
+2018-05-03 22:25:06,374 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 0 ms with result: SqlDataReader
+
+2018-05-03 22:25:06,374 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:25:06,374 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:25:06 PM +08:00
+
+2018-05-03 22:25:06,374 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:25:06 PM +08:00
+
+2018-05-03 22:25:06,375 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[Name] AS [Name], 
+    [Limit1].[PhoneNum] AS [PhoneNum], 
+    [Limit1].[PasswordHash] AS [PasswordHash], 
+    [Limit1].[PasswordSalt] AS [PasswordSalt], 
+    [Limit1].[Email] AS [Email], 
+    [Limit1].[CityId] AS [CityId], 
+    [Limit1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Limit1].[CreateDateTime] AS [CreateDateTime], 
+    [Limit1].[IsDeleted] AS [IsDeleted], 
+    [Limit1].[Id1] AS [Id1], 
+    [Limit1].[Name1] AS [Name1], 
+    [Limit1].[CreateDateTime1] AS [CreateDateTime1], 
+    [Limit1].[IsDeleted1] AS [IsDeleted1]
+    FROM ( SELECT TOP (2) 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[PhoneNum] AS [PhoneNum], 
+        [Extent1].[PasswordHash] AS [PasswordHash], 
+        [Extent1].[PasswordSalt] AS [PasswordSalt], 
+        [Extent1].[Email] AS [Email], 
+        [Extent1].[CityId] AS [CityId], 
+        [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+        [Extent1].[CreateDateTime] AS [CreateDateTime], 
+        [Extent1].[IsDeleted] AS [IsDeleted], 
+        [Extent2].[Id] AS [Id1], 
+        [Extent2].[Name] AS [Name1], 
+        [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+        [Extent2].[IsDeleted] AS [IsDeleted1]
+        FROM  [dbo].[T_AdminUsers] AS [Extent1]
+        LEFT OUTER JOIN [dbo].[T_Cities] AS [Extent2] ON [Extent1].[CityId] = [Extent2].[Id]
+        WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )  AS [Limit1]
+2018-05-03 22:25:06,375 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:25:06,375 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:25:06,375 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:25:06 PM +08:00
+
+2018-05-03 22:25:06,376 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 0 ms with result: SqlDataReader
+
+2018-05-03 22:25:06,376 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:25:06,376 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:25:06 PM +08:00
+
+2018-05-03 22:25:12,926 [25] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:25:12 PM +08:00
+
+2018-05-03 22:25:12,927 [25] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[PhoneNum] AS [PhoneNum], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[PasswordSalt] AS [PasswordSalt], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[CityId] AS [CityId], 
+    [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_AdminUsers] AS [Extent1]
+    WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+2018-05-03 22:25:12,927 [25] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:25:12,927 [25] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:25:12,927 [25] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:25:12 PM +08:00
+
+2018-05-03 22:25:12,927 [25] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 0 ms with result: SqlDataReader
+
+2018-05-03 22:25:12,927 [25] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:25:12,928 [25] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:25:12 PM +08:00
+
+2018-05-03 22:25:12,928 [25] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:25:12 PM +08:00
+
+2018-05-03 22:25:12,929 [25] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[T_AdminUsers] AS [Extent1]
+        WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )  AS [GroupBy1]
+2018-05-03 22:25:12,929 [25] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:25:12,929 [25] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:25:12,929 [25] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:25:12 PM +08:00
+
+2018-05-03 22:25:12,929 [25] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 0 ms with result: SqlDataReader
+
+2018-05-03 22:25:12,929 [25] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:25:12,929 [25] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:25:12 PM +08:00
+
+2018-05-03 22:25:12,930 [25] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:25:12 PM +08:00
+
+2018-05-03 22:25:12,930 [25] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[Name] AS [Name], 
+    [Limit1].[PhoneNum] AS [PhoneNum], 
+    [Limit1].[PasswordHash] AS [PasswordHash], 
+    [Limit1].[PasswordSalt] AS [PasswordSalt], 
+    [Limit1].[Email] AS [Email], 
+    [Limit1].[CityId] AS [CityId], 
+    [Limit1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Limit1].[CreateDateTime] AS [CreateDateTime], 
+    [Limit1].[IsDeleted] AS [IsDeleted], 
+    [Limit1].[Id1] AS [Id1], 
+    [Limit1].[Name1] AS [Name1], 
+    [Limit1].[CreateDateTime1] AS [CreateDateTime1], 
+    [Limit1].[IsDeleted1] AS [IsDeleted1]
+    FROM ( SELECT TOP (2) 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[PhoneNum] AS [PhoneNum], 
+        [Extent1].[PasswordHash] AS [PasswordHash], 
+        [Extent1].[PasswordSalt] AS [PasswordSalt], 
+        [Extent1].[Email] AS [Email], 
+        [Extent1].[CityId] AS [CityId], 
+        [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+        [Extent1].[CreateDateTime] AS [CreateDateTime], 
+        [Extent1].[IsDeleted] AS [IsDeleted], 
+        [Extent2].[Id] AS [Id1], 
+        [Extent2].[Name] AS [Name1], 
+        [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+        [Extent2].[IsDeleted] AS [IsDeleted1]
+        FROM  [dbo].[T_AdminUsers] AS [Extent1]
+        LEFT OUTER JOIN [dbo].[T_Cities] AS [Extent2] ON [Extent1].[CityId] = [Extent2].[Id]
+        WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )  AS [Limit1]
+2018-05-03 22:25:12,930 [25] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:25:12,930 [25] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:25:12,930 [25] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:25:12 PM +08:00
+
+2018-05-03 22:25:12,930 [25] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 0 ms with result: SqlDataReader
+
+2018-05-03 22:25:12,930 [25] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:25:12,931 [25] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:25:12 PM +08:00
+
+2018-05-03 22:27:35,412 [26] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:27:35 PM +08:00
+
+2018-05-03 22:27:36,619 [26] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[PhoneNum] AS [PhoneNum], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[PasswordSalt] AS [PasswordSalt], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[CityId] AS [CityId], 
+    [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_AdminUsers] AS [Extent1]
+    WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+2018-05-03 22:27:36,619 [26] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:27:36,621 [26] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:27:36,621 [26] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:27:36 PM +08:00
+
+2018-05-03 22:27:36,624 [26] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 1 ms with result: SqlDataReader
+
+2018-05-03 22:27:36,624 [26] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:27:36,699 [26] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:27:36 PM +08:00
+
+2018-05-03 22:27:36,713 [26] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:27:36 PM +08:00
+
+2018-05-03 22:27:36,827 [26] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[T_AdminUsers] AS [Extent1]
+        WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )  AS [GroupBy1]
+2018-05-03 22:27:36,827 [26] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:27:36,827 [26] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:27:36,827 [26] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:27:36 PM +08:00
+
+2018-05-03 22:27:36,829 [26] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 1 ms with result: SqlDataReader
+
+2018-05-03 22:27:36,829 [26] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:27:36,833 [26] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:27:36 PM +08:00
+
+2018-05-03 22:27:36,834 [26] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:27:36 PM +08:00
+
+2018-05-03 22:27:36,965 [26] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[Name] AS [Name], 
+    [Limit1].[PhoneNum] AS [PhoneNum], 
+    [Limit1].[PasswordHash] AS [PasswordHash], 
+    [Limit1].[PasswordSalt] AS [PasswordSalt], 
+    [Limit1].[Email] AS [Email], 
+    [Limit1].[CityId] AS [CityId], 
+    [Limit1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Limit1].[CreateDateTime] AS [CreateDateTime], 
+    [Limit1].[IsDeleted] AS [IsDeleted], 
+    [Limit1].[Id1] AS [Id1], 
+    [Limit1].[Name1] AS [Name1], 
+    [Limit1].[CreateDateTime1] AS [CreateDateTime1], 
+    [Limit1].[IsDeleted1] AS [IsDeleted1]
+    FROM ( SELECT TOP (2) 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[PhoneNum] AS [PhoneNum], 
+        [Extent1].[PasswordHash] AS [PasswordHash], 
+        [Extent1].[PasswordSalt] AS [PasswordSalt], 
+        [Extent1].[Email] AS [Email], 
+        [Extent1].[CityId] AS [CityId], 
+        [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+        [Extent1].[CreateDateTime] AS [CreateDateTime], 
+        [Extent1].[IsDeleted] AS [IsDeleted], 
+        [Extent2].[Id] AS [Id1], 
+        [Extent2].[Name] AS [Name1], 
+        [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+        [Extent2].[IsDeleted] AS [IsDeleted1]
+        FROM  [dbo].[T_AdminUsers] AS [Extent1]
+        LEFT OUTER JOIN [dbo].[T_Cities] AS [Extent2] ON [Extent1].[CityId] = [Extent2].[Id]
+        WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )  AS [Limit1]
+2018-05-03 22:27:36,965 [26] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:27:36,965 [26] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:27:36,965 [26] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:27:36 PM +08:00
+
+2018-05-03 22:27:36,969 [26] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 3 ms with result: SqlDataReader
+
+2018-05-03 22:27:36,969 [26] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:27:36,997 [26] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:27:36 PM +08:00
+
+2018-05-03 22:27:37,387 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:27:37 PM +08:00
+
+2018-05-03 22:27:37,390 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[PhoneNum] AS [PhoneNum], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[PasswordSalt] AS [PasswordSalt], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[CityId] AS [CityId], 
+    [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_AdminUsers] AS [Extent1]
+    WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+2018-05-03 22:27:37,391 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:27:37,391 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:27:37,391 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:27:37 PM +08:00
+
+2018-05-03 22:27:37,396 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 5 ms with result: SqlDataReader
+
+2018-05-03 22:27:37,397 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:27:37,397 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:27:37 PM +08:00
+
+2018-05-03 22:27:37,399 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:27:37 PM +08:00
+
+2018-05-03 22:27:37,400 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[T_AdminUsers] AS [Extent1]
+        WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )  AS [GroupBy1]
+2018-05-03 22:27:37,400 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:27:37,400 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:27:37,401 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:27:37 PM +08:00
+
+2018-05-03 22:27:37,406 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 5 ms with result: SqlDataReader
+
+2018-05-03 22:27:37,406 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:27:37,407 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:27:37 PM +08:00
+
+2018-05-03 22:27:37,407 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:27:37 PM +08:00
+
+2018-05-03 22:27:37,408 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[Name] AS [Name], 
+    [Limit1].[PhoneNum] AS [PhoneNum], 
+    [Limit1].[PasswordHash] AS [PasswordHash], 
+    [Limit1].[PasswordSalt] AS [PasswordSalt], 
+    [Limit1].[Email] AS [Email], 
+    [Limit1].[CityId] AS [CityId], 
+    [Limit1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Limit1].[CreateDateTime] AS [CreateDateTime], 
+    [Limit1].[IsDeleted] AS [IsDeleted], 
+    [Limit1].[Id1] AS [Id1], 
+    [Limit1].[Name1] AS [Name1], 
+    [Limit1].[CreateDateTime1] AS [CreateDateTime1], 
+    [Limit1].[IsDeleted1] AS [IsDeleted1]
+    FROM ( SELECT TOP (2) 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[PhoneNum] AS [PhoneNum], 
+        [Extent1].[PasswordHash] AS [PasswordHash], 
+        [Extent1].[PasswordSalt] AS [PasswordSalt], 
+        [Extent1].[Email] AS [Email], 
+        [Extent1].[CityId] AS [CityId], 
+        [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+        [Extent1].[CreateDateTime] AS [CreateDateTime], 
+        [Extent1].[IsDeleted] AS [IsDeleted], 
+        [Extent2].[Id] AS [Id1], 
+        [Extent2].[Name] AS [Name1], 
+        [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+        [Extent2].[IsDeleted] AS [IsDeleted1]
+        FROM  [dbo].[T_AdminUsers] AS [Extent1]
+        LEFT OUTER JOIN [dbo].[T_Cities] AS [Extent2] ON [Extent1].[CityId] = [Extent2].[Id]
+        WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )  AS [Limit1]
+2018-05-03 22:27:37,408 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:27:37,408 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:27:37,408 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:27:37 PM +08:00
+
+2018-05-03 22:27:37,417 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 8 ms with result: SqlDataReader
+
+2018-05-03 22:27:37,417 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:27:37,417 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:27:37 PM +08:00
+
+2018-05-03 22:29:19,608 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:29:19 PM +08:00
+
+2018-05-03 22:29:20,926 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[PhoneNum] AS [PhoneNum], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[PasswordSalt] AS [PasswordSalt], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[CityId] AS [CityId], 
+    [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_AdminUsers] AS [Extent1]
+    WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+2018-05-03 22:29:20,926 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:29:20,927 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:29:20,928 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:29:20 PM +08:00
+
+2018-05-03 22:29:20,957 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 28 ms with result: SqlDataReader
+
+2018-05-03 22:29:20,957 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:29:21,042 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:29:21 PM +08:00
+
+2018-05-03 22:29:24,847 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:29:24 PM +08:00
+
+2018-05-03 22:29:24,965 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[T_AdminUsers] AS [Extent1]
+        WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )  AS [GroupBy1]
+2018-05-03 22:29:24,965 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:29:24,965 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:29:24,965 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:29:24 PM +08:00
+
+2018-05-03 22:29:24,989 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 24 ms with result: SqlDataReader
+
+2018-05-03 22:29:24,989 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:29:24,994 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:29:24 PM +08:00
+
+2018-05-03 22:29:24,995 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:29:24 PM +08:00
+
+2018-05-03 22:29:25,116 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[Name] AS [Name], 
+    [Limit1].[PhoneNum] AS [PhoneNum], 
+    [Limit1].[PasswordHash] AS [PasswordHash], 
+    [Limit1].[PasswordSalt] AS [PasswordSalt], 
+    [Limit1].[Email] AS [Email], 
+    [Limit1].[CityId] AS [CityId], 
+    [Limit1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Limit1].[CreateDateTime] AS [CreateDateTime], 
+    [Limit1].[IsDeleted] AS [IsDeleted], 
+    [Limit1].[Id1] AS [Id1], 
+    [Limit1].[Name1] AS [Name1], 
+    [Limit1].[CreateDateTime1] AS [CreateDateTime1], 
+    [Limit1].[IsDeleted1] AS [IsDeleted1]
+    FROM ( SELECT TOP (2) 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[PhoneNum] AS [PhoneNum], 
+        [Extent1].[PasswordHash] AS [PasswordHash], 
+        [Extent1].[PasswordSalt] AS [PasswordSalt], 
+        [Extent1].[Email] AS [Email], 
+        [Extent1].[CityId] AS [CityId], 
+        [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+        [Extent1].[CreateDateTime] AS [CreateDateTime], 
+        [Extent1].[IsDeleted] AS [IsDeleted], 
+        [Extent2].[Id] AS [Id1], 
+        [Extent2].[Name] AS [Name1], 
+        [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+        [Extent2].[IsDeleted] AS [IsDeleted1]
+        FROM  [dbo].[T_AdminUsers] AS [Extent1]
+        LEFT OUTER JOIN [dbo].[T_Cities] AS [Extent2] ON [Extent1].[CityId] = [Extent2].[Id]
+        WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )  AS [Limit1]
+2018-05-03 22:29:25,116 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:29:25,116 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:29:25,116 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:29:25 PM +08:00
+
+2018-05-03 22:29:25,138 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 21 ms with result: SqlDataReader
+
+2018-05-03 22:29:25,138 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:29:25,163 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:29:25 PM +08:00
+
+2018-05-03 22:31:32,458 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:31:32 PM +08:00
+
+2018-05-03 22:31:33,714 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[PhoneNum] AS [PhoneNum], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[PasswordSalt] AS [PasswordSalt], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[CityId] AS [CityId], 
+    [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_AdminUsers] AS [Extent1]
+    WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+2018-05-03 22:31:33,714 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:31:33,715 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:31:33,715 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:31:33 PM +08:00
+
+2018-05-03 22:31:33,743 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 25 ms with result: SqlDataReader
+
+2018-05-03 22:31:33,743 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:31:33,824 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:31:33 PM +08:00
+
+2018-05-03 22:31:38,571 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:31:38 PM +08:00
+
+2018-05-03 22:31:38,690 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[T_AdminUsers] AS [Extent1]
+        WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )  AS [GroupBy1]
+2018-05-03 22:31:38,690 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:31:38,690 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:31:38,690 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:31:38 PM +08:00
+
+2018-05-03 22:31:38,715 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 24 ms with result: SqlDataReader
+
+2018-05-03 22:31:38,715 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:31:38,720 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:31:38 PM +08:00
+
+2018-05-03 22:31:38,720 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:31:38 PM +08:00
+
+2018-05-03 22:31:38,858 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[Name] AS [Name], 
+    [Limit1].[PhoneNum] AS [PhoneNum], 
+    [Limit1].[PasswordHash] AS [PasswordHash], 
+    [Limit1].[PasswordSalt] AS [PasswordSalt], 
+    [Limit1].[Email] AS [Email], 
+    [Limit1].[CityId] AS [CityId], 
+    [Limit1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Limit1].[CreateDateTime] AS [CreateDateTime], 
+    [Limit1].[IsDeleted] AS [IsDeleted], 
+    [Limit1].[Id1] AS [Id1], 
+    [Limit1].[Name1] AS [Name1], 
+    [Limit1].[CreateDateTime1] AS [CreateDateTime1], 
+    [Limit1].[IsDeleted1] AS [IsDeleted1]
+    FROM ( SELECT TOP (2) 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[PhoneNum] AS [PhoneNum], 
+        [Extent1].[PasswordHash] AS [PasswordHash], 
+        [Extent1].[PasswordSalt] AS [PasswordSalt], 
+        [Extent1].[Email] AS [Email], 
+        [Extent1].[CityId] AS [CityId], 
+        [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+        [Extent1].[CreateDateTime] AS [CreateDateTime], 
+        [Extent1].[IsDeleted] AS [IsDeleted], 
+        [Extent2].[Id] AS [Id1], 
+        [Extent2].[Name] AS [Name1], 
+        [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+        [Extent2].[IsDeleted] AS [IsDeleted1]
+        FROM  [dbo].[T_AdminUsers] AS [Extent1]
+        LEFT OUTER JOIN [dbo].[T_Cities] AS [Extent2] ON [Extent1].[CityId] = [Extent2].[Id]
+        WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )  AS [Limit1]
+2018-05-03 22:31:38,858 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:31:38,858 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:31:38,858 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:31:38 PM +08:00
+
+2018-05-03 22:31:38,878 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 20 ms with result: SqlDataReader
+
+2018-05-03 22:31:38,879 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:31:38,904 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:31:38 PM +08:00
+
+2018-05-03 22:32:20,044 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:32:20 PM +08:00
+
+2018-05-03 22:32:20,047 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[PhoneNum] AS [PhoneNum], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[PasswordSalt] AS [PasswordSalt], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[CityId] AS [CityId], 
+    [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_AdminUsers] AS [Extent1]
+    WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+2018-05-03 22:32:20,047 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:32:20,047 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:32:20,047 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:32:20 PM +08:00
+
+2018-05-03 22:32:20,085 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 37 ms with result: SqlDataReader
+
+2018-05-03 22:32:20,085 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:32:20,085 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:32:20 PM +08:00
+
+2018-05-03 22:32:20,087 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:32:20 PM +08:00
+
+2018-05-03 22:32:20,088 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[T_AdminUsers] AS [Extent1]
+        WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )  AS [GroupBy1]
+2018-05-03 22:32:20,088 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:32:20,088 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:32:20,088 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:32:20 PM +08:00
+
+2018-05-03 22:32:20,108 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 20 ms with result: SqlDataReader
+
+2018-05-03 22:32:20,108 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:32:20,108 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:32:20 PM +08:00
+
+2018-05-03 22:32:20,109 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:32:20 PM +08:00
+
+2018-05-03 22:32:20,109 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[Name] AS [Name], 
+    [Limit1].[PhoneNum] AS [PhoneNum], 
+    [Limit1].[PasswordHash] AS [PasswordHash], 
+    [Limit1].[PasswordSalt] AS [PasswordSalt], 
+    [Limit1].[Email] AS [Email], 
+    [Limit1].[CityId] AS [CityId], 
+    [Limit1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Limit1].[CreateDateTime] AS [CreateDateTime], 
+    [Limit1].[IsDeleted] AS [IsDeleted], 
+    [Limit1].[Id1] AS [Id1], 
+    [Limit1].[Name1] AS [Name1], 
+    [Limit1].[CreateDateTime1] AS [CreateDateTime1], 
+    [Limit1].[IsDeleted1] AS [IsDeleted1]
+    FROM ( SELECT TOP (2) 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[PhoneNum] AS [PhoneNum], 
+        [Extent1].[PasswordHash] AS [PasswordHash], 
+        [Extent1].[PasswordSalt] AS [PasswordSalt], 
+        [Extent1].[Email] AS [Email], 
+        [Extent1].[CityId] AS [CityId], 
+        [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+        [Extent1].[CreateDateTime] AS [CreateDateTime], 
+        [Extent1].[IsDeleted] AS [IsDeleted], 
+        [Extent2].[Id] AS [Id1], 
+        [Extent2].[Name] AS [Name1], 
+        [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+        [Extent2].[IsDeleted] AS [IsDeleted1]
+        FROM  [dbo].[T_AdminUsers] AS [Extent1]
+        LEFT OUTER JOIN [dbo].[T_Cities] AS [Extent2] ON [Extent1].[CityId] = [Extent2].[Id]
+        WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )  AS [Limit1]
+2018-05-03 22:32:20,109 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:32:20,109 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:32:20,109 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:32:20 PM +08:00
+
+2018-05-03 22:32:20,127 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 18 ms with result: SqlDataReader
+
+2018-05-03 22:32:20,127 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:32:20,128 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:32:20 PM +08:00
+
+2018-05-03 22:32:46,625 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:32:46 PM +08:00
+
+2018-05-03 22:32:46,625 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[PhoneNum] AS [PhoneNum], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[PasswordSalt] AS [PasswordSalt], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[CityId] AS [CityId], 
+    [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_AdminUsers] AS [Extent1]
+    WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+2018-05-03 22:32:46,625 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:32:46,626 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:32:46,626 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:32:46 PM +08:00
+
+2018-05-03 22:32:46,646 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 20 ms with result: SqlDataReader
+
+2018-05-03 22:32:46,646 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:32:46,646 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:32:46 PM +08:00
+
+2018-05-03 22:32:46,648 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:32:46 PM +08:00
+
+2018-05-03 22:32:46,648 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[T_AdminUsers] AS [Extent1]
+        WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )  AS [GroupBy1]
+2018-05-03 22:32:46,648 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:32:46,648 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:32:46,648 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:32:46 PM +08:00
+
+2018-05-03 22:32:46,663 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 15 ms with result: SqlDataReader
+
+2018-05-03 22:32:46,663 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:32:46,663 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:32:46 PM +08:00
+
+2018-05-03 22:32:46,664 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:32:46 PM +08:00
+
+2018-05-03 22:32:46,664 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[Name] AS [Name], 
+    [Limit1].[PhoneNum] AS [PhoneNum], 
+    [Limit1].[PasswordHash] AS [PasswordHash], 
+    [Limit1].[PasswordSalt] AS [PasswordSalt], 
+    [Limit1].[Email] AS [Email], 
+    [Limit1].[CityId] AS [CityId], 
+    [Limit1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Limit1].[CreateDateTime] AS [CreateDateTime], 
+    [Limit1].[IsDeleted] AS [IsDeleted], 
+    [Limit1].[Id1] AS [Id1], 
+    [Limit1].[Name1] AS [Name1], 
+    [Limit1].[CreateDateTime1] AS [CreateDateTime1], 
+    [Limit1].[IsDeleted1] AS [IsDeleted1]
+    FROM ( SELECT TOP (2) 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[PhoneNum] AS [PhoneNum], 
+        [Extent1].[PasswordHash] AS [PasswordHash], 
+        [Extent1].[PasswordSalt] AS [PasswordSalt], 
+        [Extent1].[Email] AS [Email], 
+        [Extent1].[CityId] AS [CityId], 
+        [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+        [Extent1].[CreateDateTime] AS [CreateDateTime], 
+        [Extent1].[IsDeleted] AS [IsDeleted], 
+        [Extent2].[Id] AS [Id1], 
+        [Extent2].[Name] AS [Name1], 
+        [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+        [Extent2].[IsDeleted] AS [IsDeleted1]
+        FROM  [dbo].[T_AdminUsers] AS [Extent1]
+        LEFT OUTER JOIN [dbo].[T_Cities] AS [Extent2] ON [Extent1].[CityId] = [Extent2].[Id]
+        WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )  AS [Limit1]
+2018-05-03 22:32:46,664 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:32:46,664 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:32:46,664 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:32:46 PM +08:00
+
+2018-05-03 22:32:46,679 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 14 ms with result: SqlDataReader
+
+2018-05-03 22:32:46,679 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:32:46,679 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:32:46 PM +08:00
+
+2018-05-03 22:35:15,394 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:35:15 PM +08:00
+
+2018-05-03 22:35:16,660 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[PhoneNum] AS [PhoneNum], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[PasswordSalt] AS [PasswordSalt], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[CityId] AS [CityId], 
+    [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_AdminUsers] AS [Extent1]
+    WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+2018-05-03 22:35:16,660 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:35:16,661 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:35:16,661 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:35:16 PM +08:00
+
+2018-05-03 22:35:16,665 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 2 ms with result: SqlDataReader
+
+2018-05-03 22:35:16,665 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:35:16,743 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:35:16 PM +08:00
+
+2018-05-03 22:35:16,758 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:35:16 PM +08:00
+
+2018-05-03 22:35:16,873 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[T_AdminUsers] AS [Extent1]
+        WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )  AS [GroupBy1]
+2018-05-03 22:35:16,873 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:35:16,873 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:35:16,873 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:35:16 PM +08:00
+
+2018-05-03 22:35:16,875 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 1 ms with result: SqlDataReader
+
+2018-05-03 22:35:16,875 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:35:16,880 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:35:16 PM +08:00
+
+2018-05-03 22:35:16,880 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:35:16 PM +08:00
+
+2018-05-03 22:35:16,994 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[Name] AS [Name], 
+    [Limit1].[PhoneNum] AS [PhoneNum], 
+    [Limit1].[PasswordHash] AS [PasswordHash], 
+    [Limit1].[PasswordSalt] AS [PasswordSalt], 
+    [Limit1].[Email] AS [Email], 
+    [Limit1].[CityId] AS [CityId], 
+    [Limit1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Limit1].[CreateDateTime] AS [CreateDateTime], 
+    [Limit1].[IsDeleted] AS [IsDeleted], 
+    [Limit1].[Id1] AS [Id1], 
+    [Limit1].[Name1] AS [Name1], 
+    [Limit1].[CreateDateTime1] AS [CreateDateTime1], 
+    [Limit1].[IsDeleted1] AS [IsDeleted1]
+    FROM ( SELECT TOP (2) 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[PhoneNum] AS [PhoneNum], 
+        [Extent1].[PasswordHash] AS [PasswordHash], 
+        [Extent1].[PasswordSalt] AS [PasswordSalt], 
+        [Extent1].[Email] AS [Email], 
+        [Extent1].[CityId] AS [CityId], 
+        [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+        [Extent1].[CreateDateTime] AS [CreateDateTime], 
+        [Extent1].[IsDeleted] AS [IsDeleted], 
+        [Extent2].[Id] AS [Id1], 
+        [Extent2].[Name] AS [Name1], 
+        [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+        [Extent2].[IsDeleted] AS [IsDeleted1]
+        FROM  [dbo].[T_AdminUsers] AS [Extent1]
+        LEFT OUTER JOIN [dbo].[T_Cities] AS [Extent2] ON [Extent1].[CityId] = [Extent2].[Id]
+        WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )  AS [Limit1]
+2018-05-03 22:35:16,994 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:35:16,994 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:35:16,994 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:35:16 PM +08:00
+
+2018-05-03 22:35:16,997 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 2 ms with result: SqlDataReader
+
+2018-05-03 22:35:16,997 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:35:17,022 [12] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:35:17 PM +08:00
+
+2018-05-03 22:37:24,153 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:37:24 PM +08:00
+
+2018-05-03 22:37:25,380 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT TOP (2) 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[PhoneNum] AS [PhoneNum], 
+    [Extent1].[PasswordHash] AS [PasswordHash], 
+    [Extent1].[PasswordSalt] AS [PasswordSalt], 
+    [Extent1].[Email] AS [Email], 
+    [Extent1].[CityId] AS [CityId], 
+    [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_AdminUsers] AS [Extent1]
+    WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+2018-05-03 22:37:25,380 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:37:25,381 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:37:25,381 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:37:25 PM +08:00
+
+2018-05-03 22:37:25,409 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 25 ms with result: SqlDataReader
+
+2018-05-03 22:37:25,409 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:37:25,487 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:37:25 PM +08:00
+
+2018-05-03 22:37:25,503 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:37:25 PM +08:00
+
+2018-05-03 22:37:25,623 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [GroupBy1].[A1] AS [C1]
+    FROM ( SELECT 
+        COUNT(1) AS [A1]
+        FROM [dbo].[T_AdminUsers] AS [Extent1]
+        WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )  AS [GroupBy1]
+2018-05-03 22:37:25,623 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:37:25,623 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:37:25,623 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:37:25 PM +08:00
+
+2018-05-03 22:37:25,647 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 24 ms with result: SqlDataReader
+
+2018-05-03 22:37:25,648 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:37:25,652 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:37:25 PM +08:00
+
+2018-05-03 22:37:25,653 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/3/2018 10:37:25 PM +08:00
+
+2018-05-03 22:37:25,772 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Limit1].[LoginErrorTimes] AS [LoginErrorTimes], 
+    [Limit1].[Id] AS [Id], 
+    [Limit1].[Name] AS [Name], 
+    [Limit1].[PhoneNum] AS [PhoneNum], 
+    [Limit1].[PasswordHash] AS [PasswordHash], 
+    [Limit1].[PasswordSalt] AS [PasswordSalt], 
+    [Limit1].[Email] AS [Email], 
+    [Limit1].[CityId] AS [CityId], 
+    [Limit1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+    [Limit1].[CreateDateTime] AS [CreateDateTime], 
+    [Limit1].[IsDeleted] AS [IsDeleted], 
+    [Limit1].[Id1] AS [Id1], 
+    [Limit1].[Name1] AS [Name1], 
+    [Limit1].[CreateDateTime1] AS [CreateDateTime1], 
+    [Limit1].[IsDeleted1] AS [IsDeleted1]
+    FROM ( SELECT TOP (2) 
+        [Extent1].[Id] AS [Id], 
+        [Extent1].[Name] AS [Name], 
+        [Extent1].[PhoneNum] AS [PhoneNum], 
+        [Extent1].[PasswordHash] AS [PasswordHash], 
+        [Extent1].[PasswordSalt] AS [PasswordSalt], 
+        [Extent1].[Email] AS [Email], 
+        [Extent1].[CityId] AS [CityId], 
+        [Extent1].[LoginErrorTimes] AS [LoginErrorTimes], 
+        [Extent1].[LastLoginErrorDateTime] AS [LastLoginErrorDateTime], 
+        [Extent1].[CreateDateTime] AS [CreateDateTime], 
+        [Extent1].[IsDeleted] AS [IsDeleted], 
+        [Extent2].[Id] AS [Id1], 
+        [Extent2].[Name] AS [Name1], 
+        [Extent2].[CreateDateTime] AS [CreateDateTime1], 
+        [Extent2].[IsDeleted] AS [IsDeleted1]
+        FROM  [dbo].[T_AdminUsers] AS [Extent1]
+        LEFT OUTER JOIN [dbo].[T_Cities] AS [Extent2] ON [Extent1].[CityId] = [Extent2].[Id]
+        WHERE ([Extent1].[IsDeleted] <> 1) AND ([Extent1].[PhoneNum] = @p__linq__0)
+    )  AS [Limit1]
+2018-05-03 22:37:25,772 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:37:25,772 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- p__linq__0: '18642882528' (Type = AnsiString, Size = 8000)
+
+2018-05-03 22:37:25,772 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/3/2018 10:37:25 PM +08:00
+
+2018-05-03 22:37:25,801 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 29 ms with result: SqlDataReader
+
+2018-05-03 22:37:25,801 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-03 22:37:25,829 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/3/2018 10:37:25 PM +08:00
+

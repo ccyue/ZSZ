@@ -72,7 +72,6 @@ E:\GitHub\ZSZ\modelbinder1\bin\zh-Hans\System.Web.Webpages.Deployment.resources.
 E:\GitHub\ZSZ\modelbinder1\bin\zh-Hans\System.Web.Webpages.Razor.resources.dll
 E:\GitHub\ZSZ\modelbinder1\bin\zh-Hans\System.Web.Helpers.resources.dll
 E:\GitHub\ZSZ\modelbinder1\bin\zh-Hans\System.Web.Mvc.resources.dll
-E:\GitHub\ZSZ\modelbinder1\obj\Debug\modelbinder1.csprojResolveAssemblyReference.cache
 E:\GitHub\ZSZ\modelbinder1\obj\Debug\modelbinder1.csproj.CoreCompileInputs.cache
 E:\GitHub\ZSZ\modelbinder1\obj\Debug\modelbinder1.dll
 E:\GitHub\ZSZ\modelbinder1\obj\Debug\modelbinder1.pdb
