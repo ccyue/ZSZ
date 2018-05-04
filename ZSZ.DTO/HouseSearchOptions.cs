@@ -9,7 +9,7 @@ namespace ZSZ.DTO
     public class HouseSearchOptions
     {
         public long CityId { get; set; }//城市id
-        public long TypeId { get; set; }//房源类型，可空
+        public long? TypeId { get; set; }//房源类型，可空
         public long? RegionId { get; set; }//区域，可空
         public int? StartMonthRent { get; set; }//起始月租，可空
         public int? EndMonthRent { get; set; }//结束月租，可空

@@ -47,7 +47,9 @@ namespace ZSZ.AdminWeb.Controllers
             bool result = AdminUserService.CheckLogin(model.PhoneNum, model.Password);
             if(result)
             {
-                Session["LoginUserId"] = AdminUserService.GetbyPhoneNum(model.PhoneNum).Id;
+                var user = AdminUserService.GetbyPhoneNum(model.PhoneNum);
+                Session["LoginUserId"] = user.Id;
+                Session["CityId"] = user.CityId;
                 return Json(new AjaxResult() { Status = "ok", ErrorMsg = "登陆成功" });
             }
             else

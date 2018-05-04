@@ -21,7 +21,9 @@ namespace ZSZ.AdminWeb
             //log4net
             log4net.Config.XmlConfigurator.Configure();
             //filter
-            GlobalFilters.Filters.Add(new ZSZExceptionFilter());
+            FilterConfig.RegisterFilters(GlobalFilters.Filters);
+            //GlobalFilters.Filters.Add(new ZSZExceptionFilter());
+            //GlobalFilters.Filters.Add(new ZSZAuthorizationFilter());
             //AutoFac
             var builder = new ContainerBuilder();
             builder.RegisterControllers(typeof(MvcApplication).Assembly).PropertiesAutowired();

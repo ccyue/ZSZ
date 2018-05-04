@@ -54,6 +54,7 @@
     <Compile Include="HouseSearchOptions.cs" />
     <Compile Include="HouseSearchOrderByType.cs" />
     <Compile Include="HouseSearchResult.cs" />
+    <Compile Include="HouseUpdateDTO.cs" />
     <Compile Include="IdNameDTO.cs" />
     <Compile Include="PermissionDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

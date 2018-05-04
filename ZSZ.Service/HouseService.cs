@@ -57,6 +57,7 @@ namespace ZSZ.Service
                     Address = house.Address,
                     MonthRent = house.MonthRent,
                     StatusId = house.StatusId,
+                    TypeId = house.TypeId,
                     Area = house.Area,
                     DecorateStatusId = house.DecorateStatusId,
                     TotalFloorCount = house.TotalFloorCount,
@@ -202,7 +203,11 @@ namespace ZSZ.Service
             {
                 CommonService<HouseEntity> csHouse = new CommonService<HouseEntity>(dbc);
                 var houses = csHouse.GetAll()
-                    .Where(p => p.Community.Region.CityId == options.CityId && p.TypeId == options.TypeId);
+                    .Where(p => p.Community.Region.CityId == options.CityId);
+                if (options.TypeId != null)
+                {
+                    houses = houses.Where(p => p.TypeId == options.TypeId);
+                }
                 if (options.RegionId != null)
                 {
                     houses = houses.Where(p => p.Community.RegionId == options.RegionId);
@@ -249,7 +254,7 @@ namespace ZSZ.Service
                     && SqlFunctions.DateDiff("hh", p.CreateDateTime, DateTime.Now) <= 24);
             }
         }
-        public void Update(HouseDTO house)
+        public void Update(HouseUpdateDTO house)
         {
             using (ZSZDbContext dbc = new ZSZDbContext())
             {
@@ -260,6 +265,7 @@ namespace ZSZ.Service
                 var attachments = csAttachment.GetAll().Where(p => house.AttachmentIds.Contains(p.Id)).ToArray();
                 dbhouse.CommunityId = house.CommunityId;
                 dbhouse.RoomTypeId = house.RoomTypeId;
+                dbhouse.TypeId = house.TypeId;
                 dbhouse.Address = house.Address;
                 dbhouse.MonthRent = house.MonthRent;
                 dbhouse.StatusId = house.StatusId;

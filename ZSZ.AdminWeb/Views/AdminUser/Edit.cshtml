@@ -1,0 +1,110 @@
+﻿@using ZSZ.DTO
+@model ZSZ.AdminWeb.Models.AdminUserEditModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="pd-20">
+    <form method="post" class="form form-horizontal" id="form-admin-edit">
+        @Html.HiddenFor(p => p.Id)
+        <div class="row cl">
+            <label class="form-label col-3"><span class="c-red">*</span>管理员：</label>
+            <div class="formControls col-5">
+                @Html.TextBoxFor(p => p.Name, new { @class = "input-text", datatype = "*2-16", nullmsg = "用户名不能为空" })
+            </div>
+            <div class="col-4"> </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-3"><span class="c-red">*</span>初始密码：</label>
+            <div class="formControls col-5">
+                @Html.TextBoxFor(p => p.Password, new { @class = "input-text", type = "password", autocomplete = "off", placeholder = "留空则为不修改密码"})
+            </div>
+            <div class="col-4"> </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-3"><span class="c-red">*</span>确认密码：</label>
+            <div class="formControls col-5">
+                @Html.TextBoxFor(p => p.Password2, new { @class = "input-text", type = "password", placeholder = "留空则为不修改密码", autocomplete = "off", recheck = "Password" })
+
+
+            </div>
+            <div class="col-4"> </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-3"><span class="c-red">*</span>手机：</label>
+            <div class="formControls col-5">
+                @Html.TextBoxFor(p => p.PhoneNum, new { @class = "input-text", @readonly = "readonly" })
+            </div>
+            <div class="col-4"> </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-3"><span class="c-red">*</span>邮箱：</label>
+            <div class="formControls col-5">
+                @Html.TextBoxFor(p => p.Email, new { @class = "input-text", placeholder = "", datatype = "e", nullmsg = "请输入邮箱！" })
+            </div>
+            <div class="col-4"> </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-3"><span class="c-red">*</span>城市：</label>
+            <div class="formControls col-5">
+                @Html.DropDownListFor(p => p.CityId, ViewBag.Cities as IEnumerable<SelectListItem>, new { @class = "input-text" })
+            </div>
+            <div class="col-4"> </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-3">角色：</label>
+            <div class="col-xs-12 col-sm-3">
+                @{
+                    foreach (var role in ViewBag.Roles as RoleDTO[])
+                    {
+                    <div class="col-xs-12 col-sm-3">
+                        <input type="checkbox" value="@role.Id" name="RoleIds" id="RoleIds_@role.Id" checked=@Model.RoleIds.Contains(role.Id) />
+                        <label for="RoleIds_@role.Id">@role.Name</label>
+                    </div>
+                }
+                }
+            </div>
+        </div>
+
+        <div class="row cl">
+            <div class="col-9 col-offset-3">
+                <input id="btnSave" class="btn btn-primary radius" type="button" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+            </div>
+        </div>
+    </form>
+</div>
+
+@section FooterScript{
+<script type="text/javascript" src="~/lib/icheck/jquery.icheck.min.js"></script>
+<script type="text/javascript" src="~/lib/Validform/5.3.2/Validform.min.js"></script>
+<script type="text/javascript">
+    function saveAjax () {
+        $.ajax({
+            url: "@Url.Action("Edit","AdminUser")",
+            type: "POST",
+            dataType: "json",
+            data: $("#form-admin-edit").serializeArray(),
+            success: function (res) {
+                if (res.Status == "ok") {
+                    parent.location.reload();
+                }
+                else {
+                    alert(res.ErrorMsg);
+                }
+            },
+            error: function () {
+                alert("服务器出错!");
+            }
+        });
+    };
+    $(function () {
+        var validForm = $("#form-admin-edit").Validform({ tiptype: 2 });
+        $("#btnSave").click(function () {
+            if (validForm.check(false)) {
+                saveAjax();
+            }  
+        });
+    });
+</script>
+}
+

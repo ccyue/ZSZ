@@ -1,0 +1,206 @@
+﻿@model ZSZ.DTO.HouseDTO
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="pd-20">
+    <form method="post" class="form form-horizontal" id="form-house-edit">
+        @Html.HiddenFor(p=>p.Id)
+        <div class="row cl">
+            <label class="form-label col-2"><span class="c-red">*</span>区域：</label>
+            <div class="formControls col-2">
+                @Html.DropDownList("RegionId", ViewBag.Regions as List<SelectListItem>, new { @class = "select" })
+            </div>
+            <label class="form-label col-2"><span class="c-red">*</span>小区：</label>
+            <div class="formControls col-2">
+                @Html.DropDownListFor(p => p.CommunityId, ViewBag.Communities as List<SelectListItem>, new { @class = "select" })
+            </div>
+            <label class="form-label col-2"><span class="c-red">*</span>类别：</label>
+            <div class="formControls col-2">
+                @Html.DropDownListFor(p => p.TypeId, ViewBag.Types as List<SelectListItem>, new { @class = "select" })
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-2"><span class="c-red">*</span>户型：</label>
+            <div class="formControls col-2">
+                @Html.DropDownListFor(p => p.RoomTypeId, ViewBag.RoomTypes as List<SelectListItem>, new { @class = "select" })
+            </div>
+            <label class="form-label col-2"><span class="c-red">*</span>月租金：</label>
+            <div class="formControls col-2">
+                @Html.TextBoxFor(p => p.MonthRent, new { @class = "input-text" })
+            </div>
+            <label class="form-label col-2"><span class="c-red">*</span>面积：</label>
+            <div class="formControls col-1">
+                @Html.TextBoxFor(p => p.Area, new { @class = "input-text" })
+            </div>
+            <label class="form-label col-1" style="text-align:left">平米</label>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-2"><span class="c-red">*</span>状态：</label>
+            <div class="formControls col-2">
+                @Html.DropDownListFor(p => p.StatusId, ViewBag.Status as List<SelectListItem>, new { @class = "select" })
+            </div>
+            <label class="form-label col-2"><span class="c-red">*</span>装修：</label>
+            <div class="formControls col-2">
+                @Html.DropDownListFor(p => p.DecorateStatusId, ViewBag.DecorateStatus as List<SelectListItem>, new { @class = "select" })
+            </div>
+            <label class="form-label col-2"><span class="c-red">*</span>楼层：</label>
+            <div class="formControls col-1">
+                @Html.TextBoxFor(p => p.FloorIndex, new { @class = "input-text" })
+            </div>
+            <div class="formControls col-1">
+                @Html.TextBoxFor(p => p.TotalFloorCount, new { @class = "input-text" })
+            </div>
+        </div>
+        <div class="row cl">
+            
+            <label class="form-label col-2"><span class="c-red">*</span>朝向：</label>
+            <div class="formControls col-2">
+                @Html.TextBoxFor(p => p.Direction, new { @class = "input-text" })
+            </div>
+            <label class="form-label col-2"><span class="c-red">*</span>看房时间：</label>
+            <div class="formControls col-2">
+                @Html.TextBox("LookableDateTime",Model.LookableDateTime, new { @class = "input-text Wdate", onfocus = "WdatePicker({dateFmt:'yyyy-MM-dd'})" })
+            </div>
+            <label class="form-label col-2"><span class="c-red">*</span>入住时间：</label>
+            <div class="formControls col-2">
+                @Html.TextBox("CheckInDateTime", Model.CheckInDateTime, new { @class = "input-text Wdate", onfocus = "WdatePicker({dateFmt:'yyyy-MM-dd'})" })
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-2"><span class="c-red">*</span>业主姓名：</label>
+            <div class="formControls col-2">
+                @Html.TextBoxFor(p => p.OwnerName, new { @class = "input-text" })
+            </div>
+            <label class="form-label col-2"><span class="c-red">*</span>业主电话：</label>
+            <div class="formControls col-2">
+                @Html.TextBoxFor(p => p.OwnerPhoneNum, new { @class = "input-text" })
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-2"><span class="c-red">*</span>地址：</label>
+            <div class="formControls col-10">
+                @Html.TextBoxFor(p => p.Address, new { @class = "input-text" })
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-2"><span class="c-red">*</span>房源描述：</label>
+            <div class="formControls col-10">
+                @Html.TextAreaFor(p => p.Description, new { @class = "textarea", placeholder = "说点什么...最少输入10个字符" })
+            </div>
+        </div>
+        <div class="row cl">
+            <label class="form-label col-2"><span class="c-red">*</span>配套设施：</label>
+            <div class="formControls col-10">
+                <dl class="cl permission-list2">
+                    <dd>
+                        @foreach (var item in ViewBag.Attachements as List<SelectListItem>)
+                        {
+                            <label class="">
+                                <input type="checkbox" value="@item.Value" name="AttachmentIds" id="AttachmentIds_@item.Value" checked=@Model.AttachmentIds.Contains(Convert.ToInt64(item.Value))>
+                                @item.Text
+                            </label>
+                        }
+                    </dd>
+                </dl>
+            </div>
+        </div><div class="row cl">
+            <div class="col-9 col-offset-3">
+                <input id="btnSave" class="btn btn-primary radius" type="button" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+            </div>
+        </div>
+    </form>
+</div>
+
+@section FooterScript{
+    <script type="text/javascript" src="~/lib/My97DatePicker/WdatePicker.js"></script> 
+    <script type="text/javascript" src="~/lib/Validform/5.3.2/Validform.min.js"></script>
+    <script type="text/javascript">
+
+        var getCommunity = function () {
+            var regionId = $("#RegionId").val();
+            if (regionId.length == 0 || regionId == '0')
+            {
+                return;
+            }
+            $.ajax({
+                url: "@Url.Action("GetCommunityByRegion","House")",
+                type: 'POST',
+                dataType: 'json',
+                data: { regionId: regionId },
+                success: function (res)
+                {
+                    if (res.Status)
+                    {
+                        $("#CommunityId option").remove();
+                        for (var i = 0; i < res.Data.length; i++)
+                        {
+                            $("#CommunityId").append("<option value='" + res.Data[i].Value + "'>" + res.Data[i].Text + "</option>")
+                        } 
+                    }
+                    else
+                    {
+                        alert(res.ErrorMsg);
+                    }
+                },
+                error: function () {
+                    alert("服务器出错");
+                }
+            })
+        }
+
+
+    function saveAjax () {
+        $.ajax({
+            url: "@Url.Action("Edit","House")",
+            type: "POST",
+            dataType: "json",
+            data: $("#form-house-edit").serializeArray(),
+            success: function (res) {
+                if (res.Status == "ok") {
+                    parent.location.reload();
+                }
+                else {
+                    alert(res.ErrorMsg);
+                }
+            },
+            error: function () {
+                alert("服务器出错!");
+            }
+        });
+    };
+        $(function () {
+            $("#RegionId").change(getCommunity);
+
+
+        var validForm = $("#form-admin-add").Validform({ tiptype: 2 });
+        $("#btnSave").click(function () {
+            if (validForm.check(false)) {
+                saveAjax();
+            }
+        });
+        $("#PhoneNum").blur(function () {
+            var phoneNum = $("#PhoneNum").val();
+            if (phoneNum == "")
+            {
+                return;
+            }
+            $.ajax({
+            url: "@Url.Action("CheckPhoneNum", "AdminUser")",
+            type: "POST",
+            dataType: "json",
+            data: { phoneNum: phoneNum},
+            success: function (res) {
+                if (res.Status == "exist") {
+                    layer.msg('这个手机号已经被其他人使用了!', { icon: 2, time: 2000 });
+                }
+            },
+            error: function () {
+                alert("服务器出错!");
+            }
+        });
+        });
+    });
+    </script>
+}
+
