@@ -45,6 +45,8 @@ E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\ZSZ.AdminWeb.dll
 E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\ZSZ.AdminWeb.pdb
 E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\Autofac.dll
 E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\Autofac.Integration.Mvc.dll
+E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\CaptchaGen.dll
+E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\CodeCarvings.Piczard.dll
 E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\log4net.dll
 E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\Microsoft.Web.Infrastructure.dll
 E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\Newtonsoft.Json.dll
@@ -71,6 +73,7 @@ E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\ZSZ.Service.dll.config
 E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\ZSZ.Web.Common.pdb
 E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\Autofac.xml
 E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\Autofac.Integration.Mvc.xml
+E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\CodeCarvings.Piczard.xml
 E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\log4net.xml
 E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\Newtonsoft.Json.pdb
 E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\Newtonsoft.Json.xml
@@ -86,4 +89,3 @@ E:\GitHub\ZSZ\ZSZ.AdminWeb\obj\Debug\ZSZ.AdminWeb.csprojResolveAssemblyReference
 E:\GitHub\ZSZ\ZSZ.AdminWeb\obj\Debug\ZSZ.AdminWeb.csproj.CoreCompileInputs.cache
 E:\GitHub\ZSZ\ZSZ.AdminWeb\obj\Debug\ZSZ.AdminWeb.dll
 E:\GitHub\ZSZ\ZSZ.AdminWeb\obj\Debug\ZSZ.AdminWeb.pdb
-E:\GitHub\ZSZ\ZSZ.AdminWeb\bin\CaptchaGen.dll

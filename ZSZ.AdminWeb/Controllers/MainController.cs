@@ -18,13 +18,13 @@ namespace ZSZ.AdminWeb.Controllers
         public IAdminUserService AdminUserService { get; set; }
         public ActionResult Index()
         {
-            if (Session["ss"] != null)
+            long? userId = AdminHelper.GetLoginUserId(HttpContext);
+            if (userId == null)
             {
-                return Content((string)Session["ss"]);
+                return Redirect("~/Main/Login");
             }
-            Session["ss"] = "test session";
-            //cityService.Add("北京");
-            return View();
+            var user = AdminUserService.GetById(userId.Value);
+            return View(user);
         }
         [HttpGet]
         public ActionResult Login()
@@ -58,6 +58,12 @@ namespace ZSZ.AdminWeb.Controllers
             }
         }
 
+        public ActionResult Logout()
+        {
+            Session.Abandon();
+            return RedirectToAction("Login", "Main");
+        }
+
         [HttpGet]
         public ActionResult GenerateCaptchaPic()
         {
@@ -67,5 +73,6 @@ namespace ZSZ.AdminWeb.Controllers
             MemoryStream ms = ImageFactory.GenerateImage(captchaCode, 41, 100, 18, 1);
             return File(ms, "image/jpeg");
         }
+       
     }
 }

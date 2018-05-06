@@ -1,12 +1,22 @@
-﻿@model ZSZ.DTO.HouseSearchResult
+﻿@model ZSZ.DTO.HouseDTO[]
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style type="text/css">
+    #pager li {
+        float: left;
+        margin-left: 5px;
+        color: purple;
+    }
 
+    .curPager {
+        color: purple;
+    }
+</style>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 房源管理 <span class="c-gray en">&gt;</span> 房源列表 <a class="btn btn-success radius r mr-20" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a></nav>
 <div class="pd-20">
     <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> 
-        <a href="javascript:;" onclick="admin_add('添加房源','@Url.Action("Add","House")','800','500')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加房源</a></span> <span class="r">共有数据：<strong>@Model.totalCount</strong> 条</span> </div>
+        <a href="javascript:;" onclick="admin_add('添加房源','@Url.Action("Add","House")','800','500')" class="btn btn-primary radius"><i class="Hui-iconfont">&#xe600;</i> 添加房源</a></span> <span class="r">共有数据：<strong>@ViewBag.TotalCount</strong> 条</span> </div>
     <table class="table table-border table-bordered table-bg">
         <thead>
             <tr>
@@ -25,7 +35,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var house in Model.result)
+            @foreach (var house in Model)
             {
                 <tr class="text-c">
                     <td><input type="checkbox" value="1" name=""></td>
@@ -43,11 +53,26 @@
                     <a title="删除" href="javascript:;" onclick="admin_del(this,'@house.Id')" class="ml-5" style="text-decoration:none">
                         <i class="Hui-iconfont">&#xe6e2;</i>
                     </a>
+                        <a title="图片" href="javascript:;" onclick="layer_show('图片编辑','@Url.Action("PicList","House",new { houseId = house.Id})','800','500')" class="ml-5" style="text-decoration:none">
+                            <i class="Hui-iconfont">&#xe613;</i>
+                        </a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
+    @{ 
+        var pager = new ZSZ.CommonMVC.Pager();
+        pager.CurrentPageClassName = "curPager";
+        pager.PageIndex = (int)ViewBag.PageIndex;
+        pager.TotalCount = (int)ViewBag.TotalCount;
+        pager.MaxPageCount = 10;
+        pager.PageSize = 10;
+        pager.UrlPattern = "/House/List?typeId=" + ViewBag.typeId + "&pageIndex={pn}";
+    }
+    <div id="pager">
+        @Html.Raw(pager.GetPagerHtml())
+    </div>
 </div>
 @section FooterScript{
     <script type="text/javascript">

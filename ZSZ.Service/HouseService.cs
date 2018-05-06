@@ -91,7 +91,8 @@ namespace ZSZ.Service
                 {
                     HouseId = housePic.HouseId,
                     ThumbUrl = housePic.ThumbUrl,
-                    Url = housePic.Url
+                    Url = housePic.Url,
+                    CreateDateTime = DateTime.Now
                 };
                 dbc.HousePics.Add(pic);
                 dbc.SaveChanges();

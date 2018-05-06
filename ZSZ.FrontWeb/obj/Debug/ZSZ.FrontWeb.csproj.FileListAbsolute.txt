@@ -1,12 +1,14 @@
 E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\ZSZ.FrontWeb.dll.config
 E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\ZSZ.FrontWeb.dll
 E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\ZSZ.FrontWeb.pdb
+E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\Newtonsoft.Json.dll
 E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\System.Web.Helpers.dll
 E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\System.Web.Mvc.dll
 E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\System.Web.Razor.dll
 E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\System.Web.Webpages.Deployment.dll
 E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\System.Web.Webpages.dll
 E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\System.Web.Webpages.Razor.dll
+E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\Newtonsoft.Json.xml
 E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\System.Web.Razor.xml
 E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\System.Web.Webpages.xml
 E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\System.Web.Webpages.Deployment.xml
@@ -16,6 +18,4 @@ E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\System.Web.Mvc.xml
 E:\GitHub\ZSZ\ZSZ.FrontWeb\obj\Debug\ZSZ.FrontWeb.csproj.CoreCompileInputs.cache
 E:\GitHub\ZSZ\ZSZ.FrontWeb\obj\Debug\ZSZ.FrontWeb.dll
 E:\GitHub\ZSZ\ZSZ.FrontWeb\obj\Debug\ZSZ.FrontWeb.pdb
-E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\Newtonsoft.Json.dll
-E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\Newtonsoft.Json.xml
 E:\GitHub\ZSZ\ZSZ.FrontWeb\obj\Debug\ZSZ.FrontWeb.csprojResolveAssemblyReference.cache

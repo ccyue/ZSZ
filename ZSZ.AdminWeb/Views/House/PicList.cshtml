@@ -1,0 +1,75 @@
+﻿@model ZSZ.DTO.HousePicDTO[]
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/lib/lightbox2/2.8.1/css/lightbox.css" rel="stylesheet" type="text/css">
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 房源管理 <span class="c-gray en">&gt;</span> 图片管理 <a class="btn btn-success radius r mr-20" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="pd-20">
+    <div class="cl pd-5 bg-1 bk-gray mt-20">
+        <span class="l">
+            <a class="btn btn-primary radius" onclick="uploadPic('上传图片','@Url.Action("PicUpload","House",new { houseId = ViewBag.HouseId })')" href="javascript:;"><i class="Hui-iconfont"></i> 添加图片</a>
+            <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
+        </span>
+        <span class="r">共有数据：<strong>@ViewBag.TotalCount</strong> 条</span>
+    </div>
+    <form id="housePics">
+        <div class="portfolio-content">
+            <ul class="cl portfolio-area">
+                @foreach (var h in Model)
+            {
+                    <li class="item">
+                        <div class="portfoliobox">
+                            <input class="checkbox" name="pictureIds" id="pictureIds_@h.Id" type="checkbox" value="@h.Id">
+                            <div class="picbox"><a href="@Url.Content(h.Url)" data-lightbox="gallery" data-title="客厅1"><img src="@Url.Content(h.ThumbUrl)"></a></div>
+                            <div class="textbox"></div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </form>
+</div>
+@section FooterScript{
+    <script type="text/javascript" src="~/lib/lightbox2/2.8.1/js/lightbox-plus-jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $.Huihover(".portfolio-area li");
+        });
+        function uploadPic(title, url) {
+            var index = layer.open({
+                type: 2,
+                title: title,
+                content: url
+            });
+            layer.full(index);
+        }
+        function datadel()
+        {
+            var ids = new Array();
+            $("input[name='pictureIds']:checked").each(function () {
+                var value = $(this).val();
+                ids.push(value);
+            });
+            alert(ids.join(','));
+            layer.confirm('确认要删除吗？', function (index) {
+                //var data = $("#housePics").serializeArray();
+                //此处请求后台程序，下方是成功后的前台处理……
+                $.ajax({
+                    url: "@Url.Action("PicDelete", "House")",
+                    data: { deleteIds: ids },
+                    traditional:true,
+                    type: "post",
+                    datajson: "json",
+                    success: function (res) {
+                        location.reload();
+                    },
+                    error: function ()
+                    {
+                        alert("服务器出错!");
+                    }
+                })
+
+            });
+        }
+    </script>
+}

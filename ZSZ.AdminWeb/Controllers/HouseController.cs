@@ -1,8 +1,12 @@
-﻿using System;
+﻿using CodeCarvings.Piczard;
+using CodeCarvings.Piczard.Filters.Watermarks;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ZSZ.AdminWeb.App_Start;
 using ZSZ.AdminWeb.Models;
 using ZSZ.CommonMVC;
 using ZSZ.DTO;
@@ -12,6 +16,7 @@ namespace ZSZ.AdminWeb.Controllers
 {
     public class HouseController : Controller
     {
+        public IAdminUserService AdminUserService { get; set; }
         public IHouseService HouseService { get; set; }
         public IRegionService RegionService { get; set; }
         public ICommunityService CommunityService { get; set; }
@@ -19,22 +24,24 @@ namespace ZSZ.AdminWeb.Controllers
         public IAttachementService AttachementService { get; set; }
 
         private SelectListItem firstItem = new SelectListItem() { Value = "0", Text = "请选择" };
-        public ActionResult List()
+
+        [CheckPermission("House.List")]
+        public ActionResult List(long typeId,int pageIndex = 1)
         {
-            HouseSearchOptions options = new HouseSearchOptions()
+            long? userId = AdminHelper.GetLoginUserId(HttpContext);
+            if(userId==null||userId==0)
             {
-                OrderByType = HouseSearchOrderByType.CreateDateDesc,
-                PageSize = 10,
-                CurrentIndex = 1,
-                CityId = (long)Session["CityId"]
-            };
-            options.CityId = (long)Session["CityId"];
-            HouseSearchResult result = HouseService.Search(options);
-            ViewBag.RoomTypes = GetListByName("户型");
-            ViewBag.Status = GetListByName("房屋状态");
-            ViewBag.DecorateStatus = GetListByName("装修状态");
-            return View(result);
+                return View("Error", (object)"总部不能进行房源管理");
+            }
+            long? cityId = AdminUserService.GetById(userId.Value).CityId;
+            ViewBag.TotalCount = HouseService.GetTotalCount(cityId.Value, typeId);
+            ViewBag.PageIndex = pageIndex;
+            ViewBag.TypeId = typeId;
+            var house = HouseService.GetPageData(cityId.Value, typeId, 10, (pageIndex-1)*10);
+            return View(house);
         }
+
+        [CheckPermission("House.Add")]
         [HttpGet]
         public ActionResult Add()
         {
@@ -53,6 +60,8 @@ namespace ZSZ.AdminWeb.Controllers
             ViewBag.Attachements = AttachementService.GetAll().Select(p => new SelectListItem() { Text = p.Name, Value = p.Id.ToString() }).ToList(); ;
             return View(new HouseAddNewDTO());
         }
+
+        [CheckPermission("House.Add")]
         [HttpPost]
         public ActionResult Add(HouseAddNewDTO house)
         {
@@ -64,6 +73,7 @@ namespace ZSZ.AdminWeb.Controllers
             return Json(new AjaxResult() { Status = "ok"});
         }
 
+        [CheckPermission("House.Delete")]
         [HttpPost]
         public ActionResult Delete(long id)
         {
@@ -71,6 +81,7 @@ namespace ZSZ.AdminWeb.Controllers
             return Json(new AjaxResult() { Status = "ok" });
         }
 
+        [CheckPermission("House.Edit")]
         [HttpGet]
         public ActionResult Edit(long id)
         {
@@ -97,6 +108,8 @@ namespace ZSZ.AdminWeb.Controllers
             ViewBag.Attachements = AttachementService.GetAll().Select(p => new SelectListItem() { Text = p.Name, Value = p.Id.ToString() }).ToList();
             return View(house);
         }
+
+        [CheckPermission("House.Edit")]
         [HttpPost]
         public ActionResult Edit(HouseUpdateDTO house)
         {
@@ -105,6 +118,71 @@ namespace ZSZ.AdminWeb.Controllers
                 return Json(new AjaxResult() { Status = "error", ErrorMsg = CommonMVC.MVCHelper.GetValidMsg(ModelState) });
             }
             HouseService.Update(house);
+            return Json(new AjaxResult() { Status = "ok" });
+        }
+
+        [HttpGet]
+        public ActionResult PicList(long houseId)
+        {
+            HousePicDTO[] pics = HouseService.GetPics(houseId);
+            ViewBag.HouseId = houseId;
+            return View(pics);
+        }
+        [HttpGet]
+        public ActionResult PicUpload(long houseId)
+        {
+            return View(houseId);
+        }
+        [HttpPost]
+        public ActionResult PicUpload(long houseId,HttpPostedFileBase file)
+        {
+            //check houseId
+            var house = HouseService.GetById(houseId);
+            if(house==null)
+            {
+                return Json(new AjaxResult() { Status = "error", ErrorMsg = "房源不存在" });
+            }
+            string fileName = Common.CommonHelper.CalcMD5(file.FileName);
+            string extension = Path.GetExtension(file.FileName);
+            string path = "/upload/" + DateTime.Now.ToString("yyyy/MM/dd")+"/"+ fileName + extension;
+            string thumbPath = "/upload/" + DateTime.Now.ToString("yyyy/MM/dd") + "/" + fileName + "_thumb" + extension;
+            string fullPath = HttpContext.Server.MapPath("~"+path);
+            string thumbFullPath = HttpContext.Server.MapPath("~" + thumbPath);
+            new FileInfo(fullPath).Directory.Create();
+            new FileInfo(thumbFullPath).Directory.Create();
+            file.InputStream.Position = 0;
+            //file.SaveAs(path);
+
+            //缩略图
+            ImageProcessingJob jobThumb = new ImageProcessingJob();
+            jobThumb.Filters.Add(new FixedResizeConstraint(200, 200));
+            jobThumb.SaveProcessedImageToFileSystem(file.InputStream, thumbFullPath);
+            file.InputStream.Position = 0;
+
+            //水印
+            ImageWatermark imgWatermark =
+                new ImageWatermark(HttpContext.Server.MapPath("~/images/watermark.jpg"));
+            imgWatermark.ContentAlignment = System.Drawing.ContentAlignment.BottomRight;
+            imgWatermark.Alpha = 50;
+            ImageProcessingJob jobNormal = new ImageProcessingJob();
+            jobNormal.Filters.Add(imgWatermark);//添加水印 
+            jobNormal.Filters.Add(new FixedResizeConstraint(600, 600));
+            jobNormal.SaveProcessedImageToFileSystem(file.InputStream, fullPath);
+            HouseService.AddHousePic(new HousePicDTO()
+            {
+                HouseId = houseId,
+                Url = path,
+                ThumbUrl = thumbPath
+            });
+            return Json(new AjaxResult() { Status = "ok"});
+        }
+        [HttpPost]
+        public ActionResult PicDelete(long[] deleteIds)
+        {
+            foreach(var id in deleteIds)
+            {
+                HouseService.DeleteHousePic(id);
+            }           
             return Json(new AjaxResult() { Status = "ok" });
         }
 

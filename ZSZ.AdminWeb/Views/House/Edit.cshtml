@@ -5,7 +5,7 @@
 
 <div class="pd-20">
     <form method="post" class="form form-horizontal" id="form-house-edit">
-        @Html.HiddenFor(p=>p.Id)
+        @Html.HiddenFor(p => p.Id)
         <div class="row cl">
             <label class="form-label col-2"><span class="c-red">*</span>区域：</label>
             <div class="formControls col-2">
@@ -27,11 +27,11 @@
             </div>
             <label class="form-label col-2"><span class="c-red">*</span>月租金：</label>
             <div class="formControls col-2">
-                @Html.TextBoxFor(p => p.MonthRent, new { @class = "input-text" })
+                @Html.TextBoxFor(p => p.MonthRent, new { @class = "input-text", datatype = "n" })
             </div>
             <label class="form-label col-2"><span class="c-red">*</span>面积：</label>
             <div class="formControls col-1">
-                @Html.TextBoxFor(p => p.Area, new { @class = "input-text" })
+                @Html.TextBoxFor(p => p.Area, new { @class = "input-text", datatype = "n" })
             </div>
             <label class="form-label col-1" style="text-align:left">平米</label>
         </div>
@@ -46,21 +46,21 @@
             </div>
             <label class="form-label col-2"><span class="c-red">*</span>楼层：</label>
             <div class="formControls col-1">
-                @Html.TextBoxFor(p => p.FloorIndex, new { @class = "input-text" })
+                @Html.TextBoxFor(p => p.FloorIndex, new { @class = "input-text", datatype = "n" })
             </div>
             <div class="formControls col-1">
-                @Html.TextBoxFor(p => p.TotalFloorCount, new { @class = "input-text" })
+                @Html.TextBoxFor(p => p.TotalFloorCount, new { @class = "input-text", datatype = "n" })
             </div>
         </div>
         <div class="row cl">
-            
+
             <label class="form-label col-2"><span class="c-red">*</span>朝向：</label>
             <div class="formControls col-2">
-                @Html.TextBoxFor(p => p.Direction, new { @class = "input-text" })
+                @Html.TextBoxFor(p => p.Direction, new { @class = "input-text", datatype = "*1-10" })
             </div>
             <label class="form-label col-2"><span class="c-red">*</span>看房时间：</label>
             <div class="formControls col-2">
-                @Html.TextBox("LookableDateTime",Model.LookableDateTime, new { @class = "input-text Wdate", onfocus = "WdatePicker({dateFmt:'yyyy-MM-dd'})" })
+                @Html.TextBox("LookableDateTime", Model.LookableDateTime, new { @class = "input-text Wdate", onfocus = "WdatePicker({dateFmt:'yyyy-MM-dd'})" })
             </div>
             <label class="form-label col-2"><span class="c-red">*</span>入住时间：</label>
             <div class="formControls col-2">
@@ -70,23 +70,23 @@
         <div class="row cl">
             <label class="form-label col-2"><span class="c-red">*</span>业主姓名：</label>
             <div class="formControls col-2">
-                @Html.TextBoxFor(p => p.OwnerName, new { @class = "input-text" })
+                @Html.TextBoxFor(p => p.OwnerName, new { @class = "input-text", datatype = "*1-10" })
             </div>
             <label class="form-label col-2"><span class="c-red">*</span>业主电话：</label>
             <div class="formControls col-2">
-                @Html.TextBoxFor(p => p.OwnerPhoneNum, new { @class = "input-text" })
+                @Html.TextBoxFor(p => p.OwnerPhoneNum, new { @class = "input-text", datatype = "m" })
             </div>
         </div>
         <div class="row cl">
             <label class="form-label col-2"><span class="c-red">*</span>地址：</label>
             <div class="formControls col-10">
-                @Html.TextBoxFor(p => p.Address, new { @class = "input-text" })
+                @Html.TextBoxFor(p => p.Address, new { @class = "input-text", datatype = "*10-100" })
             </div>
         </div>
         <div class="row cl">
             <label class="form-label col-2"><span class="c-red">*</span>房源描述：</label>
             <div class="formControls col-10">
-                @Html.TextAreaFor(p => p.Description, new { @class = "textarea", placeholder = "说点什么...最少输入10个字符" })
+                @Html.TextAreaFor(p => p.Description, new { @class = "textarea", placeholder = "说点什么...最少输入10个字符", datatype = "*10-250" })
             </div>
         </div>
         <div class="row cl">
@@ -113,7 +113,7 @@
 </div>
 
 @section FooterScript{
-    <script type="text/javascript" src="~/lib/My97DatePicker/WdatePicker.js"></script> 
+    <script type="text/javascript" src="~/lib/My97DatePicker/WdatePicker.js"></script>
     <script type="text/javascript" src="~/lib/Validform/5.3.2/Validform.min.js"></script>
     <script type="text/javascript">
 
@@ -136,7 +136,7 @@
                         for (var i = 0; i < res.Data.length; i++)
                         {
                             $("#CommunityId").append("<option value='" + res.Data[i].Value + "'>" + res.Data[i].Text + "</option>")
-                        } 
+                        }
                     }
                     else
                     {
@@ -173,7 +173,7 @@
             $("#RegionId").change(getCommunity);
 
 
-        var validForm = $("#form-admin-add").Validform({ tiptype: 2 });
+            var validForm = $("#form-house-edit").Validform({ tiptype: 2 });
         $("#btnSave").click(function () {
             if (validForm.check(false)) {
                 saveAjax();

@@ -49,6 +49,9 @@
     <Reference Include="CaptchaGen, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\CaptchaGen.1.0.0\lib\net40\CaptchaGen.dll</HintPath>
     </Reference>
+    <Reference Include="CodeCarvings.Piczard, Version=1.2.3.0, Culture=neutral, PublicKeyToken=88d00d4422733d60, processorArchitecture=MSIL">
+      <HintPath>..\packages\CodeCarvings.Piczard.1.2.3.3\lib\CodeCarvings.Piczard.dll</HintPath>
+    </Reference>
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
@@ -1469,6 +1472,8 @@
     <Content Include="Views\House\List.cshtml" />
     <Content Include="Views\House\Add.cshtml" />
     <Content Include="Views\House\Edit.cshtml" />
+    <Content Include="Views\House\PicList.cshtml" />
+    <Content Include="Views\House\PicUpload.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1477,6 +1482,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminHelper.cs" />
     <Compile Include="App_Start\CheckPermissionAttribute.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
