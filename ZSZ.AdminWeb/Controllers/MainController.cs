@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using ZSZ.AdminWeb.Models;
@@ -73,6 +74,5 @@ namespace ZSZ.AdminWeb.Controllers
             MemoryStream ms = ImageFactory.GenerateImage(captchaCode, 41, 100, 18, 1);
             return File(ms, "image/jpeg");
         }
-       
     }
 }

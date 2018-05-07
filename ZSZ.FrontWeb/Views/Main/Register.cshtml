@@ -1,0 +1,142 @@
+﻿@model ZSZ.FrontWeb.Models.UserRegModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<div class="headertwo clearfloat" id="header">
+    <a href="javascript:history.go(-1)" class="fl box-s"><i class="iconfont icon-arrow-l fl"></i></a>
+    <p class="fl">用户注册</p>
+</div>
+
+<div class="register clearfloat" id="main">
+    <form id="regForm">
+        <ul>
+            <li class="clearfloat">
+                <p class="tit fl">手机号</p>
+                @Html.TextBoxFor(p => p.PhonenNum, new { @class = "shuru fl", placeholder = "请输入手机号码" })
+            </li>
+            <li class="clearfloat">
+                <p class="tit fl">验证码</p>
+                @Html.TextBoxFor(p => p.SMSCode, new { @class = "shuru shurutwo fl", placeholder = "请输入短信验证码" })
+                <a href="#loginmodalt" id="modaltrigger">
+                    <input type="button" id="" value="获取短信验证码" class="btn fr"  />
+                </a>
+            </li>
+            <li class="clearfloat">
+                <p class="tit fl">密码</p>
+                @Html.TextBoxFor(p => p.Password, new { @class = "shuru fl", placeholder = "请设置密码", type = "password" })
+            </li>
+            <li class="clearfloat">
+                <p class="tit fl">确认密码</p>
+                @Html.TextBoxFor(p => p.ConfirmPassword, new { @class = "shuru fl", placeholder = "请再次输入密码", type = "password" })
+            </li>
+        </ul>
+    </form>
+    <a id="btnRegister" class="pay-btn clearfloat">
+        注册
+    </a>
+    <div class="bottom clearfloat">
+        <p class="fl">
+            已有账号？
+            <a href="register.html">立即登录</a>
+        </p>
+    </div>
+</div>
+
+<!--弹窗内容 star-->
+<div id="loginmodalt" class="box-s loginmodaltwo" style="display:none;">
+    <div class="top clearfloat box-s">
+        <p class="tit">请输入图片验证码</p>
+        <div class="xia clearfloat">
+            <input type="text" id="txtCaptchaCode" value="" class="yzm fl" placeholder="填写图片验证码" />
+            <span class="fl"><img id="imgVerifyCode" src=""/></span>
+            <i id="picRefresh" class="iconfont icon-shuaxin fr"></i>
+        </div>
+    </div>
+    <form id="loginform" name="loginform" method="post" action="">
+        <div class="center fl"><input type="submit" name="loginbtn" id="loginbtn" class="hidemodal" value="取消" tabindex="3"></div>
+        <div class="center fl"><input type="button" name="loginbtn" id="btnSendSMS" class="hidemodal" value="确定" tabindex="3"></div>
+    </form>
+</div>
+<!--弹窗内容 end-->
+@section Footer{
+<script type="text/javascript" src="~/js/jquery.leanModal.min.js"></script>
+<script type="text/javascript" src="~/js/tchuang.js"></script>
+<script type="text/javascript">
+    $("#modaltrigger").leanModal({
+        top: 110,
+        overlay: 0.45,
+        closeButton: ".hidemodal"
+    }).click(function () {
+        $("#imgVerifyCode").attr("src", "@Url.Action("GenerateCaptchaPic","Main")" + "?" + Math.random());
+    });
+    $(function () {
+        $("#imgVerifyCode,#picRefresh").click(function () {
+            $("#imgVerifyCode").attr("src", "@Url.Action("GenerateCaptchaPic","Main")" + "?" + Math.random());
+        });
+        $("#imgVerifyCode").click();
+        //发送验证码
+        $("#btnSendSMS").click(sendSMS);
+        //注册用户
+        $("#btnRegister").click(userRes);
+    });
+    var sendSMS = function () {
+        var phoneNum = $("#PhoneNum").val();
+        var captchaCode = $("#txtCaptchaCode").val()
+        if (phoneNum.length != 11) {
+            alert("手机号无效");
+            return;
+        }
+        if (captchaCode.length == 0)
+        {
+            alert("请输入验证码");
+            return;
+        }
+        $.ajax({
+            url: "@Url.Action("SendCaptchaCode", "Main")",
+            data: { phoneNum: phoneNum, captchaCode: $("#txtCaptchaCode").val() },
+            dataType: "json",
+            type: "POST",
+            success: function (res) {
+                if (res.Status == "ok")
+                {
+                    $("#lean_overlay").fadeOut(200);
+                    $("#loginmodalt").css({ "display": "none" });
+                }
+                else
+                {
+                    alert(res.ErrorMsg);
+                }
+            },
+            error: function ()
+            {
+                alert("服务器出错!");
+            }
+        })
+    }
+    var userRes = function () {
+        $.ajax({
+            url: "@Url.Action("Register", "Main")",
+            data: $("#regForm").serializeArray(),
+            dataType: "json",
+            type: "POST",
+            success: function (res) {
+                if (res.Status == "ok")
+                {
+                    location.href = "@Url.Action("Login","Main")";
+                }
+                else
+                {
+                    alert(res.ErrorMsg);
+                }
+            },
+            error: function ()
+            {
+                alert("服务器出错!");
+            }
+        })
+    }
+</script>
+
+}
+

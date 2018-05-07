@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Web;
+
+namespace ZSZ.FrontWeb.Models
+{
+    public class UserUpdatePassword
+    {
+        [Required]
+        public string Password { get; set; }
+        [Required]
+        [Compare(nameof(Password))]
+        public string ConfirmPassword { get; set; }
+    }
+}

@@ -55,11 +55,7 @@ namespace ZSZ.Service
             {
                 CommonService<UserEntity> csUser = new CommonService<UserEntity>(dbc);
                 var user = csUser.GetById(id);
-                if(user==null)
-                {
-                    throw new ArgumentException("User is not exist.");
-                }
-                return ToDTO(user);
+                return user == null ? null : ToDTO(user);
             }
         }
 
@@ -69,11 +65,7 @@ namespace ZSZ.Service
             {
                 CommonService<UserEntity> csUser = new CommonService<UserEntity>(dbc);
                 var user = csUser.GetAll().SingleOrDefault(p => p.PhoneNum == phoneNum);
-                if (user == null)
-                {
-                    throw new ArgumentException("User is not exist.");
-                }
-                return ToDTO(user);
+                return user == null ? null : ToDTO(user);
             }
         }
 
@@ -113,6 +105,39 @@ namespace ZSZ.Service
             }
         }
 
+        public bool IsLocked(long id)
+        {
+            var user = GetById(id);
+            return (user.LoginErrorTimes >= 5 && user.LastLoginErrorDateTime > DateTime.Now.AddMinutes(-30));
+        }
+        public void IncrLoginError(long id)
+        {
+            using (ZSZDbContext dbc = new ZSZDbContext())
+            {
+                var user = GetById(id);
+                if (user == null)
+                {
+                    throw new ArgumentException("用户不存在");
+                }
+                user.LoginErrorTimes++;
+                user.LastLoginErrorDateTime = DateTime.Now;
+                dbc.SaveChanges();
+            }
+        }
+        public void ResetLoginError(long id)
+        {
+            using (ZSZDbContext dbc = new ZSZDbContext())
+            {
+                var user = GetById(id);
+                if (user == null)
+                {
+                    throw new ArgumentException("用户不存在");
+                }
+                user.LoginErrorTimes = 0;
+                user.LastLoginErrorDateTime = null;
+                dbc.SaveChanges();
+            }
+        }
         public UserDTO ToDTO(UserEntity user)
         {
             return new UserDTO()

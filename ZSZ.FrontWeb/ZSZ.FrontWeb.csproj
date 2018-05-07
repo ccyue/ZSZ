@@ -40,7 +40,28 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.0.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.0.1\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mvc5.4.0.2\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="CaptchaGen, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CaptchaGen.1.0.0\lib\net40\CaptchaGen.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -53,6 +74,24 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.1.0\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.1.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.0\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.0\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.1.0\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -62,44 +101,115 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="System.Web.Razor">
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Webpages">
-      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Webpages.Deployment">
-      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Webpages.Razor">
-      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Helpers">
-      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Mvc">
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="css\all.css" />
+    <Content Include="css\app.css" />
+    <Content Include="css\base.css" />
+    <Content Include="css\iconfont.svg" />
+    <Content Include="css\loaders.min.css" />
+    <Content Include="css\loading.css" />
+    <Content Include="css\mui.min.css" />
+    <Content Include="css\mui.picker.min.css" />
+    <Content Include="css\page.css" />
+    <Content Include="css\swiper.min.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="img\bao.png" />
+    <Content Include="img\bg.jpg" />
+    <Content Include="img\bg.png" />
+    <Content Include="img\che.png" />
+    <Content Include="img\checketwo.png" />
+    <Content Include="img\checktwo.png" />
+    <Content Include="img\chuang.png" />
+    <Content Include="img\close.png" />
+    <Content Include="img\closetwo.png" />
+    <Content Include="img\detail-iocn001.png" />
+    <Content Include="img\detail-iocn01.png" />
+    <Content Include="img\dui.png" />
+    <Content Include="img\fang.png" />
+    <Content Include="img\huangbg.png" />
+    <Content Include="img\index-banner.jpg" />
+    <Content Include="img\left.png" />
+    <Content Include="img\left2.png" />
+    <Content Include="img\lou.png" />
+    <Content Include="img\lvbg.png" />
+    <Content Include="img\map.png" />
+    <Content Include="img\people.png" />
+    <Content Include="img\right.png" />
+    <Content Include="img\right2.png" />
+    <Content Include="img\self.png" />
+    <Content Include="img\shang.png" />
+    <Content Include="img\tel.jpg" />
+    <Content Include="img\touxiang.png" />
+    <Content Include="img\water.png" />
+    <Content Include="img\woshou.png" />
+    <Content Include="img\xia.png" />
+    <Content Include="img\xiu.png" />
+    <Content Include="img\zhi.png" />
+    <Content Include="js\app.js" />
+    <Content Include="js\city.data-3.js" />
+    <Content Include="js\city.data.js" />
+    <Content Include="js\fastclick.js" />
+    <Content Include="js\global.js" />
+    <Content Include="js\hmt.js" />
+    <Content Include="js\jquery-1.8.3.min.js" />
+    <Content Include="js\jquery.leanModal.min.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\jquery.SuperSlide.2.1.js" />
+    <Content Include="js\menu.js" />
+    <Content Include="js\mobiscroll.2.13.2.js" />
+    <Content Include="js\mui.min.js" />
+    <Content Include="js\mui.picker.min.js" />
+    <Content Include="js\psong.js" />
+    <Content Include="js\rem.js" />
+    <Content Include="js\swiper.jquery.min.js" />
+    <Content Include="js\swiper.min.js" />
+    <Content Include="js\tchuang.js" />
+    <Content Include="js\yhq.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="css\iconfont.eot" />
+    <Content Include="css\iconfont.ttf" />
+    <Content Include="css\iconfont.woff" />
+    <Content Include="fonts\mui.ttf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="slick\ajax-loader.gif" />
+    <Content Include="slick\fonts\slick.svg" />
+    <Content Include="slick\slick.css" />
+    <Content Include="slick\slick.js" />
+    <Content Include="slick\slick.min.js" />
+    <Content Include="upload\1.jpg" />
+    <Content Include="upload\2.jpg" />
+    <Content Include="upload\3.jpg" />
+    <Content Include="upload\4.jpg" />
+    <Content Include="upload\ht.jpg" />
+    <Content Include="upload\list-img.jpg" />
+    <Content Include="upload\list-tu.jpg" />
+    <Content Include="upload\map.jpg" />
+    <Content Include="upload\room.jpg" />
+    <Content Include="upload\roomlist.jpg" />
+    <Content Include="upload\yunshu.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BinderConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\ZSZExceptionFilter.cs" />
+    <Compile Include="Controllers\MainController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="FrontUnit.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\UserLoginModel.cs" />
+    <Compile Include="Models\UserRegModel.cs" />
+    <Compile Include="Models\UserUpdatePassword.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -111,6 +221,17 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="slick\fonts\slick.eot" />
+    <Content Include="slick\fonts\slick.ttf" />
+    <Content Include="slick\fonts\slick.woff" />
+    <Content Include="slick\slick.scss" />
+    <Content Include="Views\Main\Login.cshtml" />
+    <Content Include="Views\Main\Index.cshtml" />
+    <Content Include="Views\Main\Register.cshtml" />
+    <Content Include="Views\User\ForgotPassword.cshtml" />
+    <Content Include="Views\User\ForgotPassword2.cshtml" />
+    <Content Include="Views\User\ForgotPassword3.cshtml" />
+    <Content Include="Views\User\ForgotPassword4.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -120,8 +241,32 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ZSZ.CommonMVC\ZSZ.CommonMVC.csproj">
+      <Project>{9AC3667C-8450-440C-B023-BFF39E5E21EB}</Project>
+      <Name>ZSZ.CommonMVC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZSZ.Common\ZSZ.Common.csproj">
+      <Project>{cab4ad0e-4af9-4f08-a90e-67b9b93f0f17}</Project>
+      <Name>ZSZ.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZSZ.DTO\ZSZ.DTO.csproj">
+      <Project>{3c067852-054c-4a1f-8ffb-761c03b25e62}</Project>
+      <Name>ZSZ.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZSZ.IService\ZSZ.IService.csproj">
+      <Project>{4787ADE4-96ED-48F0-B0F5-F04FF41750AA}</Project>
+      <Name>ZSZ.IService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZSZ.Service\ZSZ.Service.csproj">
+      <Project>{618ac131-7cc2-4ff9-9f5e-b9fdefb584e4}</Project>
+      <Name>ZSZ.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZSZ.Web.Common\ZSZ.Web.Common.csproj">
+      <Project>{7faf08dd-fe1f-40e5-927e-83c3509ceddd}</Project>
+      <Name>ZSZ.Web.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,75 @@
+﻿@model ZSZ.FrontWeb.Models.UserLoginModel
+@{
+    ViewBag.Title = "登陆";
+}
+
+<div class="headertwo clearfloat" id="header">
+    <a href="javascript:history.go(-1)" class="fl box-s"><i class="iconfont icon-arrow-l fl"></i></a>
+    <p class="fl">登录</p>
+</div>
+
+<div class="sign clearfloat" id="main">
+    <form id="loginForm">
+        <ul>
+            <li class="clearfloat">
+                <i class="iconfont icon-phone fl"></i>
+                @Html.TextBoxFor(p => p.PhoneNum, new { placeholder = "请输入手机号", @class = "fl phone" })
+            </li>
+            <li class="clearfloat">
+                <i class="iconfont icon-lock fl"></i>
+                @Html.TextBoxFor(p => p.Password, new { placeholder = "请输入密码", @class = "fl phone", type = "password" })
+            </li>
+        </ul>
+    </form>
+    <a id ="btnLogin" href="#" class="pay-btn clearfloat">
+        登录
+    </a>
+    <div class="bottom clearfloat">
+        <p class="fl">
+            还不是会员？
+            <a href="@Url.Action("Register","Main")">立即注册</a>
+        </p>
+        <a href="@Url.Action("ForgotPassword","User")" class="fr">忘记密码？</a>
+    </div>
+</div>
+@section Footer{
+<script type="text/javascript">
+    $(function () {
+        $("#btnLogin").click(function () {
+            var phoneNum = $("#PhoneNum").val();
+            var password = $("#Password").val();
+            if (phoneNum.length == 0)
+            {
+                aler("请输入手机号!");
+            }
+            if (password.length == 0)
+            {
+                alert("密码不能为空!")
+            }
+            $.ajax({
+                url: "@Url.Action("Login","Main")",
+                dataType: "json",
+                type: "post",
+                data: { PhoneNum: phoneNum, Password : password },
+                success: function (res)
+                {
+                    if (res.Status == "ok")
+                    {
+                        location.href = "@Url.Action("Index","Main")";
+                    }
+                    else
+                    {
+                        alert(res.ErrorMsg);
+                    }
+                },
+                error: function ()
+                {
+                    alert("服务器出错");
+                }
+            })
+        });
+    });
+
+    </script>
+}
+
