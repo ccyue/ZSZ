@@ -9,3 +9,15 @@ E:\GitHub\ZSZ\TestService\obj\Debug\netstandard2.0\TestService.AssemblyInfoInput
 E:\GitHub\ZSZ\TestService\obj\Debug\netstandard2.0\TestService.AssemblyInfo.cs
 E:\GitHub\ZSZ\TestService\obj\Debug\netstandard2.0\TestService.dll
 E:\GitHub\ZSZ\TestService\obj\Debug\netstandard2.0\TestService.pdb
+C:\GitHub\ZSZ\TestService\bin\Debug\netstandard2.0\TestService.deps.json
+C:\GitHub\ZSZ\TestService\bin\Debug\netstandard2.0\TestService.dll
+C:\GitHub\ZSZ\TestService\bin\Debug\netstandard2.0\TestService.pdb
+C:\GitHub\ZSZ\TestService\bin\Debug\netstandard2.0\ITestService.dll
+C:\GitHub\ZSZ\TestService\bin\Debug\netstandard2.0\ITestService.pdb
+C:\GitHub\ZSZ\TestService\obj\Debug\netstandard2.0\TestService.csprojAssemblyReference.cache
+C:\GitHub\ZSZ\TestService\obj\Debug\netstandard2.0\TestService.csproj.CoreCompileInputs.cache
+C:\GitHub\ZSZ\TestService\obj\Debug\netstandard2.0\TestService.AssemblyInfoInputs.cache
+C:\GitHub\ZSZ\TestService\obj\Debug\netstandard2.0\TestService.AssemblyInfo.cs
+C:\GitHub\ZSZ\TestService\obj\Debug\netstandard2.0\TestService.csproj.CopyComplete
+C:\GitHub\ZSZ\TestService\obj\Debug\netstandard2.0\TestService.dll
+C:\GitHub\ZSZ\TestService\obj\Debug\netstandard2.0\TestService.pdb

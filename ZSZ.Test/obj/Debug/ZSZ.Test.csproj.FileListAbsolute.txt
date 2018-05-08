@@ -143,7 +143,6 @@ E:\GitHub\ZSZ\ZSZ.Test\bin\Debug\EntityFramework.SqlServer.xml
 C:\GitHub\ZSZ\ZSZ.Test\bin\Debug\ZSZ.Test.exe.config
 C:\GitHub\ZSZ\ZSZ.Test\obj\Debug\ZSZ.Test.exe
 C:\GitHub\ZSZ\ZSZ.Test\obj\Debug\ZSZ.Test.pdb
-C:\GitHub\ZSZ\ZSZ.Test\obj\Debug\ZSZ.Test.csprojResolveAssemblyReference.cache
 C:\GitHub\ZSZ\ZSZ.Test\bin\Debug\ZSZ.Test.exe
 C:\GitHub\ZSZ\ZSZ.Test\bin\Debug\ZSZ.Test.pdb
 C:\GitHub\ZSZ\ZSZ.Test\bin\Debug\Autofac.dll
@@ -174,3 +173,12 @@ E:\GitHub\ZSZ\ZSZ.Test\bin\Debug\ZSZ.IService.dll
 E:\GitHub\ZSZ\ZSZ.Test\bin\Debug\ZSZ.DTO.dll
 E:\GitHub\ZSZ\ZSZ.Test\bin\Debug\ZSZ.IService.pdb
 E:\GitHub\ZSZ\ZSZ.Test\bin\Debug\ZSZ.DTO.pdb
+C:\GitHub\ZSZ\ZSZ.Test\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\GitHub\ZSZ\ZSZ.Test\bin\Debug\ZSZ.IService.dll
+C:\GitHub\ZSZ\ZSZ.Test\bin\Debug\ZSZ.DTO.dll
+C:\GitHub\ZSZ\ZSZ.Test\bin\Debug\ZSZ.Service.dll.config
+C:\GitHub\ZSZ\ZSZ.Test\bin\Debug\ZSZ.IService.pdb
+C:\GitHub\ZSZ\ZSZ.Test\bin\Debug\ZSZ.DTO.pdb
+C:\GitHub\ZSZ\ZSZ.Test\obj\Debug\ZSZ.Test.csprojAssemblyReference.cache
+C:\GitHub\ZSZ\ZSZ.Test\obj\Debug\ZSZ.Test.csproj.CoreCompileInputs.cache
+C:\GitHub\ZSZ\ZSZ.Test\obj\Debug\ZSZ.Test.csproj.CopyComplete

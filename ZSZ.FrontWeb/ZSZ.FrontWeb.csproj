@@ -107,6 +107,7 @@
     <Content Include="css\all.css" />
     <Content Include="css\app.css" />
     <Content Include="css\base.css" />
+    <Content Include="css\exchangecity.css" />
     <Content Include="css\iconfont.svg" />
     <Content Include="css\loaders.min.css" />
     <Content Include="css\loading.css" />
@@ -123,6 +124,7 @@
     <Content Include="img\checketwo.png" />
     <Content Include="img\checktwo.png" />
     <Content Include="img\chuang.png" />
+    <Content Include="img\close-fc.png" />
     <Content Include="img\close.png" />
     <Content Include="img\closetwo.png" />
     <Content Include="img\detail-iocn001.png" />
@@ -232,6 +234,7 @@
     <Content Include="Views\User\ForgotPassword2.cshtml" />
     <Content Include="Views\User\ForgotPassword3.cshtml" />
     <Content Include="Views\User\ForgotPassword4.cshtml" />
+    <None Include="Views\Main\Temp.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

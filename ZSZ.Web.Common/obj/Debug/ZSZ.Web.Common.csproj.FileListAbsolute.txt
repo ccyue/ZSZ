@@ -1,6 +1,5 @@
 C:\GitHub\ZSZ\ZSZ.Web.Common\bin\Debug\ZSZ.Web.Common.dll
 C:\GitHub\ZSZ\ZSZ.Web.Common\bin\Debug\ZSZ.Web.Common.pdb
-C:\GitHub\ZSZ\ZSZ.Web.Common\obj\Debug\ZSZ.Web.Common.csprojResolveAssemblyReference.cache
 C:\GitHub\ZSZ\ZSZ.Web.Common\obj\Debug\ZSZ.Web.Common.dll
 C:\GitHub\ZSZ\ZSZ.Web.Common\obj\Debug\ZSZ.Web.Common.pdb
 E:\GitHub\ZSZ\ZSZ.Web.Common\bin\Debug\ZSZ.Web.Common.dll
@@ -9,3 +8,4 @@ E:\GitHub\ZSZ\ZSZ.Web.Common\obj\Debug\ZSZ.Web.Common.csproj.CoreCompileInputs.c
 E:\GitHub\ZSZ\ZSZ.Web.Common\obj\Debug\ZSZ.Web.Common.dll
 E:\GitHub\ZSZ\ZSZ.Web.Common\obj\Debug\ZSZ.Web.Common.pdb
 E:\GitHub\ZSZ\ZSZ.Web.Common\obj\Debug\ZSZ.Web.Common.csprojResolveAssemblyReference.cache
+C:\GitHub\ZSZ\ZSZ.Web.Common\obj\Debug\ZSZ.Web.Common.csproj.CoreCompileInputs.cache

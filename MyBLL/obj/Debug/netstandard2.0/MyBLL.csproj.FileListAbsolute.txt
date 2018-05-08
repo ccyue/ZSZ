@@ -9,3 +9,15 @@ E:\GitHub\ZSZ\MyBLL\obj\Debug\netstandard2.0\MyBLL.AssemblyInfoInputs.cache
 E:\GitHub\ZSZ\MyBLL\obj\Debug\netstandard2.0\MyBLL.AssemblyInfo.cs
 E:\GitHub\ZSZ\MyBLL\obj\Debug\netstandard2.0\MyBLL.dll
 E:\GitHub\ZSZ\MyBLL\obj\Debug\netstandard2.0\MyBLL.pdb
+C:\GitHub\ZSZ\MyBLL\bin\Debug\netstandard2.0\MyBLL.deps.json
+C:\GitHub\ZSZ\MyBLL\bin\Debug\netstandard2.0\MyBLL.dll
+C:\GitHub\ZSZ\MyBLL\bin\Debug\netstandard2.0\MyBLL.pdb
+C:\GitHub\ZSZ\MyBLL\bin\Debug\netstandard2.0\IMyBLL.dll
+C:\GitHub\ZSZ\MyBLL\bin\Debug\netstandard2.0\IMyBLL.pdb
+C:\GitHub\ZSZ\MyBLL\obj\Debug\netstandard2.0\MyBLL.csprojAssemblyReference.cache
+C:\GitHub\ZSZ\MyBLL\obj\Debug\netstandard2.0\MyBLL.csproj.CoreCompileInputs.cache
+C:\GitHub\ZSZ\MyBLL\obj\Debug\netstandard2.0\MyBLL.AssemblyInfoInputs.cache
+C:\GitHub\ZSZ\MyBLL\obj\Debug\netstandard2.0\MyBLL.AssemblyInfo.cs
+C:\GitHub\ZSZ\MyBLL\obj\Debug\netstandard2.0\MyBLL.csproj.CopyComplete
+C:\GitHub\ZSZ\MyBLL\obj\Debug\netstandard2.0\MyBLL.dll
+C:\GitHub\ZSZ\MyBLL\obj\Debug\netstandard2.0\MyBLL.pdb

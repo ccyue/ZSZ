@@ -20,7 +20,6 @@ C:\GitHub\ZSZ\ZSZ.AdminWeb\bin\System.Web.Razor.xml
 C:\GitHub\ZSZ\ZSZ.AdminWeb\bin\System.Web.WebPages.xml
 C:\GitHub\ZSZ\ZSZ.AdminWeb\bin\System.Web.WebPages.Deployment.xml
 C:\GitHub\ZSZ\ZSZ.AdminWeb\bin\System.Web.WebPages.Razor.xml
-C:\GitHub\ZSZ\ZSZ.AdminWeb\obj\Debug\ZSZ.AdminWeb.csprojResolveAssemblyReference.cache
 C:\GitHub\ZSZ\ZSZ.AdminWeb\obj\Debug\ZSZ.AdminWeb.dll
 C:\GitHub\ZSZ\ZSZ.AdminWeb\obj\Debug\ZSZ.AdminWeb.pdb
 C:\GitHub\ZSZ\ZSZ.AdminWeb\bin\Newtonsoft.Json.dll
@@ -89,3 +88,12 @@ E:\GitHub\ZSZ\ZSZ.AdminWeb\obj\Debug\ZSZ.AdminWeb.csprojResolveAssemblyReference
 E:\GitHub\ZSZ\ZSZ.AdminWeb\obj\Debug\ZSZ.AdminWeb.csproj.CoreCompileInputs.cache
 E:\GitHub\ZSZ\ZSZ.AdminWeb\obj\Debug\ZSZ.AdminWeb.dll
 E:\GitHub\ZSZ\ZSZ.AdminWeb\obj\Debug\ZSZ.AdminWeb.pdb
+C:\GitHub\ZSZ\ZSZ.AdminWeb\bin\CaptchaGen.dll
+C:\GitHub\ZSZ\ZSZ.AdminWeb\bin\CodeCarvings.Piczard.dll
+C:\GitHub\ZSZ\ZSZ.AdminWeb\bin\EntityFramework.SqlServer.dll
+C:\GitHub\ZSZ\ZSZ.AdminWeb\bin\ZSZ.Service.dll.config
+C:\GitHub\ZSZ\ZSZ.AdminWeb\bin\CodeCarvings.Piczard.xml
+C:\GitHub\ZSZ\ZSZ.AdminWeb\bin\EntityFramework.SqlServer.xml
+C:\GitHub\ZSZ\ZSZ.AdminWeb\obj\Debug\ZSZ.AdminWeb.csprojAssemblyReference.cache
+C:\GitHub\ZSZ\ZSZ.AdminWeb\obj\Debug\ZSZ.AdminWeb.csproj.CoreCompileInputs.cache
+C:\GitHub\ZSZ\ZSZ.AdminWeb\obj\Debug\ZSZ.AdminWeb.csproj.CopyComplete

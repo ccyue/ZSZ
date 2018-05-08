@@ -14,6 +14,6 @@ namespace ZSZ.IService
         /// <summary>
         /// Add new city
         /// </summary>
-        long Add(string cityName);
+        long Add(string cityName, string initials, bool isHot);
     }
 }

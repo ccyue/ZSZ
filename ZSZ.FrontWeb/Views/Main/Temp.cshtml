@@ -1,0 +1,92 @@
+﻿@using ZSZ.DTO
+
+<html>
+<head>
+
+    <link href="~/css/exchangecity.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="header" data-stellar-background-ratio="0.07" style="background-position-y: 0px;">
+        <div class="wrapper">
+            <div class="fl">
+                <a href="https://www.lianjia.com/" title="链家网" class="logo" target="_self"><h1 class="index_h1">链家网</h1></a>
+                <span class="exchange"><i></i>大连</span>
+            </div>
+            <div class="city-change animated">
+                <span class="close"></span>
+                @{
+                    CityDTO[] cities = ViewBag.Cities as CityDTO[];
+                    CityDTO[] hotCity = cities.Where(p => p.IsHot).ToArray();
+                    var dicCity = cities.GroupBy(p => p.Initials).ToDictionary(p => p.Key, p => p);
+                    var count = (int)Math.Ceiling(dicCity.Count() / 2.0);
+                    var lCity = dicCity.Take(count);
+                    var rCity = dicCity.Skip(count);
+                }
+                <div class="title">
+                    选择城市
+                    <span class="city-tab">
+                        <span class="code1">热门城市:</span>
+                        @foreach (var city in cities.Where(p => p.IsHot).ToArray())
+                        {
+                            <a href="@Url.Action("Index","Main",new { cityId = city.Id})" title="@city.Name">@city.Name</a>
+                        }
+                    </span>
+                </div>
+                <div class="title-line"></div>
+                <div class="fc-main clear">
+                    <div class="fl citys-l">
+                        <ul>
+                            @foreach (var item in lCity)
+                            {
+                                <li class="clear">
+                                    <span class="code-title fl">@item.Key</span>
+                                    <div class="city-enum fl">
+                                        @foreach (var city in item.Value)
+                                        {
+                                            <a href="@Url.Action("Index","Main",new { cityId = city.Id})" title="@city.Name">@city.Name</a>
+                                        }
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                    <div class="fl citys-r">
+                        <ul>
+                            @foreach (var item in rCity)
+                            {
+                                <li class="clear">
+                                    <span class="code-title fl">@item.Key</span>
+                                    <div class="city-enum fl">
+                                        @foreach (var city in item.Value)
+                                        {
+                                            <a href="@Url.Action("Index","Main",new { cityId = city.Id})" cityId="@city.Id" title="@city.Name">@city.Name</a>
+                                        }
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlayBg"></div>
+
+    @section Footer{
+        <script type="text/javascript">
+            $(function () {
+                $(".exchange").click(function (e) {
+                    $(".city-change").show(),
+                        $(".city-change").addClass("bounceIn"),
+                        $(".overlayBg").fadeIn(300)
+                });
+                $(".close,.overlayBg").click(function (e) {
+                    $(".city-change").fadeOut().removeClass("bounceIn"),
+                        $(".overlayBg").fadeOut()
+                });
+            })
+        </script>
+    }
+
+</body>
+</html>

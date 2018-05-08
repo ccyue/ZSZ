@@ -9,6 +9,8 @@ namespace ZSZ.DTO
     public class CityDTO : BaseDTO
     {
         public String Name { get; set; }
+        public string Initials { get; set; }
+        public bool IsHot { get; set; }
     }
 
 }

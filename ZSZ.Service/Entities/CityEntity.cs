@@ -10,5 +10,7 @@ namespace ZSZ.Service.Entities
     public class CityEntity :BaseEntity
     {
         public string Name { get; set; }
+        public string Initials { get; set; }
+        public bool IsHot { get; set; }
     }
 }

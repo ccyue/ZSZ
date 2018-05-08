@@ -65,7 +65,7 @@ namespace ServiceTests
             {
                 service.GetById(city.Id);
             }
-            var cityId = service.Add("大连");
+            var cityId = service.Add("大连","D",false);
             var newCity = service.GetById(cityId);
             Assert.AreEqual(newCity.Name, "大连");
         }

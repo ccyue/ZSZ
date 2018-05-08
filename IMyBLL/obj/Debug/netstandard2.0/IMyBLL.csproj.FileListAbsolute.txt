@@ -7,3 +7,11 @@ E:\GitHub\ZSZ\IMyBLL\obj\Debug\netstandard2.0\IMyBLL.AssemblyInfo.cs
 E:\GitHub\ZSZ\IMyBLL\obj\Debug\netstandard2.0\IMyBLL.dll
 E:\GitHub\ZSZ\IMyBLL\obj\Debug\netstandard2.0\IMyBLL.pdb
 E:\GitHub\ZSZ\IMyBLL\obj\Debug\netstandard2.0\IMyBLL.csprojResolveAssemblyReference.cache
+C:\GitHub\ZSZ\IMyBLL\bin\Debug\netstandard2.0\IMyBLL.deps.json
+C:\GitHub\ZSZ\IMyBLL\bin\Debug\netstandard2.0\IMyBLL.dll
+C:\GitHub\ZSZ\IMyBLL\bin\Debug\netstandard2.0\IMyBLL.pdb
+C:\GitHub\ZSZ\IMyBLL\obj\Debug\netstandard2.0\IMyBLL.csproj.CoreCompileInputs.cache
+C:\GitHub\ZSZ\IMyBLL\obj\Debug\netstandard2.0\IMyBLL.AssemblyInfoInputs.cache
+C:\GitHub\ZSZ\IMyBLL\obj\Debug\netstandard2.0\IMyBLL.AssemblyInfo.cs
+C:\GitHub\ZSZ\IMyBLL\obj\Debug\netstandard2.0\IMyBLL.dll
+C:\GitHub\ZSZ\IMyBLL\obj\Debug\netstandard2.0\IMyBLL.pdb

@@ -1,0 +1,521 @@
+2018-05-08 15:54:19,999 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Failed to open connection at 5/8/2018 3:54:19 PM +08:00 with error: Cannot open database "zhangshangzu" requested by the login. The login failed.
+Login failed for user 'sa'.
+
+2018-05-08 15:55:11,043 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/8/2018 3:55:11 PM +08:00
+
+2018-05-08 15:55:11,228 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[IsHot] AS [IsHot], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Cities] AS [Extent1]
+    WHERE [Extent1].[IsDeleted] <> 1
+2018-05-08 15:55:11,229 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 15:55:11,229 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/8/2018 3:55:11 PM +08:00
+
+2018-05-08 15:55:11,244 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 14 ms with result: SqlDataReader
+
+2018-05-08 15:55:11,244 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 15:55:11,246 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/8/2018 3:55:11 PM +08:00
+
+2018-05-08 15:56:11,309 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/8/2018 3:56:11 PM +08:00
+
+2018-05-08 15:56:11,309 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[IsHot] AS [IsHot], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Cities] AS [Extent1]
+    WHERE [Extent1].[IsDeleted] <> 1
+2018-05-08 15:56:11,309 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 15:56:11,309 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/8/2018 3:56:11 PM +08:00
+
+2018-05-08 15:56:11,309 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 0 ms with result: SqlDataReader
+
+2018-05-08 15:56:11,309 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 15:56:11,309 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/8/2018 3:56:11 PM +08:00
+
+2018-05-08 16:06:03,767 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/8/2018 4:06:03 PM +08:00
+
+2018-05-08 16:06:03,919 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[IsHot] AS [IsHot], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Cities] AS [Extent1]
+    WHERE [Extent1].[IsDeleted] <> 1
+2018-05-08 16:06:03,919 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:06:03,919 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/8/2018 4:06:03 PM +08:00
+
+2018-05-08 16:06:03,921 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 0 ms with result: SqlDataReader
+
+2018-05-08 16:06:03,921 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:06:03,922 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/8/2018 4:06:03 PM +08:00
+
+2018-05-08 16:15:22,916 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/8/2018 4:15:22 PM +08:00
+
+2018-05-08 16:15:23,074 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[IsHot] AS [IsHot], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Cities] AS [Extent1]
+    WHERE [Extent1].[IsDeleted] <> 1
+2018-05-08 16:15:23,074 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:15:23,074 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/8/2018 4:15:23 PM +08:00
+
+2018-05-08 16:15:23,075 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 0 ms with result: SqlDataReader
+
+2018-05-08 16:15:23,075 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:15:23,076 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/8/2018 4:15:23 PM +08:00
+
+2018-05-08 16:17:08,448 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/8/2018 4:17:08 PM +08:00
+
+2018-05-08 16:17:08,594 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[IsHot] AS [IsHot], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Cities] AS [Extent1]
+    WHERE [Extent1].[IsDeleted] <> 1
+2018-05-08 16:17:08,594 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:17:08,594 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/8/2018 4:17:08 PM +08:00
+
+2018-05-08 16:17:08,595 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 0 ms with result: SqlDataReader
+
+2018-05-08 16:17:08,595 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:17:08,596 [8] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/8/2018 4:17:08 PM +08:00
+
+2018-05-08 16:22:57,196 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/8/2018 4:22:57 PM +08:00
+
+2018-05-08 16:22:57,356 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Initials] AS [Initials], 
+    [Extent1].[IsHot] AS [IsHot], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Cities] AS [Extent1]
+    WHERE [Extent1].[IsDeleted] <> 1
+2018-05-08 16:22:57,356 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:22:57,356 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/8/2018 4:22:57 PM +08:00
+
+2018-05-08 16:22:57,369 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 12 ms with result: SqlDataReader
+
+2018-05-08 16:22:57,369 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:22:57,370 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/8/2018 4:22:57 PM +08:00
+
+2018-05-08 16:26:15,406 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/8/2018 4:26:15 PM +08:00
+
+2018-05-08 16:26:15,567 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Initials] AS [Initials], 
+    [Extent1].[IsHot] AS [IsHot], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Cities] AS [Extent1]
+    WHERE [Extent1].[IsDeleted] <> 1
+2018-05-08 16:26:15,567 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:26:15,567 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/8/2018 4:26:15 PM +08:00
+
+2018-05-08 16:26:15,574 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 7 ms with result: SqlDataReader
+
+2018-05-08 16:26:15,574 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:26:15,575 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/8/2018 4:26:15 PM +08:00
+
+2018-05-08 16:26:18,515 [5] ERROR ZSZExceptionFilter - Exception
+System.Web.HttpCompileException (0x80004005): c:\GitHub\ZSZ\ZSZ.FrontWeb\Views\Main\Temp.cshtml(44): error CS0103: The name 'key' does not exist in the current context
+   at System.Web.Compilation.AssemblyBuilder.Compile()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
+   at System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2018-05-08 16:28:43,622 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/8/2018 4:28:43 PM +08:00
+
+2018-05-08 16:28:43,622 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Initials] AS [Initials], 
+    [Extent1].[IsHot] AS [IsHot], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Cities] AS [Extent1]
+    WHERE [Extent1].[IsDeleted] <> 1
+2018-05-08 16:28:43,622 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:28:43,622 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/8/2018 4:28:43 PM +08:00
+
+2018-05-08 16:28:43,623 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 0 ms with result: SqlDataReader
+
+2018-05-08 16:28:43,623 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:28:43,623 [10] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/8/2018 4:28:43 PM +08:00
+
+2018-05-08 16:31:20,066 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/8/2018 4:31:20 PM +08:00
+
+2018-05-08 16:31:20,067 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Initials] AS [Initials], 
+    [Extent1].[IsHot] AS [IsHot], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Cities] AS [Extent1]
+    WHERE [Extent1].[IsDeleted] <> 1
+2018-05-08 16:31:20,067 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:31:20,067 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/8/2018 4:31:20 PM +08:00
+
+2018-05-08 16:31:20,067 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 0 ms with result: SqlDataReader
+
+2018-05-08 16:31:20,067 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:31:20,067 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/8/2018 4:31:20 PM +08:00
+
+2018-05-08 16:33:02,242 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/8/2018 4:33:02 PM +08:00
+
+2018-05-08 16:33:02,242 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Initials] AS [Initials], 
+    [Extent1].[IsHot] AS [IsHot], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Cities] AS [Extent1]
+    WHERE [Extent1].[IsDeleted] <> 1
+2018-05-08 16:33:02,243 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:33:02,243 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/8/2018 4:33:02 PM +08:00
+
+2018-05-08 16:33:02,243 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 0 ms with result: SqlDataReader
+
+2018-05-08 16:33:02,243 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:33:02,243 [6] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/8/2018 4:33:02 PM +08:00
+
+2018-05-08 16:52:23,262 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/8/2018 4:52:23 PM +08:00
+
+2018-05-08 16:52:23,425 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Initials] AS [Initials], 
+    [Extent1].[IsHot] AS [IsHot], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Cities] AS [Extent1]
+    WHERE [Extent1].[IsDeleted] <> 1
+2018-05-08 16:52:23,425 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:52:23,425 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/8/2018 4:52:23 PM +08:00
+
+2018-05-08 16:52:23,426 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 0 ms with result: SqlDataReader
+
+2018-05-08 16:52:23,426 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:52:23,427 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/8/2018 4:52:23 PM +08:00
+
+2018-05-08 16:54:47,719 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/8/2018 4:54:47 PM +08:00
+
+2018-05-08 16:54:47,719 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Initials] AS [Initials], 
+    [Extent1].[IsHot] AS [IsHot], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Cities] AS [Extent1]
+    WHERE [Extent1].[IsDeleted] <> 1
+2018-05-08 16:54:47,719 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:54:47,719 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/8/2018 4:54:47 PM +08:00
+
+2018-05-08 16:54:47,720 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 0 ms with result: SqlDataReader
+
+2018-05-08 16:54:47,720 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:54:47,720 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/8/2018 4:54:47 PM +08:00
+
+2018-05-08 16:55:12,945 [17] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/8/2018 4:55:12 PM +08:00
+
+2018-05-08 16:55:12,945 [17] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Initials] AS [Initials], 
+    [Extent1].[IsHot] AS [IsHot], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Cities] AS [Extent1]
+    WHERE [Extent1].[IsDeleted] <> 1
+2018-05-08 16:55:12,945 [17] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:55:12,945 [17] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/8/2018 4:55:12 PM +08:00
+
+2018-05-08 16:55:12,946 [17] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 0 ms with result: SqlDataReader
+
+2018-05-08 16:55:12,946 [17] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:55:12,946 [17] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/8/2018 4:55:12 PM +08:00
+
+2018-05-08 16:55:54,817 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/8/2018 4:55:54 PM +08:00
+
+2018-05-08 16:55:54,817 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Initials] AS [Initials], 
+    [Extent1].[IsHot] AS [IsHot], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Cities] AS [Extent1]
+    WHERE [Extent1].[IsDeleted] <> 1
+2018-05-08 16:55:54,817 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:55:54,817 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/8/2018 4:55:54 PM +08:00
+
+2018-05-08 16:55:54,817 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 0 ms with result: SqlDataReader
+
+2018-05-08 16:55:54,817 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:55:54,818 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/8/2018 4:55:54 PM +08:00
+
+2018-05-08 16:56:01,760 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/8/2018 4:56:01 PM +08:00
+
+2018-05-08 16:56:01,760 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Initials] AS [Initials], 
+    [Extent1].[IsHot] AS [IsHot], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Cities] AS [Extent1]
+    WHERE [Extent1].[IsDeleted] <> 1
+2018-05-08 16:56:01,760 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:56:01,760 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/8/2018 4:56:01 PM +08:00
+
+2018-05-08 16:56:01,761 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 0 ms with result: SqlDataReader
+
+2018-05-08 16:56:01,761 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:56:01,761 [14] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/8/2018 4:56:01 PM +08:00
+
+2018-05-08 16:56:20,953 [22] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/8/2018 4:56:20 PM +08:00
+
+2018-05-08 16:56:20,953 [22] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Initials] AS [Initials], 
+    [Extent1].[IsHot] AS [IsHot], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Cities] AS [Extent1]
+    WHERE [Extent1].[IsDeleted] <> 1
+2018-05-08 16:56:20,953 [22] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:56:20,953 [22] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/8/2018 4:56:20 PM +08:00
+
+2018-05-08 16:56:20,954 [22] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 0 ms with result: SqlDataReader
+
+2018-05-08 16:56:20,954 [22] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:56:20,954 [22] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/8/2018 4:56:20 PM +08:00
+
+2018-05-08 16:56:42,944 [17] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/8/2018 4:56:42 PM +08:00
+
+2018-05-08 16:56:42,944 [17] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Initials] AS [Initials], 
+    [Extent1].[IsHot] AS [IsHot], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Cities] AS [Extent1]
+    WHERE [Extent1].[IsDeleted] <> 1
+2018-05-08 16:56:42,944 [17] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:56:42,944 [17] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/8/2018 4:56:42 PM +08:00
+
+2018-05-08 16:56:42,944 [17] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 0 ms with result: SqlDataReader
+
+2018-05-08 16:56:42,944 [17] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:56:42,945 [17] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/8/2018 4:56:42 PM +08:00
+
+2018-05-08 16:58:00,829 [21] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/8/2018 4:58:00 PM +08:00
+
+2018-05-08 16:58:00,830 [21] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Initials] AS [Initials], 
+    [Extent1].[IsHot] AS [IsHot], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Cities] AS [Extent1]
+    WHERE [Extent1].[IsDeleted] <> 1
+2018-05-08 16:58:00,830 [21] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:58:00,830 [21] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/8/2018 4:58:00 PM +08:00
+
+2018-05-08 16:58:00,830 [21] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 0 ms with result: SqlDataReader
+
+2018-05-08 16:58:00,831 [21] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:58:00,831 [21] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/8/2018 4:58:00 PM +08:00
+
+2018-05-08 16:59:18,118 [19] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/8/2018 4:59:18 PM +08:00
+
+2018-05-08 16:59:18,119 [19] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Initials] AS [Initials], 
+    [Extent1].[IsHot] AS [IsHot], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Cities] AS [Extent1]
+    WHERE [Extent1].[IsDeleted] <> 1
+2018-05-08 16:59:18,119 [19] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:59:18,119 [19] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/8/2018 4:59:18 PM +08:00
+
+2018-05-08 16:59:18,119 [19] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 0 ms with result: SqlDataReader
+
+2018-05-08 16:59:18,119 [19] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 16:59:18,120 [19] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/8/2018 4:59:18 PM +08:00
+
+2018-05-08 18:44:39,726 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/8/2018 6:44:39 PM +08:00
+
+2018-05-08 18:44:39,962 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Initials] AS [Initials], 
+    [Extent1].[IsHot] AS [IsHot], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Cities] AS [Extent1]
+    WHERE [Extent1].[IsDeleted] <> 1
+2018-05-08 18:44:39,962 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 18:44:39,963 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/8/2018 6:44:39 PM +08:00
+
+2018-05-08 18:44:39,963 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 0 ms with result: SqlDataReader
+
+2018-05-08 18:44:39,963 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 18:44:39,965 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/8/2018 6:44:39 PM +08:00
+
+2018-05-08 18:44:39,983 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/8/2018 6:44:39 PM +08:00
+
+2018-05-08 18:44:39,983 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Initials] AS [Initials], 
+    [Extent1].[IsHot] AS [IsHot], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Cities] AS [Extent1]
+    WHERE [Extent1].[IsDeleted] <> 1
+2018-05-08 18:44:39,983 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 18:44:39,984 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/8/2018 6:44:39 PM +08:00
+
+2018-05-08 18:44:39,984 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 0 ms with result: SqlDataReader
+
+2018-05-08 18:44:39,984 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 18:44:39,984 [5] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/8/2018 6:44:39 PM +08:00
+
+2018-05-08 18:44:43,727 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/8/2018 6:44:43 PM +08:00
+
+2018-05-08 18:44:43,728 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Initials] AS [Initials], 
+    [Extent1].[IsHot] AS [IsHot], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Cities] AS [Extent1]
+    WHERE [Extent1].[IsDeleted] <> 1
+2018-05-08 18:44:43,728 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 18:44:43,728 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/8/2018 6:44:43 PM +08:00
+
+2018-05-08 18:44:43,728 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 0 ms with result: SqlDataReader
+
+2018-05-08 18:44:43,728 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 18:44:43,728 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/8/2018 6:44:43 PM +08:00
+
+2018-05-08 18:44:43,729 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/8/2018 6:44:43 PM +08:00
+
+2018-05-08 18:44:43,729 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Initials] AS [Initials], 
+    [Extent1].[IsHot] AS [IsHot], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Cities] AS [Extent1]
+    WHERE [Extent1].[IsDeleted] <> 1
+2018-05-08 18:44:43,729 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 18:44:43,729 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/8/2018 6:44:43 PM +08:00
+
+2018-05-08 18:44:43,730 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 0 ms with result: SqlDataReader
+
+2018-05-08 18:44:43,730 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 18:44:43,730 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/8/2018 6:44:43 PM +08:00
+
+2018-05-08 18:44:49,768 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/8/2018 6:44:49 PM +08:00
+
+2018-05-08 18:44:49,768 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Initials] AS [Initials], 
+    [Extent1].[IsHot] AS [IsHot], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Cities] AS [Extent1]
+    WHERE [Extent1].[IsDeleted] <> 1
+2018-05-08 18:44:49,768 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 18:44:49,768 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/8/2018 6:44:49 PM +08:00
+
+2018-05-08 18:44:49,768 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 0 ms with result: SqlDataReader
+
+2018-05-08 18:44:49,768 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-08 18:44:49,769 [9] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/8/2018 6:44:49 PM +08:00
+

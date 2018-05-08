@@ -1,9 +1,19 @@
-﻿
+﻿@using ZSZ.DTO
 @{
     ViewBag.Title = "Index";
 }
 @section Header{
     <link rel="stylesheet" href="~/css/swiper.min.css">
+    <link href="~/css/exchangecity.css" rel="stylesheet" />
+}
+@{
+    CityDTO[] cities = ViewBag.Cities as CityDTO[];
+    CityDTO[] hotCity = cities.Where(p => p.IsHot).ToArray();
+    var currentCityName = cities.Where(p => p.Id == (long)ViewBag.CurrentCityId).FirstOrDefault().Name;
+    var dicCity = cities.GroupBy(p => p.Initials).ToDictionary(p => p.Key, p => p);
+    var count = (int)Math.Ceiling(dicCity.Count() / 2.0);
+    var lCity = dicCity.Take(count);
+    var rCity = dicCity.Skip(count);
 }
 <!--header star-->
 <div class="header clearfloat">
@@ -12,7 +22,7 @@
     </div>
     <header class="mui-bar mui-bar-nav">
         <a class="btn" href="#">
-            <p>北京<i class="iconfont icon-iconfontarrowdown-copy"></i></p>
+            <p id="exchange" style="margin-bottom:0px;">@currentCityName<i class="iconfont icon-iconfontarrowdown-copy"></i></p>
         </a>
         <div class="top-sch-box flex-col">
             <div class="centerflex">
@@ -177,7 +187,57 @@
         </div>
     </div>
 </div>
-
+<!--change city star-->
+<div class="city-change animated">
+    <span class="close"></span>
+    <div class="title">
+        选择城市
+        <span class="city-tab">
+            <span class="code1">热门城市:</span>
+            @foreach (var city in cities.Where(p => p.IsHot).ToArray())
+            {
+                <a href="@Url.Action("Index","Main",new { cityId = city.Id})" title="@city.Name">@city.Name</a>
+            }
+        </span>
+    </div>
+    <div class="title-line"></div>
+    <div class="fc-main clear">
+        <div class="fl citys-l">
+            <ul>
+                @foreach (var item in lCity)
+                {
+                    <li class="clear">
+                        <span class="code-title fl">@item.Key</span>
+                        <div class="city-enum fl">
+                            @foreach (var city in item.Value)
+                            {
+                                <a href="@Url.Action("Index","Main",new { cityId = city.Id})" title="@city.Name">@city.Name</a>
+                            }
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="fl citys-r">
+            <ul>
+                @foreach (var item in rCity)
+                {
+                    <li class="clear">
+                        <span class="code-title fl">@item.Key</span>
+                        <div class="city-enum fl">
+                            @foreach (var city in item.Value)
+                            {
+                                <a href="@Url.Action("Index","Main",new { cityId = city.Id})" cityId="@city.Id" title="@city.Name">@city.Name</a>
+                            }
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="overlayBg"></div>
+<!--change city end-->
 <footer class="page-footer fixed-footer" id="footer">
     <ul>
         <li class="active">
@@ -237,8 +297,19 @@
                 }
             });
 
+            /*change city*/
+            $("#exchange").click(function (e) {
+                $(".city-change").show(),
+                    $(".city-change").addClass("bounceIn"),
+                    $(".overlayBg").fadeIn(300)
+            });
+            $(".close,.overlayBg").click(function (e) {
+                $(".city-change").fadeOut().removeClass("bounceIn"),
+                    $(".overlayBg").fadeOut()
+            });
+
         });
-</script>
+    </script>
 
 }
 

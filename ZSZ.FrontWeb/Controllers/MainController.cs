@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using ZSZ.Common;
 using ZSZ.CommonMVC;
+using ZSZ.DTO;
 using ZSZ.FrontWeb.Models;
 using ZSZ.IService;
 
@@ -16,8 +17,15 @@ namespace ZSZ.FrontWeb.Controllers
     {
         public ISettingService SettingService { get; set; }
         public IUserService UserService { get; set; }
-        public ActionResult Index()
+        public ICityService CityService { get; set; }
+        public ActionResult Index(long? cityId)
         {
+            if(cityId==null)
+            {
+                cityId = FrontUnit.GetCityID(HttpContext);
+            }
+            ViewBag.CurrentCityId = cityId;
+            ViewBag.Cities = CityService.GetAll();
             return View();
         }
         [HttpGet]

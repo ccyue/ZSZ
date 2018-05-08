@@ -12,7 +12,7 @@ namespace ZSZ.Service
 {
     public class CityService : ICityService
     {
-        public long Add(string cityName)
+        public long Add(string cityName,string initials,bool isHot)
         {
             using(ZSZDbContext dbc = new ZSZDbContext())
             {
@@ -23,7 +23,11 @@ namespace ZSZ.Service
                 {
                     throw new ArgumentException(string.Format("{0} has already exist.", cityName));
                 }
-                CityEntity city = new CityEntity(){ Name= cityName, CreateDateTime =DateTime.Now};
+                CityEntity city = new CityEntity(){
+                    Name = cityName,
+                    Initials = initials,
+                    IsHot = isHot,
+                    CreateDateTime =DateTime.Now};
                 dbc.Cities.Add(city);
                 dbc.SaveChanges();
                 return city.Id;
@@ -54,6 +58,8 @@ namespace ZSZ.Service
             {
                 Id = city.Id,
                 Name = city.Name,
+                Initials = city.Initials,
+                IsHot = city.IsHot,
                 CreateDateTime = city.CreateDateTime
             };
         }

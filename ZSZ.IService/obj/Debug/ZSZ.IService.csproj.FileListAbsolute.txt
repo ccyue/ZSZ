@@ -1,6 +1,5 @@
 C:\GitHub\ZSZ\ZSZ.IService\bin\Debug\ZSZ.IService.dll
 C:\GitHub\ZSZ\ZSZ.IService\bin\Debug\ZSZ.IService.pdb
-C:\GitHub\ZSZ\ZSZ.IService\obj\Debug\ZSZ.IService.csprojResolveAssemblyReference.cache
 C:\GitHub\ZSZ\ZSZ.IService\obj\Debug\ZSZ.IService.dll
 C:\GitHub\ZSZ\ZSZ.IService\obj\Debug\ZSZ.IService.pdb
 E:\GitHub\ZSZ\ZSZ.IService\bin\Debug\ZSZ.IService.dll
@@ -11,3 +10,8 @@ E:\GitHub\ZSZ\ZSZ.IService\obj\Debug\ZSZ.IService.csprojResolveAssemblyReference
 E:\GitHub\ZSZ\ZSZ.IService\obj\Debug\ZSZ.IService.csproj.CoreCompileInputs.cache
 E:\GitHub\ZSZ\ZSZ.IService\obj\Debug\ZSZ.IService.dll
 E:\GitHub\ZSZ\ZSZ.IService\obj\Debug\ZSZ.IService.pdb
+C:\GitHub\ZSZ\ZSZ.IService\bin\Debug\ZSZ.DTO.dll
+C:\GitHub\ZSZ\ZSZ.IService\bin\Debug\ZSZ.DTO.pdb
+C:\GitHub\ZSZ\ZSZ.IService\obj\Debug\ZSZ.IService.csprojAssemblyReference.cache
+C:\GitHub\ZSZ\ZSZ.IService\obj\Debug\ZSZ.IService.csproj.CoreCompileInputs.cache
+C:\GitHub\ZSZ\ZSZ.IService\obj\Debug\ZSZ.IService.csproj.CopyComplete
