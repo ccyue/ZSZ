@@ -24,6 +24,10 @@ namespace ZSZ.FrontWeb.Controllers
             {
                 cityId = FrontUnit.GetCityID(HttpContext);
             }
+            else
+            {
+                Session["CityId"] = cityId;
+            }
             ViewBag.CurrentCityId = cityId;
             ViewBag.Cities = CityService.GetAll();
             return View();

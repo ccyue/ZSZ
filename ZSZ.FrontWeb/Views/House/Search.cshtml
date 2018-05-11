@@ -1,0 +1,80 @@
+﻿@using ZSZ.CommonMVC
+@model ZSZ.FrontWeb.Models.HouseSearchViewModel
+@{
+    ViewBag.Title = "Search";
+}
+
+<div class="headertwo clearfloat" id="header">
+    <a href="javascript:history.go(-1)" class="fl box-s"><i class="iconfont icon-arrow-l fl"></i></a>
+    <p class="fl">北京</p>
+    <a href="javascript:history.go(-1)" class="fr"><i class="iconfont icon-sousuo fl"></i></a>
+</div>
+<div class="clearfloat" id="main">
+    <div class="menu-list clearfloat am-sharetwo">
+        <ul class="yiji" id="oe_menu">
+            <li>
+                <a href="#" class="inactive">区域<i></i></a>
+                <ul style="display: none">
+                    <li><a href="~/House/Search?@(Html.Raw(MVCHelper.RemoveQueryString(Request.QueryString,"RegionId")))">全部</a></li>
+                    @foreach (var item in Model.regions)
+                    {
+                        <li><a href="~/House/Search?@(Html.Raw(MVCHelper.UpdateQueryString(Request.QueryString,"RegionId",item.Id.ToString())))">@item.Name</a></li>
+                    }
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="inactive">租金<i></i></a>
+                <ul style="display: none">
+                    <li><a href="~/House/Search?@(Html.Raw(MVCHelper.RemoveQueryString(Request.QueryString,"MonthRent")))">全部</a></li>
+                    <li><a href="~/House/Search?@(Html.Raw(MVCHelper.UpdateQueryString(Request.QueryString,"MonthRent","*-1000")))">1000以下</a></li>
+                    <li><a href="~/House/Search?@(Html.Raw(MVCHelper.UpdateQueryString(Request.QueryString,"MonthRent","1000-2000")))">1000-2000</a></li>
+                    <li><a href="~/House/Search?@(Html.Raw(MVCHelper.UpdateQueryString(Request.QueryString,"MonthRent","2000-3000")))">2000-3000</a></li>
+                    <li><a href="~/House/Search?@(Html.Raw(MVCHelper.UpdateQueryString(Request.QueryString,"MonthRent","3000-*")))">3000-*</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="inactive">排序<i></i></a>
+                <ul style="display: none">
+                    <li><a href="~/House/Search?@(MVCHelper.UpdateQueryString(Request.QueryString,"OrderByType","MonthRentAsc"))">租金从低到高</a></li>
+                    <li><a href="~/House/Search?@(MVCHelper.UpdateQueryString(Request.QueryString,"OrderByType","MonthRentDesc"))">租金从高到低</a></li>
+                    <li><a href="~/House/Search?@(MVCHelper.UpdateQueryString(Request.QueryString,"OrderByType","AreaAsc"))">面积从小到大</a></li>
+                    <li><a href="~/House/Search?@(MVCHelper.UpdateQueryString(Request.QueryString,"OrderByType","AreaDesc"))">面积从大到小</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="recom clearfloat recomtwo">
+        <div class="content clearfloat box-s">
+            @foreach (var house in Model.houses)
+            {
+                <div class="list clearfloat fl box-s">
+                    <a href="house-details.html">
+                        <div class="tu clearfloat">
+                            <span></span>
+                            <img src="upload/list-tu.jpg" />
+                        </div>
+                        <div class="right clearfloat">
+                            <div class="tit clearfloat">
+                                <p class="fl">@house.CommunityName</p>
+                                <span class="fr">@house.MonthRent<samp>元/月</samp></span>
+                            </div>
+                            <p class="recom-jianjie">@house.RoomTypeName   |  @(house.Area)m²  |  @house.DecorateStatusName</p>
+                            <div class="recom-bottom clearfloat">
+                                <span><i class="iconfont icon-duihao"></i>随时住</span>
+                                <span><i class="iconfont icon-duihao"></i>家电齐全</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Footer
+{
+    <script type="text/javascript" src="~/js/psong.js"></script>
+    <script type="text/javascript" src="~/js/menu.js"></script>
+
+}

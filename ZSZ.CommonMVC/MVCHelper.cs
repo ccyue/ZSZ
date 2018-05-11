@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Text;
 using System.Web.Mvc;
+using System.Linq;
 
 namespace ZSZ.CommonMVC
 {
@@ -23,6 +25,38 @@ namespace ZSZ.CommonMVC
                 }
             }
             return sb.ToString();
+        }
+        public static string ToQueryString(NameValueCollection nvc)
+        {
+            StringBuilder strb = new StringBuilder();
+            foreach(var key in nvc.AllKeys)
+            {
+                strb.Append(key).Append("=").Append(nvc[key]).Append("&");
+            }
+            return strb.ToString().Trim('&');
+        }
+        public static string UpdateQueryString(NameValueCollection nvc,string name,string value)
+        {
+            NameValueCollection newNVC = new NameValueCollection(nvc);
+            if(newNVC.AllKeys.Contains(name))
+            {
+                newNVC[name] = value;
+            }
+            else
+            {
+                newNVC.Add(name, value);
+            }
+            return ToQueryString(newNVC);
+        }
+        public static string RemoveQueryString(NameValueCollection nvc, string name)
+        {
+            NameValueCollection newNVC = new NameValueCollection(nvc);
+            if (newNVC.AllKeys.Contains(name))
+            {
+                newNVC.Remove(name);
+            }
+
+            return ToQueryString(newNVC);
         }
     }
 }

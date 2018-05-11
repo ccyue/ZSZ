@@ -15,3 +15,4 @@ C:\GitHub\ZSZ\IMyBLL\obj\Debug\netstandard2.0\IMyBLL.AssemblyInfoInputs.cache
 C:\GitHub\ZSZ\IMyBLL\obj\Debug\netstandard2.0\IMyBLL.AssemblyInfo.cs
 C:\GitHub\ZSZ\IMyBLL\obj\Debug\netstandard2.0\IMyBLL.dll
 C:\GitHub\ZSZ\IMyBLL\obj\Debug\netstandard2.0\IMyBLL.pdb
+C:\GitHub\ZSZ\IMyBLL\obj\Debug\netstandard2.0\IMyBLL.csprojAssemblyReference.cache

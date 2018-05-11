@@ -203,12 +203,15 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\ZSZExceptionFilter.cs" />
+    <Compile Include="Controllers\HouseController.cs" />
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="FrontUnit.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\HouseSearchViewModel.cs" />
+    <Compile Include="Models\HouseViewModel.cs" />
     <Compile Include="Models\UserLoginModel.cs" />
     <Compile Include="Models\UserRegModel.cs" />
     <Compile Include="Models\UserUpdatePassword.cs" />
@@ -234,7 +237,10 @@
     <Content Include="Views\User\ForgotPassword2.cshtml" />
     <Content Include="Views\User\ForgotPassword3.cshtml" />
     <Content Include="Views\User\ForgotPassword4.cshtml" />
+    <Content Include="Views\House\Index.cshtml" />
+    <Content Include="Views\House\Search.cshtml" />
     <None Include="Views\Main\Temp.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

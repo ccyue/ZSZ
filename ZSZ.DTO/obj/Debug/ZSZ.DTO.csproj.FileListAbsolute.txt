@@ -9,3 +9,4 @@ E:\GitHub\ZSZ\ZSZ.DTO\obj\Debug\ZSZ.DTO.dll
 E:\GitHub\ZSZ\ZSZ.DTO\obj\Debug\ZSZ.DTO.pdb
 E:\GitHub\ZSZ\ZSZ.DTO\obj\Debug\ZSZ.DTO.csprojResolveAssemblyReference.cache
 C:\GitHub\ZSZ\ZSZ.DTO\obj\Debug\ZSZ.DTO.csproj.CoreCompileInputs.cache
+C:\GitHub\ZSZ\ZSZ.DTO\obj\Debug\ZSZ.DTO.csprojAssemblyReference.cache

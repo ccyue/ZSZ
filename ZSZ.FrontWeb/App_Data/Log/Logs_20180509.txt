@@ -1,0 +1,84 @@
+2018-05-09 10:05:06,637 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/9/2018 10:05:06 AM +08:00
+
+2018-05-09 10:05:06,813 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Initials] AS [Initials], 
+    [Extent1].[IsHot] AS [IsHot], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Cities] AS [Extent1]
+    WHERE [Extent1].[IsDeleted] <> 1
+2018-05-09 10:05:06,813 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-09 10:05:06,814 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/9/2018 10:05:06 AM +08:00
+
+2018-05-09 10:05:06,816 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 2 ms with result: SqlDataReader
+
+2018-05-09 10:05:06,816 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-09 10:05:06,817 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/9/2018 10:05:06 AM +08:00
+
+2018-05-09 10:05:06,831 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/9/2018 10:05:06 AM +08:00
+
+2018-05-09 10:05:06,831 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Initials] AS [Initials], 
+    [Extent1].[IsHot] AS [IsHot], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Cities] AS [Extent1]
+    WHERE [Extent1].[IsDeleted] <> 1
+2018-05-09 10:05:06,831 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-09 10:05:06,831 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/9/2018 10:05:06 AM +08:00
+
+2018-05-09 10:05:06,832 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 0 ms with result: SqlDataReader
+
+2018-05-09 10:05:06,832 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-09 10:05:06,832 [11] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/9/2018 10:05:06 AM +08:00
+
+2018-05-09 16:42:18,947 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/9/2018 4:42:18 PM +08:00
+
+2018-05-09 16:42:20,103 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Initials] AS [Initials], 
+    [Extent1].[IsHot] AS [IsHot], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Cities] AS [Extent1]
+    WHERE [Extent1].[IsDeleted] <> 1
+2018-05-09 16:42:20,103 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-09 16:42:20,103 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/9/2018 4:42:20 PM +08:00
+
+2018-05-09 16:42:20,103 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 3 ms with result: SqlDataReader
+
+2018-05-09 16:42:20,103 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-09 16:42:20,119 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/9/2018 4:42:20 PM +08:00
+
+2018-05-09 16:42:20,134 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Opened connection at 5/9/2018 4:42:20 PM +08:00
+
+2018-05-09 16:42:20,134 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:SELECT 
+    [Extent1].[Id] AS [Id], 
+    [Extent1].[Name] AS [Name], 
+    [Extent1].[Initials] AS [Initials], 
+    [Extent1].[IsHot] AS [IsHot], 
+    [Extent1].[CreateDateTime] AS [CreateDateTime], 
+    [Extent1].[IsDeleted] AS [IsDeleted]
+    FROM [dbo].[T_Cities] AS [Extent1]
+    WHERE [Extent1].[IsDeleted] <> 1
+2018-05-09 16:42:20,134 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-09 16:42:20,134 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Executing at 5/9/2018 4:42:20 PM +08:00
+
+2018-05-09 16:42:20,134 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:-- Completed in 0 ms with result: SqlDataReader
+
+2018-05-09 16:42:20,134 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:
+
+2018-05-09 16:42:20,134 [7] DEBUG ZSZ.Service.ZSZDbContext - EF执行SQL:Closed connection at 5/9/2018 4:42:20 PM +08:00
+
