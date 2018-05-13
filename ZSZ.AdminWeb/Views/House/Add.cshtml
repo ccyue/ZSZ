@@ -84,7 +84,9 @@
         <div class="row cl">
             <label class="form-label col-2"><span class="c-red">*</span>房源描述：</label>
             <div class="formControls col-10">
-                @Html.TextAreaFor(p => p.Description, new { @class = "textarea", placeholder = "说点什么...最少输入10个字符",datatype = "*10-100" })
+                <script id="container" name="Description" type="text/plain">
+                    @Html.Raw(Model.Description)
+                </script>
             </div>
         </div>
         <div class="row cl">
@@ -113,8 +115,10 @@
 @section FooterScript{
     <script type="text/javascript" src="~/lib/My97DatePicker/WdatePicker.js"></script> 
     <script type="text/javascript" src="~/lib/Validform/5.3.2/Validform.min.js"></script>
+    <script type="text/javascript" src="~/lib/ueditor/1.4.3/ueditor.config.js"></script>
+    <script type="text/javascript" src="~/lib/ueditor/1.4.3/ueditor.all.js"></script>
     <script type="text/javascript">
-
+        var ue = UE.getEditor('container');
         var getCommunity = function () {
             var regionId = $("#RegionId").val();
             if (regionId.length == 0 || regionId == '0')
@@ -148,7 +152,9 @@
         }
 
 
-    function saveAjax () {
+        function saveAjax() {
+        var description = ue.getContent();
+        $("Description").val(description);
         $.ajax({
             url: "@Url.Action("Add","House")",
             type: "POST",
@@ -194,8 +200,10 @@
             error: function () {
                 alert("服务器出错!");
             }
+            });
+
         });
-        });
+
     });
     </script>
 }

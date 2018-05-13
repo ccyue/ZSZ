@@ -18,6 +18,7 @@ namespace ZSZ.FrontWeb.Controllers
         public ISettingService SettingService { get; set; }
         public IUserService UserService { get; set; }
         public ICityService CityService { get; set; }
+        public IIdNameService IdNameService { get; set; }
         public ActionResult Index(long? cityId)
         {
             if(cityId==null)
@@ -28,9 +29,11 @@ namespace ZSZ.FrontWeb.Controllers
             {
                 Session["CityId"] = cityId;
             }
-            ViewBag.CurrentCityId = cityId;
-            ViewBag.Cities = CityService.GetAll();
-            return View();
+            IndexModelView model = new IndexModelView();
+            model.CityId = cityId.Value;
+            model.Cities = CityService.GetAll();
+            model.Types = IdNameService.GetAll("房屋类别").ToDictionary(p=>p.Name,p=>p.Id);
+            return View(model);
         }
         [HttpGet]
         public ActionResult Login()

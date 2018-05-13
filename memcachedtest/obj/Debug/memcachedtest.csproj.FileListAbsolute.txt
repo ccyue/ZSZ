@@ -1,0 +1,9 @@
+E:\GitHub\ZSZ\memcachedtest\bin\Debug\memcachedtest.exe.config
+E:\GitHub\ZSZ\memcachedtest\bin\Debug\memcachedtest.exe
+E:\GitHub\ZSZ\memcachedtest\bin\Debug\memcachedtest.pdb
+E:\GitHub\ZSZ\memcachedtest\bin\Debug\Enyim.Caching.dll
+E:\GitHub\ZSZ\memcachedtest\bin\Debug\Enyim.Caching.xml
+E:\GitHub\ZSZ\memcachedtest\obj\Debug\memcachedtest.csproj.CoreCompileInputs.cache
+E:\GitHub\ZSZ\memcachedtest\obj\Debug\memcachedtest.exe
+E:\GitHub\ZSZ\memcachedtest\obj\Debug\memcachedtest.pdb
+E:\GitHub\ZSZ\memcachedtest\obj\Debug\memcachedtest.csprojResolveAssemblyReference.cache

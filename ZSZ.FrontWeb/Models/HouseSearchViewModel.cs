@@ -8,6 +8,7 @@ namespace ZSZ.FrontWeb.Models
 {
     public class HouseSearchViewModel
     {
+        public string CityName { get; set; }
         public RegionDTO[] regions { get; set; }
         public HouseDTO[] houses { get; set; }
     }

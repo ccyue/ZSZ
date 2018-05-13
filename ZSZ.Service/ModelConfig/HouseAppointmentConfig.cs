@@ -19,7 +19,7 @@ namespace ZSZ.Service.ModelConfig
             Property(h => h.Name).IsRequired().HasMaxLength(20);
             Property(h => h.PhoneNum).IsRequired().HasMaxLength(20).IsUnicode(false);
             Property(h => h.Status).IsRequired().HasMaxLength(20);
-            Property(h => h.RowVersion).IsRequired().IsRowVersion();
+            Property(h => h.RowVersion).IsRequired().IsRowVersion();  //乐观锁
         }
     }
 }

@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<div class="headertwo clearfloat" id="header">
+    <a href="javascript:history.go(-1)" class="fl box-s"><i class="iconfont icon-arrow-l fl"></i></a>
+    <p class="fl">个人中心</p>
+</div>
+<div class="clearfloat pcenter" id="main">
+    <div class="p-list p-listwo clearfloat box-s">
+        <a href="collection.html" class="clearfloat">
+            <i class="iconfont icon-favorite fl xing"></i>
+            <span class="fl">我的收藏</span>
+            <i class="iconfont icon-arrowright fr you"></i>
+        </a>
+    </div>
+
+    <div class="p-list p-listhree clearfloat box-s">
+        <a href="entrust.html" class="clearfloat">
+            <i class="iconfont icon-weituoguanli fl weituoguanli"></i>
+            <span class="fl">我的委托管理</span>
+            <i class="iconfont icon-arrowright fr you"></i>
+        </a>
+    </div>
+
+    <div class="p-list p-listwo clearfloat box-s">
+        <a href="extension.html" class="clearfloat">
+            <i class="iconfont icon-gonggao fl gonggao"></i>
+            <span class="fl">我要推广</span>
+            <i class="iconfont icon-arrowright fr you"></i>
+        </a>
+    </div>
+    <div class="p-list p-listhree clearfloat box-s">
+        <a href="about.html" class="clearfloat">
+            <i class="iconfont icon-gerenzhongxin fl gerenzhongxin"></i>
+            <span class="fl">关于我们</span>
+            <i class="iconfont icon-arrowright fr you"></i>
+        </a>
+    </div>
+    <div class="p-list p-listhree clearfloat box-s">
+        <a href="modify.html" class="clearfloat">
+            <i class="iconfont icon-lock fl lock"></i>
+            <span class="fl">修改密码</span>
+            <i class="iconfont icon-arrowright fr you"></i>
+        </a>
+    </div>
+</div>
+
+@{Html.RenderPartial("_Footer");}
+
+

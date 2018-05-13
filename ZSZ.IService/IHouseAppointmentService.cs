@@ -12,7 +12,7 @@ namespace ZSZ.IService
         long Add(long? userId, string name, string phoneNum, long houseId, DateTime visitDate);
         bool Follow(long adminUserId, long houseAppointmentId);
         HouseAppointmentDTO GetById(long id);
-        long GetTotalCount(long cityId, string status);
-        HouseAppointmentDTO[] GetPageData(long cityId, string status, int pageSize, int currentIndex);
+        long GetTotalCount(long cityId, string status, long? userId);
+        HouseAppointmentDTO[] GetPageData(long cityId, string status, int pageSize, int currentIndex, long? userId);
     }
 }

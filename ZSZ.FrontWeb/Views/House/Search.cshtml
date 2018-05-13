@@ -6,7 +6,7 @@
 
 <div class="headertwo clearfloat" id="header">
     <a href="javascript:history.go(-1)" class="fl box-s"><i class="iconfont icon-arrow-l fl"></i></a>
-    <p class="fl">北京</p>
+    <p class="fl">@Model.CityName</p>
     <a href="javascript:history.go(-1)" class="fr"><i class="iconfont icon-sousuo fl"></i></a>
 </div>
 <div class="clearfloat" id="main">
@@ -49,7 +49,8 @@
             @foreach (var house in Model.houses)
             {
                 <div class="list clearfloat fl box-s">
-                    <a href="house-details.html">
+                    <a href="~/@(house.Id).html">
+                    @*<a href="@Url.Action("Detail","House",new { id = house.Id })">*@
                         <div class="tu clearfloat">
                             <span></span>
                             <img src="upload/list-tu.jpg" />
@@ -71,10 +72,9 @@
         </div>
     </div>
 </div>
-
+@{Html.RenderPartial("_Footer");}
 @section Footer
 {
     <script type="text/javascript" src="~/js/psong.js"></script>
     <script type="text/javascript" src="~/js/menu.js"></script>
-
 }
