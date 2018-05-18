@@ -1,0 +1,15 @@
+E:\GitHub\ZSZ\elactictest\bin\Debug\elactictest.exe.config
+E:\GitHub\ZSZ\elactictest\bin\Debug\elactictest.exe
+E:\GitHub\ZSZ\elactictest\bin\Debug\elactictest.pdb
+E:\GitHub\ZSZ\elactictest\bin\Debug\Newtonsoft.Json.dll
+E:\GitHub\ZSZ\elactictest\bin\Debug\PlainElastic.Net.dll
+E:\GitHub\ZSZ\elactictest\bin\Debug\Newtonsoft.Json.xml
+E:\GitHub\ZSZ\elactictest\bin\Debug\PlainElastic.Net.pdb
+E:\GitHub\ZSZ\elactictest\bin\Debug\PlainElastic.Net.xml
+E:\GitHub\ZSZ\elactictest\obj\Debug\elactictest.csprojResolveAssemblyReference.cache
+E:\GitHub\ZSZ\elactictest\obj\Debug\elactictest.csproj.CoreCompileInputs.cache
+E:\GitHub\ZSZ\elactictest\obj\Debug\elactictest.exe
+E:\GitHub\ZSZ\elactictest\obj\Debug\elactictest.pdb
+E:\GitHub\ZSZ\elactictest\bin\Debug\System.Data.SQLite.dll
+E:\GitHub\ZSZ\elactictest\bin\Debug\System.Data.SQLite.xml
+E:\GitHub\ZSZ\elactictest\bin\Debug\System.Data.SQLite.dll.config
