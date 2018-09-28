@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    
+    <ul>
+        <li>Go to Store</li>
+        <li>Watch TV</li>
+        <li>Go Shopping</li>
+    </ul>
+
+    <script>
+    const younger = [' George', 'John', 'Thomas'];
+    const olders = [' James', 'Adrew', 'Martin'];
+
+    const members = [...younger, 'Mary', ...olders];
+    const currentMembers = [...members]; //[].concat(members);
+    younger.push(...olders);
+    //NodeList
+    const lis = document.querySelectorAll('li');
+    for(let li of [...lis]){
+        console.log(li.textContent);
+    }
+    //数组
+    const favorites ={
+        color: ['yellow', 'blue'],
+        fruits: ['banana', 'mongo']
+    };
+    const shoppingList = ['milk', 'sweet', ...favorites.fruits]
+
+    //函数
+    let fruit = ['apple','banana','pear'];
+    const newFruit = ['orange', 'mongo'];
+    fruit.push(...newFruit);
+
+    const dateFields = [2018,9,28];
+    const date = new Date(...dateFields);
+
+    </script>
+
+</body>
+</html>

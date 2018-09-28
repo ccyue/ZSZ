@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tagged template strings</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .hightlight{
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+        <script>
+    
+            function highlight(strings, ...values)
+            {
+                const highlighted = values.map(value => `<span class="hightlight">${value}</span>`)
+                //let str ='';
+                //strings.forEach((string,i)=> str += `${string}${highlighted[i] || ''}`);
+                //return str;
+                 return strings.reduce((prev,curr,i) => `${prev}${curr}${highlighted[i]||''}`, '');
+            }
+        
+            const user ='Mary';
+            const topic ='Learn to use markdown';
+            const sentence = highlight`${user} has commond on your topic ${topic}.`;
+        
+            document.body.innerHTML = sentence;
+
+        </script>
+</body>
+</html>

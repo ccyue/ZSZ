@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    
+    <script>
+    //对函数参数处理
+    function sum(...numbers)
+    {
+        return numbers.reduce((prev,curr) => prev+curr,0);
+    }
+    console.log(sum(1,2,3,4));
+    function convertCurrency(rate, ...amounts)
+    {
+        return amounts.map(amount=>amount*rate);
+    }
+    console.log(convertCurrency(0.89,12,23,655,23));
+    //数组解构
+    const playes = ['Jelly', 123,5.4,6.7,3.4,8.3,7.9];
+    const [name,id,...scores] = playes;
+
+    </script>
+</body>
+</html>

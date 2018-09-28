@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script>
+    
+    const repos = [
+        {name:'grit', owner: 'mojombo', decription:'Grit is no longer maintained', id : 1},
+        {name:'jsawesome', owner: 'vanpelt', decription:'Awesome JSON', id : 2},
+        {name:'mer-core', owner: 'wycats', decription:'Merb Core: All you need. None you don\'t.', id:3},
+    ];
+
+    const owners=[
+        {name:'mojombo', location:'San Francisco', followers:123},
+        {name:'vanpelt', location:'Bay Minette', followers:1034},
+        {name:'wycats', location:'Los Angeles, CA', followers:388}
+    ];
+
+    function getRepoById(id)
+    {
+        return new Promise((resolve,reject)=>{
+            let repo = repos.find(p=>p.id==id);
+            if(repo){
+                resolve(repo);
+            }
+            else{
+                reject(Error('Repo is not found.'));
+            }
+        })
+    }
+
+    function getOwnerByRepo(repo)
+    {
+        return new Promise((resolve,reject)=>{
+            let owner = owners.find(p=>p.name==repo.owner)
+            if(owner){
+                resolve(owner);
+            }
+            else{
+                reject(Error('Owner is not found.'))
+            }
+        })
+    }
+
+    getRepoById(1)
+    .then(repo=>{
+        return getOwnerByRepo(repo)
+    })
+    .then(owner=>console.log(owner))
+    .catch(err=>console.log(err));
+
+    
+    </script>
+</body>
+</html>

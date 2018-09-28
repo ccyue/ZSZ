@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>For of Loop Examples</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .completed{
+            text-decoration-line: line-through;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>Go to Store</li>
+        <li>Watch TV</li>
+        <li>Go Shopping</li>
+    </ul>
+    <script>
+        const fruits = ['Apple', 'Banana', 'Orange', 'Mango']
+        for(let[index, fruit] of fruits.entries()){
+            console.log(`${fruit} ranks ${index+1} in my favorite fruits`);
+        }
+
+        //Iterator 接口
+        //数组
+        function sum()
+        {
+            let total = 0;
+            for(let num of arguments){
+                total +=num;
+            }
+            return total;
+        }
+        sum(10,12,78,789,52,63);
+        //Node List
+        const lis = document.querySelectorAll('li');
+        for(let li of lis)
+        {
+            li.addEventListener('click', function(){
+                this.classList.toggle('completed');
+            })
+        }
+    //Node List
+    const todos = document.querySelectorAll('li');
+    const names = Array.from(todos,todo => todo.textContent); //Array.from(todos).map(todo => todo.textContent);
+    //Arguments Object
+    function sum(){
+        return Array.from(arguments).reduce((prev,curr) => prev +curr,0);
+    }
+    //Strings
+    const website = 'MTR';
+    const sss = Array.from(website);
+    //弥补Array不足  
+    Array.of(1,2)
+    Array.of(7)
+    Array(7)
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script>
+        const perter = Symbol('peter'); //生成唯一标识符，解决对象命名冲突问题。
+        const classRoom ={
+            [Symbol('lily')]:{grade:60,gender:'female'},
+            [Symbol('nina')]:{grade:90,gender:'female'},
+            [Symbol('nina')]:{grade:90,gender:'female'},
+        }
+        
+        const syms = Object.getOwnPropertySymbols(classRoom).map(sym=>classRoom[sym]);
+        console.log(syms);
+
+    </script>
+</body>
+</html>

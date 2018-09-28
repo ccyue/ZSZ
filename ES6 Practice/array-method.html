@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Array method</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    
+    <script>
+        const inventory = [
+            {name:'apples', quantity:2},
+            {name:'bananas', quantity:6},
+            {name:'cherries', quantity:5},
+        ]
+
+        
+        let res1 = inventory.find(e=>e.name=="bananas");    //true
+        let res2 = inventory.findIndex(e=>e.name=="bananas");    //1
+        let res3 = inventory.some(e=>e.quantity>2);   //true
+        let res4 = inventory.every(e=>e.quantity>2);  //false
+
+    </script>
+</body>
+</html>

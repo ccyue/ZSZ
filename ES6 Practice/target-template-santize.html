@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./js/purify.js"></script>
+</head>
+<body>
+    <div class="add-comment">
+        <form class="add-comment">
+                <textarea class=comment-text></textarea>
+                <button>Post Comment</button>
+        </form>
+        <div class="comment"></div>
+    </div>
+    
+    
+    <script>
+        const addCommentForm = document.querySelector('.add-comment');
+        const textarea = document.querySelector('.comment-text');
+        const commentDiv = document.querySelector('.comment');
+        const user = 'Mary';
+        
+        function sanitize(strings,...values)
+        {
+            const dirty = strings.reduce((prev,curr,i)=>`${prev}${curr}${values[i]||''}`);
+            return DOMPurify.sanitize(dirty);
+        }
+
+        addCommentForm.addEventListener('submit',function(event){
+            event.preventDefault();
+            const newComment = textarea.value.trim();
+            if(newComment)
+            {
+                commentDiv.innerHTML = sanitize`
+                <div class="commnet-header">${user}</div>
+                <div class="comment-body">${textarea.value}</div>
+                `.trim();
+                textarea.value = '';
+            }
+        })
+
+    function sanitize(strings,...values)
+    {
+        const dirty = strings.reduce((prev,curr,i)=>`${prev}${curr}${values[i]||''}`);
+        return DOMPurify.sanitize(dirty);
+    }
+    commentDiv.innerHTML = sanitize`<div class="commnet-header">${user}</div>
+                <div class="comment-body">${textarea.value}</div>
+                `.trim();
+    </script>
+
+</body>
+</html>

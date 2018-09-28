@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script>
+        const name= 'Laravist';
+        const age = 2;
+        const birthday = '2018-2';
+    //set value for object
+    const ll = {
+        name,
+        age,
+        birthday,
+        greet(){
+            alert(`Hello ${name}!`);
+        }
+    }
+    //identity
+    let id=0;
+    const userIds = {
+        [`user-${++id}`]: id,
+        [`user-${++id}`]: id,
+        [`user-${++id}`]: id,
+        [`user-${++id}`]: id,
+        [`user-${++id}`]: id
+    }
+    // key & value
+    const keys = ['name', 'age', 'birthday'];
+    const values = ['Laravist', 2, '2018-2'];
+
+    const Lara = {
+        [keys.shift()]: values.shift(),
+        [keys.shift()]: values.shift(),
+        [keys.shift()]: values.shift(),
+    }
+
+    </script>
+</body>
+</html>

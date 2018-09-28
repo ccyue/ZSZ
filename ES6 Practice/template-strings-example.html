@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>template strings example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+    <script>
+        const Jelly = {
+            name: 'Jelly',
+            date: '2018-09-27',
+            todos:[
+                {name:'Go to Store', completed:false},
+                {name:'Watch Movie', completed:true},
+                {name:'Running', completed:true}
+            ]
+        };
+        function renderTodos(todos)
+        {
+            return  `<ul>
+            ${todos.map(todo=>`<li>
+                ${todo.name} ${todo.completed?'🤩':'😯'}
+                </li>`).join('')}
+            </ul>`.trim();
+        }
+
+        const template = 
+        `<div>
+            <div>${Jelly.name}</div>
+            <div>${renderTodos(Jelly.todos)}</div>
+            <div>${Jelly.date}</div>
+        </div>`
+        document.body.innerHTML = template;
+
+    </script>
+</body>
+</html>

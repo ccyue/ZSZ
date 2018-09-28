@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>New String Methods</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+    <script>
+        const id = '201039119920222786X';
+        const fan = 'I love Vue';
+        
+        console.log(id.startsWith(2));
+        console.log(fan.endsWith('e'));
+        console.log(fan.includes('love'));
+        console.log(fan.repeat(5));
+
+        console.log(`${'='.repeat(5)} ${fan} ${'='.repeat(5)}`)
+
+        const Tom = {
+			name:'Tom Jones',
+			age:25,
+			family:{
+				mother:'Norah Jones',
+				father:'Richard Jones',
+				brother:'Howard Jones'
+			},
+		}
+        let name ='';
+        ({ name, age:a, sister='no sister'} = Tom);
+        let {mother, father, brother} = Tom.family;
+        
+        const numbers = ['one', 'two', 'three', 'four', 'five', 'six'];
+        const [one,,three,...others] = numbers;
+        let number1 = 10, number2= 20;
+        [number1,number2] = [number2,number1];
+        
+        const fruits = ['Apple', 'Banana', 'Orange', 'Mango']
+        fruits.describe ='My favorite fruits';
+        for(let i=0;i<fruits.length;i++){
+            console.log(fruits[i]);
+        }
+        
+        fruits.forEach(element => {
+            //if (element == 'Orange') {
+                //continue;  //error
+            //}
+        });
+        for(let index in fruits){
+            console.log(fruits[index]);  // all property
+        }
+
+        for(let fruit of fruits){
+            if (fruit == 'Orange') {
+                continue;  
+            }
+            console.log(fruit);  // all property
+        }
+    </script>
+    
+</body>
+</html>
