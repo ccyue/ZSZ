@@ -1,0 +1,121 @@
+﻿@using ZSZ.CommonMVC
+@{
+    ViewBag.Title = "Search";
+}
+
+<div class="headertwo clearfloat" id="header">
+    <a href="javascript:history.go(-1)" class="fl box-s"><i class="iconfont icon-arrow-l fl"></i></a>
+    <p class="fl">@ViewBag.CityName</p>
+    <a href="javascript:history.go(-1)" class="fr"><i class="iconfont icon-sousuo fl"></i></a>
+</div>
+<div class="clearfloat" id="main">
+    <div class="menu-list clearfloat am-sharetwo">
+        <ul class="yiji" id="oe_menu">
+            <li>
+                <a href="#" class="inactive">区域<i></i></a>
+                <ul style="display: none">
+                    <li><a href="~/House/Search2?@(Html.Raw(MVCHelper.RemoveQueryString(Request.QueryString,"RegionId")))">全部</a></li>
+                    @foreach (var item in ViewBag.Regions)
+                    {
+                        <li><a href="~/House/Search2?@(Html.Raw(MVCHelper.UpdateQueryString(Request.QueryString,"RegionId",item.Id.ToString())))">@item.Name</a></li>
+                    }
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="inactive">租金<i></i></a>
+                <ul style="display: none">
+                    <li><a href="~/House/Search2?@(Html.Raw(MVCHelper.RemoveQueryString(Request.QueryString,"MonthRent")))">全部</a></li>
+                    <li><a href="~/House/Search2?@(Html.Raw(MVCHelper.UpdateQueryString(Request.QueryString,"MonthRent","*-1000")))">1000以下</a></li>
+                    <li><a href="~/House/Search2?@(Html.Raw(MVCHelper.UpdateQueryString(Request.QueryString,"MonthRent","1000-2000")))">1000-2000</a></li>
+                    <li><a href="~/House/Search2?@(Html.Raw(MVCHelper.UpdateQueryString(Request.QueryString,"MonthRent","2000-3000")))">2000-3000</a></li>
+                    <li><a href="~/House/Search2?@(Html.Raw(MVCHelper.UpdateQueryString(Request.QueryString,"MonthRent","3000-*")))">3000-*</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="inactive">排序<i></i></a>
+                <ul style="display: none">
+                    <li><a href="~/House/Search2?@(MVCHelper.UpdateQueryString(Request.QueryString,"OrderByType","MonthRentAsc"))">租金从低到高</a></li>
+                    <li><a href="~/House/Search2?@(MVCHelper.UpdateQueryString(Request.QueryString,"OrderByType","MonthRentDesc"))">租金从高到低</a></li>
+                    <li><a href="~/House/Search2?@(MVCHelper.UpdateQueryString(Request.QueryString,"OrderByType","AreaAsc"))">面积从小到大</a></li>
+                    <li><a href="~/House/Search2?@(MVCHelper.UpdateQueryString(Request.QueryString,"OrderByType","AreaDesc"))">面积从大到小</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="recom clearfloat recomtwo">
+        <div class="content clearfloat box-s">
+            <div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <!--数据列表-->
+                    <ul id="ul1" class="mui-table-view mui-table-view-chevron"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@{Html.RenderPartial("_Footer");}
+@section Footer
+{
+    <script type="text/javascript" src="~/js/psong.js"></script>
+    <script type="text/javascript" src="~/js/menu.js"></script>
+    <script type="text/javascript" src="~/js/template.js"></script>
+    <script type="text/javascript">
+        var pageIndex = 1;
+        mui.init({
+            pullRefresh: {
+                container: "#refreshContainer",//下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
+                up: {
+                    height: 50,//可选,默认50.触发下拉刷新拖动距离,
+                    auto: true,//可选,默认false.首次加载自动下拉刷新一次
+                    contentdown: "下拉可以刷新",//可选，在下拉可刷新状态时，下拉刷新控件上显示的标题内容
+                    contentover: "释放立即刷新",//可选，在释放可刷新状态时，下拉刷新控件上显示的标题内容
+                    contentrefresh: "正在刷新...",//可选，正在刷新状态时，下拉刷新控件上显示的标题内容
+                    callback: function () {
+                        var prThis = this;
+                        $.ajax({
+                            url: "/House/LoadMore" + location.search + "&pageIndex=" + pageIndex,
+                            type: "Post",
+                            dataType: "json",
+                            success: function (res) {
+                                pageIndex++;
+                                var hasMoredata = (res.Data.length == 10);
+                                var html = template('houseList', { houses: res.Data });
+                                $("#ul1").append(html);
+                                prThis.endPullupToRefresh(!hasMoredata);
+                            },
+                            error: function () {
+                                alert("加载数据失败")
+                            }
+                        });
+                        this.endPullupToRefresh(false);
+                    }//必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
+                }
+            }
+        });
+    </script>
+    <script id="houseList" type="text/html">
+        {{each houses as h}}
+        <div class="list clearfloat fl box-s">
+            @*<a href="/House/Detail/{{h.Id}}" />*@
+            <a href="/{{h.Id}}.html">
+            <div class="tu clearfloat">
+                <span></span>
+                <img src="upload/list-tu.jpg" />
+            </div>
+            <div class="right clearfloat">
+                <div class="tit clearfloat">
+                    <p class="fl">{{h.CommunityName}}</p>
+                    <span class="fr">{{h.MonthRent}}<samp>元/月</samp></span>
+                </div>
+                <p class="recom-jianjie">{{h.RoomTypeName}} |  {{h.Area}}m²  |  {{h.DecorateStatusName}}</p>
+                <div class="recom-bottom clearfloat">
+                    <span><i class="iconfont icon-duihao"></i>随时住</span>
+                    <span><i class="iconfont icon-duihao"></i>家电齐全</span>
+                </div>
+            </div>
+            </a>
+        </div>
+        {{/each}}
+    </script>
+}

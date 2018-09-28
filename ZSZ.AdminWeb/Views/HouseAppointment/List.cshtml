@@ -1,0 +1,98 @@
+﻿@model ZSZ.DTO.HouseAppointmentDTO[]
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    #pager li {
+        float: left;
+        margin-left: 5px;
+        color: purple;
+    }
+
+    .curPager {
+        color: purple;
+    }
+</style>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 预约管理 <span class="c-gray en">&gt;</span> 预约列表 <a class="btn btn-success radius r mr-20" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="pd-20">
+    <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l">
+    <span class="r">共有数据：<strong>@ViewBag.TotalCount</strong> 条</span> </div>
+    <table class="table table-border table-bordered table-bg">
+        <thead>
+            <tr>
+                <th scope="col" colspan="9">预约列表</th>
+            </tr>
+            <tr class="text-c">
+                <th width="25"><input type="checkbox" name="" value=""></th>
+                <th width="60">区域</th>
+                <th width="60">小区</th> 
+                <th width="60">姓名</th>
+                <th width="150">电话</th>
+                <th width="200">地址</th>
+                <th width="90">预约时间</th>
+                <th width="80">状态</th>  
+                <th width="100">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var appointment in Model)
+            {
+                <tr class="text-c">
+                    <td><input type="checkbox" value="1" name=""></td>
+                    <td>@appointment.RegionName</td>
+                    <td>@appointment.CommunityName</td>
+                    <td>@appointment.Name</td>
+                    <td>@appointment.PhoneNum</td>
+                    <td>@appointment.HouseAddress</td>
+                    <td>@appointment.VisitDate</td>
+                    <td>@appointment.Status</td>
+                    <td class="td-manage">
+                        <a href="~/House/Edit/@appointment.HouseId" target="_blank">查看房源</a>
+                        <a title="抢单" href="javascript:;" onclick="follow(@appointment.Id)" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6d0;</i></a>
+                </tr>
+            }
+        </tbody>
+    </table>
+    @{ 
+        var pager = new ZSZ.CommonMVC.Pager();
+        pager.CurrentPageClassName = "curPager";
+        pager.PageIndex = (int)ViewBag.PageIndex;
+        pager.TotalCount = (int)ViewBag.TotalCount;
+        pager.MaxPageCount = 10;
+        pager.PageSize = 10;
+        pager.UrlPattern = "/HouseAppointment/List?pageIndex={pn}";
+    }
+    <div id="pager">
+        @Html.Raw(pager.GetPagerHtml())
+    </div>
+</div>
+@section FooterScript{
+    <script type="text/javascript">
+        function follow(id)
+        {
+            $.ajax({
+                url: '@Url.Action("Follow", "HouseAppointment")',
+                type: 'POST',
+                dataType: "json",
+                data: { appointmentId: id },
+                success: function (res)
+                {
+                    if (res.Status == "ok")
+                    {
+                        alert("抢单成功");
+                        location.reload();
+                    }
+                    else
+                    {
+                        alert("抢单失败");
+                    }
+                },
+                error: function ()
+                {
+                    alert("服务器出错");
+                }
+
+            });
+        }
+    </script>
+}

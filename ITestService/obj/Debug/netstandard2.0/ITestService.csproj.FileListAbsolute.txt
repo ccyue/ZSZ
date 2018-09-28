@@ -6,7 +6,6 @@ E:\GitHub\ZSZ\ITestService\obj\Debug\netstandard2.0\ITestService.AssemblyInfoInp
 E:\GitHub\ZSZ\ITestService\obj\Debug\netstandard2.0\ITestService.AssemblyInfo.cs
 E:\GitHub\ZSZ\ITestService\obj\Debug\netstandard2.0\ITestService.dll
 E:\GitHub\ZSZ\ITestService\obj\Debug\netstandard2.0\ITestService.pdb
-E:\GitHub\ZSZ\ITestService\obj\Debug\netstandard2.0\ITestService.csprojResolveAssemblyReference.cache
 C:\GitHub\ZSZ\ITestService\bin\Debug\netstandard2.0\ITestService.deps.json
 C:\GitHub\ZSZ\ITestService\bin\Debug\netstandard2.0\ITestService.dll
 C:\GitHub\ZSZ\ITestService\bin\Debug\netstandard2.0\ITestService.pdb
@@ -16,3 +15,4 @@ C:\GitHub\ZSZ\ITestService\obj\Debug\netstandard2.0\ITestService.AssemblyInfo.cs
 C:\GitHub\ZSZ\ITestService\obj\Debug\netstandard2.0\ITestService.dll
 C:\GitHub\ZSZ\ITestService\obj\Debug\netstandard2.0\ITestService.pdb
 C:\GitHub\ZSZ\ITestService\obj\Debug\netstandard2.0\ITestService.csprojAssemblyReference.cache
+E:\GitHub\ZSZ\ITestService\obj\Debug\netstandard2.0\ITestService.csprojResolveAssemblyReference.cache

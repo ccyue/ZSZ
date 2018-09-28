@@ -30,16 +30,17 @@ namespace ZSZ.Test
             #endregion
 
             #region Email
-            //using (MailMessage mailMessage = new MailMessage())
-            //using (SmtpClient smtpClient = new SmtpClient("smtp.qq.com", 465))
-            //{
-            //    mailMessage.To.Add("chengcheng.yue@outlook.com");
-            //    mailMessage.Body = "Good morning";
-            //    mailMessage.From = new MailAddress("884167190@qq.com");
-            //    mailMessage.Subject = "Test email";
-            //    smtpClient.Credentials = new System.Net.NetworkCredential("884167190@qq.com", "ziighahexapzbcih");
-            //    smtpClient.Send(mailMessage);
-            //}
+            using (MailMessage mailMessage = new MailMessage())
+            using (SmtpClient smtpClient = new SmtpClient("smtp.163.com"))
+            {
+                mailMessage.To.Add("884167190@qq.com");
+                mailMessage.Body = "Good morning";
+                mailMessage.From = new MailAddress("ycctest01@163.com");
+                mailMessage.Subject = "Test email";
+                smtpClient.EnableSsl = true;
+                smtpClient.Credentials = new System.Net.NetworkCredential("ycctest01@163.com", "cctest20180513");
+                smtpClient.Send(mailMessage);
+            }
             #endregion
 
             #region 缩略图
@@ -128,7 +129,7 @@ namespace ZSZ.Test
             //} 
             #endregion
 
-                Console.ReadKey();
+            Console.ReadKey();
         }
     }
 }

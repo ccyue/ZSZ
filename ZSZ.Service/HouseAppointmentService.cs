@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using ZSZ.DTO;
 using ZSZ.IService;
 using ZSZ.Service.Entities;
+using System.Data.Entity.Infrastructure;
 
 namespace ZSZ.Service
 {
@@ -39,6 +40,7 @@ namespace ZSZ.Service
                     HouseId = houseId,
                     UserId = userId,
                     Name = name,
+                    PhoneNum = phoneNum,
                     Status = "未处理",
                     VisitDate = visitDate,
                     CreateDateTime = DateTime.Now
@@ -52,7 +54,33 @@ namespace ZSZ.Service
 
         public bool Follow(long adminUserId, long houseAppointmentId)
         {
-            throw new NotImplementedException();
+            using (ZSZDbContext dbcontext = new ZSZDbContext())
+            {
+                CommonService<HouseAppointmentEntity> bs = new CommonService<HouseAppointmentEntity>(dbcontext);
+                var app = bs.GetById(houseAppointmentId);
+                if(app==null)
+                {
+                    throw new ArgumentException("订单不存在");
+                }
+                else if (app.FollowAdminUserId != null)
+                {
+                    return app.FollowAdminUserId == adminUserId;
+                }                   
+                else
+                {
+                    app.FollowAdminUserId = adminUserId;
+                    app.Status = "已接单";
+                    try
+                    {
+                        dbcontext.SaveChanges();
+                        return true;
+                    }
+                    catch(DbUpdateConcurrencyException ex)
+                    {
+                        return false;
+                    }
+                }
+            }
         }
 
         public HouseAppointmentDTO GetById(long id)
@@ -69,7 +97,7 @@ namespace ZSZ.Service
             }
         }
 
-        public HouseAppointmentDTO[] GetPageData(long cityId, string status, int pageSize, int currentIndex)
+        public HouseAppointmentDTO[] GetPageData(long cityId, string status, int pageSize, int currentIndex,long? userId)
         {
             using (ZSZDbContext dbc = new ZSZDbContext())
             {
@@ -78,33 +106,51 @@ namespace ZSZ.Service
                     .Include(nameof(HouseAppointmentEntity.House) + "." + nameof(HouseEntity.Community))
                     .Include(nameof(HouseAppointmentEntity.House) + "." + nameof(HouseEntity.Community) + "." + nameof(CommunityEntity.Region))
                     .Include(p => p.FollowAdminUser).AsNoTracking()
-                    .Where(p => p.House.Community.Region.CityId == cityId)
-                    .Where(p => p.Status == status)
-                    .OrderByDescending(p => p.CreateDateTime)
-                    .Skip(currentIndex).Take(pageSize)
-                    .ToList().Select(p => ToDTO(p)).ToArray();
-                return houseApps;
+                    .Where(p => p.House.Community.Region.CityId == cityId);
+                if (!string.IsNullOrEmpty(status))
+                {
+                    houseApps = houseApps.Where(p => p.Status == status);
+                }
+                if(userId!=null)
+                {
+                    houseApps = houseApps.Where(p => p.FollowAdminUserId == userId);
+                }
+                houseApps = houseApps.OrderByDescending(p => p.CreateDateTime)
+                .Skip(currentIndex).Take(pageSize);
+                var result = houseApps.ToList().Select(p => ToDTO(p)).ToArray();
+                return result;
             }
         }
 
-        public long GetTotalCount(long cityId, string status)
+        public long GetTotalCount(long cityId, string status, long? userId)
         {
             using (ZSZDbContext dbc = new ZSZDbContext())
             {
                 CommonService<HouseAppointmentEntity> cs = new CommonService<HouseAppointmentEntity>(dbc);
-                return cs.GetAll().LongCount(p => p.House.Community.Region.CityId == cityId && p.Status == status);
+                var houseApps = cs.GetAll().Where(p => p.House.Community.Region.CityId == cityId);
+                if (!string.IsNullOrEmpty(status))
+                {
+                    houseApps = houseApps.Where(p => p.Status == status);
+                }
+                if (userId != null)
+                {
+                    houseApps = houseApps.Where(p => p.FollowAdminUserId == userId);
+                }
+                return houseApps.LongCount();
             }
         }
 
         private HouseAppointmentDTO ToDTO(HouseAppointmentEntity houseApp)
         {
             HouseAppointmentDTO dto = new HouseAppointmentDTO();
+            dto.Id = houseApp.Id;
             dto.UserId = houseApp.UserId;
             dto.Name = houseApp.Name;
             dto.PhoneNum = houseApp.PhoneNum;
             dto.VisitDate = houseApp.VisitDate;
             dto.HouseId = houseApp.HouseId;
             dto.Status = houseApp.Status;
+            dto.HouseAddress = houseApp.House.Address;
             dto.FollowAdminUserId = houseApp.FollowAdminUserId;
             if (dto.FollowAdminUserId != null && houseApp.FollowAdminUser != null)
             {

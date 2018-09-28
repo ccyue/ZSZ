@@ -6,6 +6,7 @@ using ZSZ.DTO;
 
 namespace ZSZ.FrontWeb.Models
 {
+    [Serializable]
     public class HouseViewModel
     {
         public HouseDTO House { get; set; }

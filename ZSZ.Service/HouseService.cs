@@ -327,5 +327,25 @@ namespace ZSZ.Service
             }
             return dto;
         }
+
+        public HouseDTO[] GetAll()
+        {
+            using (ZSZDbContext dbcontext = new ZSZDbContext())
+            {
+                CommonService<HouseEntity> house = new CommonService<HouseEntity>(dbcontext);
+                using (ZSZDbContext dbc = new ZSZDbContext())
+                {
+                    CommonService<HouseEntity> csHouse = new CommonService<HouseEntity>(dbc);
+                    return csHouse.GetAll()
+                        .Include(p => p.Attachments).Include(p => p.HousePics).Include(p => p.Community)
+                        .Include(p => p.Status).Include(p => p.DecorateStatus).Include(p => p.RoomType).Include(p => p.Type)
+                        .Include(nameof(HouseEntity.Community) + "." + nameof(CommunityEntity.Region))
+                        .Include(nameof(HouseEntity.Community) + "." + nameof(CommunityEntity.Region) + "." + nameof(RegionEntity.City))
+                        .AsNoTracking()
+                        .ToList().Select(p => ToDTO(p))
+                        .ToArray();
+                }
+            }
+        }
     }
 }

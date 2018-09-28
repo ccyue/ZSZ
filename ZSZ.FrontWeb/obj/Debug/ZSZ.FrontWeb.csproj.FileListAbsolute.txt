@@ -91,3 +91,13 @@ C:\GitHub\ZSZ\ZSZ.FrontWeb\obj\Debug\ZSZ.FrontWeb.csproj.CoreCompileInputs.cache
 C:\GitHub\ZSZ\ZSZ.FrontWeb\obj\Debug\ZSZ.FrontWeb.csproj.CopyComplete
 C:\GitHub\ZSZ\ZSZ.FrontWeb\obj\Debug\ZSZ.FrontWeb.dll
 C:\GitHub\ZSZ\ZSZ.FrontWeb\obj\Debug\ZSZ.FrontWeb.pdb
+E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\Enyim.Caching.dll
+E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\Enyim.Caching.xml
+E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\ServiceStack.Common.dll
+E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\ServiceStack.Interfaces.dll
+E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\ServiceStack.Redis.dll
+E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\ServiceStack.Text.dll
+E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\ServiceStack.Common.xml
+E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\ServiceStack.Interfaces.xml
+E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\ServiceStack.Redis.xml
+E:\GitHub\ZSZ\ZSZ.FrontWeb\bin\ServiceStack.Text.xml

@@ -21,5 +21,6 @@ namespace ZSZ.IService
         long GetCount(long cityId, DateTime startDateTime, DateTime endDateTime);
         HousePicDTO[] GetPics(long houseId);
         int GetTodayNewHouseCount(long cityId);
+        HouseDTO[] GetAll();
     }
 }

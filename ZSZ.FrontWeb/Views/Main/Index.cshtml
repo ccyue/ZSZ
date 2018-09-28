@@ -1,4 +1,5 @@
 ﻿@using ZSZ.DTO
+@model ZSZ.FrontWeb.Models.IndexModelView
 @{
     ViewBag.Title = "Index";
 }
@@ -7,9 +8,9 @@
     <link href="~/css/exchangecity.css" rel="stylesheet" />
 }
 @{
-    CityDTO[] cities = ViewBag.Cities as CityDTO[];
+    CityDTO[] cities = Model.Cities as CityDTO[];
     CityDTO[] hotCity = cities.Where(p => p.IsHot).ToArray();
-    var currentCityName = cities.Where(p => p.Id == (long)ViewBag.CurrentCityId).FirstOrDefault().Name;
+    var currentCityName = cities.Where(p => p.Id == Model.CityId).FirstOrDefault().Name;
     var dicCity = cities.GroupBy(p => p.Initials).ToDictionary(p => p.Key, p => p);
     var count = (int)Math.Ceiling(dicCity.Count() / 2.0);
     var lCity = dicCity.Take(count);
@@ -72,25 +73,25 @@
     <div class="cation clearfloat">
         <ul class="clearfloat">
             <li>
-                <a href="entire.html">
+                <a href="@Url.Action("Search","House",new { typeId = Model.Types["整租"]})">
                     <img src="~/img/fang.png" />
                     <p>整租</p>
                 </a>
             </li>
             <li>
-                <a href="entire.html">
+                <a href="@Url.Action("Search","House",new { typeId = Model.Types["合租"]})">
                     <img src="~/img/chuang.png" />
                     <p>合租</p>
                 </a>
             </li>
             <li>
-                <a href="entire.html">
+                <a href="@Url.Action("Search","House",new { typeId = Model.Types["短租"]})">
                     <img src="~/img/bao.png" />
                     <p>短租</p>
                 </a>
             </li>
             <li>
-                <a href="entire.html">
+                <a href="@Url.Action("Search","House",new { typeId = Model.Types["写字楼"]})">
                     <img src="~/img/lou.png" />
                     <p>写字楼</p>
                 </a>
@@ -238,34 +239,7 @@
 </div>
 <div class="overlayBg"></div>
 <!--change city end-->
-<footer class="page-footer fixed-footer" id="footer">
-    <ul>
-        <li class="active">
-            <a href="index.html">
-                <i class="iconfont icon-shouyev1"></i>
-                <p>首页</p>
-            </a>
-        </li>
-        <li>
-            <a href="lease.html">
-                <i class="iconfont icon-chuzuwo"></i>
-                <p>我要出租</p>
-            </a>
-        </li>
-        <li>
-            <a href="schedule.html">
-                <i class="iconfont icon-richengbiao"></i>
-                <p>看房日程</p>
-            </a>
-        </li>
-        <li>
-            <a href="sign.html">
-                <i class="iconfont icon-gerenzhongxin"></i>
-                <p>个人中心</p>
-            </a>
-        </li>
-    </ul>
-</footer>
+@{Html.RenderPartial("_Footer");}
 @section Footer{
     <script type="text/javascript" src="~/js/fastclick.js"></script>
     <script type="text/javascript" src="~/js/mui.min.js"></script>

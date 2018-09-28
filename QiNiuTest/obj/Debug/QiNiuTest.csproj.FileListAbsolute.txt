@@ -1,0 +1,10 @@
+E:\GitHub\ZSZ\QiNiuTest\obj\Debug\QiNiuTest.csproj.CoreCompileInputs.cache
+E:\GitHub\ZSZ\QiNiuTest\bin\Debug\QiNiuTest.exe.config
+E:\GitHub\ZSZ\QiNiuTest\bin\Debug\QiNiuTest.exe
+E:\GitHub\ZSZ\QiNiuTest\bin\Debug\QiNiuTest.pdb
+E:\GitHub\ZSZ\QiNiuTest\bin\Debug\Newtonsoft.Json.dll
+E:\GitHub\ZSZ\QiNiuTest\bin\Debug\Qiniu.dll
+E:\GitHub\ZSZ\QiNiuTest\bin\Debug\Newtonsoft.Json.xml
+E:\GitHub\ZSZ\QiNiuTest\obj\Debug\QiNiuTest.exe
+E:\GitHub\ZSZ\QiNiuTest\obj\Debug\QiNiuTest.pdb
+E:\GitHub\ZSZ\QiNiuTest\obj\Debug\QiNiuTest.csprojResolveAssemblyReference.cache

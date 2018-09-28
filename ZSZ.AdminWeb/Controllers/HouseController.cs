@@ -22,6 +22,7 @@ namespace ZSZ.AdminWeb.Controllers
         public ICommunityService CommunityService { get; set; }
         public IIdNameService IdNameService { get; set; }
         public IAttachementService AttachementService { get; set; }
+        public ICityService CityService { get; set; }
 
         private SelectListItem firstItem = new SelectListItem() { Value = "0", Text = "请选择" };
 
@@ -63,13 +64,15 @@ namespace ZSZ.AdminWeb.Controllers
 
         [CheckPermission("House.Add")]
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Add(HouseAddNewDTO house)
         {
             if(!ModelState.IsValid)
             {
                 return Json(new AjaxResult() { Status = "error", ErrorMsg = CommonMVC.MVCHelper.GetValidMsg(ModelState) });
             }
-            HouseService.Add(house);
+            long houseId = HouseService.Add(house);
+            CreateStaticPage(houseId);
             return Json(new AjaxResult() { Status = "ok"});
         }
 
@@ -111,6 +114,7 @@ namespace ZSZ.AdminWeb.Controllers
 
         [CheckPermission("House.Edit")]
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Edit(HouseUpdateDTO house)
         {
             if (!ModelState.IsValid)
@@ -118,6 +122,7 @@ namespace ZSZ.AdminWeb.Controllers
                 return Json(new AjaxResult() { Status = "error", ErrorMsg = CommonMVC.MVCHelper.GetValidMsg(ModelState) });
             }
             HouseService.Update(house);
+            CreateStaticPage(house.Id);
             return Json(new AjaxResult() { Status = "ok" });
         }
 
@@ -174,12 +179,14 @@ namespace ZSZ.AdminWeb.Controllers
                 Url = path,
                 ThumbUrl = thumbPath
             });
+            CreateStaticPage(house.Id);
             return Json(new AjaxResult() { Status = "ok"});
         }
         [HttpPost]
         public ActionResult PicDelete(long[] deleteIds)
         {
-            foreach(var id in deleteIds)
+            //TODO:
+            foreach (var id in deleteIds)
             {
                 HouseService.DeleteHousePic(id);
             }           
@@ -206,6 +213,34 @@ namespace ZSZ.AdminWeb.Controllers
                 newList.AddRange(dtos.Select(p => new SelectListItem() { Value = p.Id.ToString(), Text = p.Name, Selected = p.Id == id }).ToList());
             }
             return newList;
+        }
+
+        public ActionResult RebuildAllStaticPage()
+        {
+            var houses = HouseService.GetAll();
+            foreach(var h in houses)
+            {
+                HouseViewModel model = new HouseViewModel();
+                model.House = h;
+                model.HousePics = HouseService.GetPics(h.Id);
+                model.HouseAttachment = AttachementService.GetByHouseId(h.Id);
+                model.AllAttachment = AttachementService.GetAll();
+                string html = MVCHelper.RenderViewToString(this.ControllerContext, @"~/Views/House/S_Detail.cshtml", model);
+                System.IO.File.WriteAllText(string.Format(@"E:\GitHub\ZSZ\ZSZ.FrontWeb\{0}.html", h.Id), html);
+            }
+            return View();
+        }
+
+        private void CreateStaticPage(long houseId)
+        {
+            var house = HouseService.GetById(houseId);
+            HouseViewModel model = new HouseViewModel();
+            model.House = house;
+            model.HousePics = HouseService.GetPics(houseId);
+            model.HouseAttachment = AttachementService.GetByHouseId(houseId);
+            model.AllAttachment = AttachementService.GetAll();
+            string html = MVCHelper.RenderViewToString(this.ControllerContext, @"~/Views/House/S_Detail.cshtml", model);
+            System.IO.File.WriteAllText(string.Format(@"E:\GitHub\ZSZ\ZSZ.FrontWeb\{0}.html",houseId), html);
         }
 	}
 }
